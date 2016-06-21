@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ExtensionMethodsSample
 {
@@ -25,6 +21,10 @@ namespace ExtensionMethodsSample
 
     static class ExtensionMethods
     {
+        /// <summary>
+        /// this is the extension method for Adviser 
+        /// </summary>
+        /// <param name="adv"></param>
         public static void GetBalance(this Adviser adv)
         {
 
