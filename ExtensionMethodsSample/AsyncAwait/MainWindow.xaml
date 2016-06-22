@@ -1,0 +1,10 @@
+﻿<Window x:Class="AsyncAwait.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Button Content="Click Button" HorizontalAlignment="Left" Margin="226,72,0,0" VerticalAlignment="Top" Width="75" Name="startButton" Click="startButton_Click"/>
+        <TextBox HorizontalAlignment="Left" Margin="115,125,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="129" Width="310" Name="resultsTextBox"/>
+
+    </Grid>
+</Window>
