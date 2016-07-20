@@ -31,4 +31,5 @@ namespace ExtensionMethodsSample
             Console.WriteLine("Logging in Ext method{0}",adv.Name);
         }
     }
+
 }
