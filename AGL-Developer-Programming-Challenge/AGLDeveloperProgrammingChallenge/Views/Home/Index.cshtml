@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<!doctype html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+</head>
+
+<body ng-app="AGL">
+
+
+    <div ng-controller="AGLController">
+        <ul>
+            <li ng-repeat="x in AGLRes">
+               <input type="text" style="font-weight:bold;" value="{{ x.gender }}" disabled="disabled"/>
+
+                <ul>
+                    <li ng-repeat="pet in x.cats">
+                        {{ pet }}
+                    </li>
+
+                </ul>
+
+            </li>
+        </ul>
+        <ol ng-model="AGLRes" ng-list="gender" ng-trim="false"></ol>
+    </div>
+
+
+    
+    <script type="text/javascript">
+        //Can create seperate module class but for having a quick glance created in single page
+        var app = angular.module('AGL', []);
+
+        //Calling mvc controller method from Angular Controller
+        app.controller('AGLController',
+        function ($scope, $http) {
+            $scope.AGLRes = {
+                gender: "",
+                cats: { name: "" }
+
+            };
+
+            $http({
+                url: '/Home/AGLResponse',
+                method: 'GET'
+            }).success(function (data) {
+                $scope.AGLRes = data;
+            })
+            .error(function (data) {
+                alert("Fail");
+            })
+        }
+            )
+    </script>
+
+</body>
+</html>
+

@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGLDeveloperProgrammingChallenge", "AGLDeveloperProgrammingChallenge\AGLDeveloperProgrammingChallenge.csproj", "{FFBE39ED-123B-4012-819E-0DEA1AAEB8DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FFBE39ED-123B-4012-819E-0DEA1AAEB8DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFBE39ED-123B-4012-819E-0DEA1AAEB8DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFBE39ED-123B-4012-819E-0DEA1AAEB8DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFBE39ED-123B-4012-819E-0DEA1AAEB8DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
