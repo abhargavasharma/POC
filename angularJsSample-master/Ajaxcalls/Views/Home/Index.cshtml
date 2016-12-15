@@ -1,0 +1,16 @@
+﻿
+
+        <div class="form-group" ng-controller="petsController1 as p">
+            <label>cats info</label>
+            <nav>               
+                <ul>                    
+                    <li ng-repeat="pet in p.pets1">                       
+                        {{pet.gender}}
+                        <ul>
+                            <li ng-repeat="cat in pet.cats"> {{cat}}</li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
