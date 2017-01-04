@@ -1,0 +1,23 @@
+<div class="tal-currency-question">
+    <form name="annualIncomeForm" novalidate>
+        <fieldset>
+            <span class="tal-form-amount">
+                <input type="text" id="annualIncome" name="annualIncome" required
+                       ng-model="ctrl.annualIncome"
+                       autocomplete="off"
+                       tal-currency-format whole-numbers-only="true"
+                       maxlength="9"
+                       ng-disabled="ctrl.readOnly">
+            </span>
+        </fieldset>
+
+        <fieldset class="underwriting-toolbar submit-buttons text-center">
+            <button type="button" class="btn btn-secondary"
+                    ng-disabled="annualIncomeForm.$invalid || ctrl.readOnly"
+                    ng-click="ctrl.onContinueClick()">
+                Continue
+            </button>
+        </fieldset>
+    </form>
+
+</div>

@@ -1,0 +1,59 @@
+// ==============================================================
+// GLOBAL STYLES - HORIZONTAL RULE
+// ==============================================================
+
+.tal-hr {
+  &:extend(.font--feature);
+
+  .bp(0, s, {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  });
+
+  overflow: hidden;
+  text-align: center;
+
+  &:before,
+  &:after {
+      background-color: @text-color;
+      content: "";
+      display: inline-block;
+      height: 2px;
+      position: relative;
+      vertical-align: middle;
+      width: 50%;
+  }
+
+  &:before {
+      margin-left: -50%;
+  }
+
+  &:after {
+      margin-right: -50%;
+  }
+
+  > span {
+    padding: 0 0.5em;
+  }
+}
+
+.inverse-colors .tal-hr {
+  color: @white;
+
+  &:before,
+  &:after {
+    background-color: @white;
+  }
+}
+
+
+// Grey version
+
+.tal-hr-grey {
+  color:  @text-color;
+
+  &:before,
+  &:after {
+    background-color: rgba(128,128,128, 0.3);
+  }
+}

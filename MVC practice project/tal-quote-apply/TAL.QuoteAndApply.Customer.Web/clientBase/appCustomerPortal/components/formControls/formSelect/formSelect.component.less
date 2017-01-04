@@ -1,0 +1,90 @@
+// ==============================================================
+// COMPONENT: Form select (basic)
+// ==============================================================
+
+@form-select-height: 36px;
+
+// ---- Styles SHARED between all select components -------------
+
+.tal-form-select {
+  &:extend(.abs-font--size-m);
+  height: @form-select-height;
+
+  select {
+    &:extend(.stretch-absolute);
+    .mxn-input;
+    cursor: pointer;
+    width: 100%;
+    padding-right: 46px;
+    opacity: 0;
+    z-index: 4;
+    font-size: inherit;
+  }
+}
+
+// ---- Styles just for Form Select (Basic) -------------
+
+form-select, .form-select {
+  display: block;
+
+  &.is-placeholder {
+    .tal-form-select {
+      color: @placeholder-grey;
+    }
+  }
+
+  // For a non-standard version of this component (using just the html, not the directive) on the Purchase page
+  // The Relationship select. Remove this if this instance is refactored to use the component.
+  .form-control.ng-pristine ~ .tal-form-select-value {
+    color: @placeholder-grey;
+  }
+
+  .tal-form-select {
+    &:extend(.mxn-input);
+    height: @form-select-height;
+    position: relative;
+    padding-left: 0;
+
+    // caret icon
+    &:before {
+      .mxn-abs-stretch(0, 0, 0, false);
+      z-index: 1;
+      content:' ';
+      border-left: @disabled-light solid 1px;
+      width: @form-select-height;
+      background-repeat: no-repeat;
+      transition: all 300ms;
+      background-color: @white;
+      box-sizing: border-box;
+    }
+
+    .mxn-icon-pe(
+      @icon: caret-s,
+      @color-base: @grey-30,
+      @color-hover: @tal-green,
+      @color-active: @tal-green-dark,
+      @size: 10px,
+      @extend: false
+    );
+  }
+
+  select {
+    padding-right: 46px;
+
+    &:hover, &:focus {
+      ~ .tal-form-select-value {
+       outline: 1px solid @tal-green;
+      }
+    }
+  }
+
+  .tal-form-select-value {
+    .mxn-abs-stretch(0, @form-select-height, 0, 0);
+    line-height: @form-select-height;
+    padding-left: 10px;
+    background-color: @white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    z-index: 2;
+  }
+}

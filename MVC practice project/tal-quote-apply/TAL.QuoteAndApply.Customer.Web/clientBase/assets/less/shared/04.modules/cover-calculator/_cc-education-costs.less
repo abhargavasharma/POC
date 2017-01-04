@@ -1,0 +1,98 @@
+// ---- Education costs items -------------------------------------------------------------------------
+
+.cc-edu-costs {
+	.edu-item__ages,
+	.edu-item__costs {
+		legend {
+			&:extend(.visuallyhidden);
+		}
+	}
+
+	.edu-ages__ctrl,
+	.edu-costs__ctrl {
+		margin-bottom: 20px;
+
+		label {
+			width: 100%;
+			&:extend(.abs-font--size-xs);
+		}
+	}
+
+	.bp(s, {
+		.edu-ages__ctrl,
+		.edu-costs__ctrl {
+			width: 50%;
+			float: left;
+		}
+	});
+
+	.bp(m, {
+		.cc-edu-costs__item {
+			border-bottom: 1px solid @grey-90;
+
+			&:first-of-type {
+				border-top: 1px solid @grey-90;
+				padding-top: 20px;
+			}
+		}
+
+		.edu-item__legend {
+			width: 15%;
+			margin-right: 3%;
+			float: left;
+
+			border-bottom: none;
+			.abs-font--size-m;
+			font-weight: bolder;
+			margin-top: 30px;
+		}
+
+		.edu-item__ages {
+			width: 28%;
+			float: left;
+			margin-right: 4%;
+		}
+
+		.edu-item__costs {
+			width: 50%;
+			float: left;
+		}
+
+		.edu-ages__ctrl {
+			width: 45%;
+			margin-right: 5%;
+		}
+
+		.edu-costs__ctrl {
+			width: 32%;
+			margin-right: 3%;
+		}
+
+		.edu-costs__unit {
+			width: 30%;
+			float: right;
+			margin-top: 33px;
+		}
+	});
+
+	.bp(l, {
+		.edu-item__legend {
+			width: 15%;
+			margin-right: 7%;
+		}
+
+		.edu-item__ages {
+			width: 20%;
+			margin-right: 13%;
+		}
+
+		.edu-item__costs {
+			width: 45%;
+			float: left;
+		}
+	});
+}
+
+.cc-edu-costs__item {
+	margin-bottom: 30px;
+}

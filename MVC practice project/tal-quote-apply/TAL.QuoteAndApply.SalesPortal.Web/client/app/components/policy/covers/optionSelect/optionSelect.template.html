@@ -1,0 +1,22 @@
+<div ng-form="policyOptionSelect" class="tal-option-select" read-only-form="planModel.planDisabled">
+  <div class="form-group" show-errors>
+      <label class="control-label" for="{{planModel.code + optionModel.code + 'OptionCheck'}}">{{optionModel.name}}
+          <span class="fa fa-info-circle info-icon"></span>
+          <div>
+              <span class="small" ng-if="planModel.code !== 'IP' && optionModel.code === 'PR'"></span></span>
+          </div>
+      </label>
+      <select class="form-control"
+              name="optionSelected"
+              emit-ui-update="true"
+              id="{{planModel.code + optionModel.code + 'OptionCheck'}}"
+              tal-server-validate="{{optionSelectedValidationModel}}"
+              ng-change="optionChanged()"
+              ng-options="boolToStr(item) for item in [true, false]"
+              ng-model="optionModel.selected">
+          <option value="" disabled selected>Please select</option>
+      </select>
+    <tal-form-error ng-form-model="policyOptionSelect.optionSelected"></tal-form-error>
+    <br />
+  </div>
+</div>

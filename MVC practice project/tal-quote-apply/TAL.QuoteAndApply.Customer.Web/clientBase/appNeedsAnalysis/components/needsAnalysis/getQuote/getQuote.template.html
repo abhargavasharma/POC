@@ -1,0 +1,14 @@
+<div ng-switch="ctrl.currentIndex" class="tal-get-quote">
+    <div ng-switch-when="0">
+        <div ng-include="'/client/appNeedsAnalysis/components/needsAnalysis/getQuote/questions/intro.template.html'"></div>
+    </div>
+    <div ng-switch-when="1">
+        <div ng-include="'/client/appNeedsAnalysis/components/needsAnalysis/getQuote/questions/birthdate.template.html'"></div>
+    </div>
+    <div ng-switch-when="2">
+        <div ng-include="'/client/appNeedsAnalysis/components/needsAnalysis/getQuote/questions/smoking.template.html'"></div>
+    </div>
+    <div ng-switch-when="3">
+        <div ng-include="'/client/appNeedsAnalysis/components/needsAnalysis/getQuote/questions/occupation.template.html'"></div>
+    </div>
+</div>

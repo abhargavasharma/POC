@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DD30B606-85E9-4795-B549-FAE27C304CF3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TAL.QuoteAndApply.PremiumCalculation.IntegrationTests</RootNamespace>
+    <AssemblyName>TAL.QuoteAndApply.PremiumCalculation.IntegrationTests</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\lib\IntegrationTests\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\lib\IntegrationTests\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\DayOneAccidentBaseRateDtoRepositoryTests.cs" />
+    <Compile Include="Data\IncreasingClaimFactorDtoRepositoryTests.cs" />
+    <Compile Include="Data\IndemnityFactorDtoRepositoryTests.cs" />
+    <Compile Include="Data\ModalFrequencyFactorDtoRepositoryTests.cs" />
+    <Compile Include="Data\MultiCoverDiscountFactorDtoRepositoryTests.cs" />
+    <Compile Include="Data\OccupationDefinitionTypeFactorDtoRepositoryTests.cs" />
+    <Compile Include="Data\PercentageLoadingFactorDtoRepositoryTests.cs" />
+    <Compile Include="Data\PerMilleLoadingFactorDtoRepositoryTests.cs" />
+    <Compile Include="Data\PlanMinimumCoverAmountForMultiPlanDiscountDtoRepositoryTests.cs" />
+    <Compile Include="Data\PremiumReliefFactorDtoRepositoryTests.cs" />
+    <Compile Include="PremiumCalculationServiceTests.cs" />
+    <Compile Include="Data\CoverBaseRateDtoRepositoryTests.cs" />
+    <Compile Include="Data\CoverDivisionalFactorDtoRepositoryTests.cs" />
+    <Compile Include="Data\LargeSumInsuredDiscountFactorDtoRepositoryTests.cs" />
+    <Compile Include="Data\MultiPlanDiscountFactorDtoRepositoryTests.cs" />
+    <Compile Include="Data\OccupationClassFactorDtoRepositoryTests.cs" />
+    <Compile Include="Data\OccupationMappingDtoRepositoryTests.cs" />
+    <Compile Include="Data\SmokerFactorDtoRepositoryTests.cs" />
+    <Compile Include="Data\WaitingPeriodFactorDtoRepositoryTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="local.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TAL.QuoteAndApply.DataLayer\TAL.QuoteAndApply.DataLayer.csproj">
+      <Project>{B2DF77FB-A710-49CC-9AC9-286039356419}</Project>
+      <Name>TAL.QuoteAndApply.DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TAL.QuoteAndApply.DataModel\TAL.QuoteAndApply.DataModel.csproj">
+      <Project>{6E7E043C-A5B7-4DE6-9126-BC786543349C}</Project>
+      <Name>TAL.QuoteAndApply.DataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TAL.QuoteAndApply.Infrastructure\TAL.QuoteAndApply.Infrastructure.csproj">
+      <Project>{AF6718F8-8028-462F-BA2C-9EE5937C49B8}</Project>
+      <Name>TAL.QuoteAndApply.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TAL.QuoteAndApply.PremiumCalculation\TAL.QuoteAndApply.PremiumCalculation.csproj">
+      <Project>{E109CC8C-78D5-47E0-98FB-E941F4CA39F3}</Project>
+      <Name>TAL.QuoteAndApply.PremiumCalculation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TAL.QuoteAndApply.Tests.Shared\TAL.QuoteAndApply.Tests.Shared.csproj">
+      <Project>{A7064FCA-D786-41BA-92A3-26A8189AC58B}</Project>
+      <Name>TAL.QuoteAndApply.Tests.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\OctoPack.3.0.42\tools\OctoPack.targets" Condition="Exists('..\packages\OctoPack.3.0.42\tools\OctoPack.targets')" />
+  <Target Name="EnsureOctoPackImported" BeforeTargets="BeforeBuild" Condition="'$(OctoPackImported)' == ''">
+    <Error Condition="!Exists('..\packages\OctoPack.3.0.42\tools\OctoPack.targets') And ('$(RunOctoPack)' != '' And $(RunOctoPack))" Text="You are trying to build with OctoPack, but the NuGet targets file that OctoPack depends on is not available on this computer. This is probably because the OctoPack package has not been committed to source control, or NuGet Package Restore is not enabled. Please enable NuGet Package Restore to download them. For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\OctoPack.3.0.42\tools\OctoPack.targets') And ('$(RunOctoPack)' != '' And $(RunOctoPack))" Text="OctoPack cannot be run because NuGet packages were restored prior to the build running, and the targets file was unavailable when the build started. Please build the project again to include these packages in the build. You may also need to make sure that your build server does not delete packages prior to each build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

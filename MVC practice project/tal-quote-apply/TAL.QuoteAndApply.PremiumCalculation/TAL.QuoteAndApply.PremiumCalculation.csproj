@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E109CC8C-78D5-47E0-98FB-E941F4CA39F3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TAL.QuoteAndApply.PremiumCalculation</RootNamespace>
+    <AssemblyName>TAL.QuoteAndApply.PremiumCalculation</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Calculators\CoverCalculator.cs" />
+    <Compile Include="Calculators\FactorACalculator.cs" />
+    <Compile Include="Calculators\FactorBCalculator.cs" />
+    <Compile Include="Calculators\DayOneAccidentCalculator.cs" />
+    <Compile Include="Calculators\Inputs\DayOneAccidentCalculatorInput.cs" />
+    <Compile Include="Calculators\LoadingCalculator.cs" />
+    <Compile Include="Calculators\Inputs\LoadingCalculatorInput.cs" />
+    <Compile Include="Calculators\Inputs\PercentageLoadingCalculatorInput.cs" />
+    <Compile Include="Calculators\Inputs\PerMilleLoadingCalculatorInput.cs" />
+    <Compile Include="Calculators\Inputs\PlanCalculatorInput.cs" />
+    <Compile Include="Calculators\Inputs\RiskCalculatorInput.cs" />
+    <Compile Include="Calculators\MultiCoverBlockCalculator.cs" />
+    <Compile Include="Calculators\Inputs\MultiCoverBlockCalculatorInput.cs" />
+    <Compile Include="Calculators\PercentageLoadingCalculator.cs" />
+    <Compile Include="Calculators\PerMilleLoadingCalculator.cs" />
+    <Compile Include="Calculators\PlanCalculator.cs" />
+    <Compile Include="Data\DayOneAccidentBaseRateDtoRepository.cs" />
+    <Compile Include="Data\IncreasingClaimFactorDtoRepository.cs" />
+    <Compile Include="Data\IndemnityFactorDtoRepository.cs" />
+    <Compile Include="Data\OccupationDefinitionTypeFactorDtoRepository.cs" />
+    <Compile Include="Data\PercentageLoadingFactorDtoRepository.cs" />
+    <Compile Include="Data\PerMilleLoadingFactorDtoRepository.cs" />
+    <Compile Include="Data\PlanMinimumCoverAmountForMultiPlanDiscountDtoRepository.cs" />
+    <Compile Include="Models\DayOneAccidentBaseRateDto.cs" />
+    <Compile Include="Models\DayOneAccidentBaseRateDtoMapper.cs" />
+    <Compile Include="Models\IncreasingClaimsFactorDto.cs" />
+    <Compile Include="Models\IncreasingClaimsFactorDtoMapper.cs" />
+    <Compile Include="Models\IndemnityFactorDto.cs" />
+    <Compile Include="Models\IndemnityFactorDtoMapper.cs" />
+    <Compile Include="Models\Loadings.cs" />
+    <Compile Include="Models\OccupationDefinitionTypeFactorDto.cs" />
+    <Compile Include="Models\OccupationDefinitionTypeFactorDtoMapper.cs" />
+    <Compile Include="Models\PercentageLoadingFactorDto.cs" />
+    <Compile Include="Models\PercentageLoadingFactorDtoMapper.cs" />
+    <Compile Include="Models\PerMilleLoadingFactorDto.cs" />
+    <Compile Include="Models\PerMilleLoadingFactorDtoMapper.cs" />
+    <Compile Include="Models\PlanMinimumCoverAmountForMultiPlanDiscountDto.cs" />
+    <Compile Include="Models\PlanMinimumCoverAmountForMultiPlanDiscountDtoMapper.cs" />
+    <Compile Include="Models\PlanPremiumAndDiscounts.cs" />
+    <Compile Include="Models\PremiumAndDiscount.cs" />
+    <Compile Include="Services\GetDayOneAccidentCalculatorInputService.cs" />
+    <Compile Include="Services\GetLoadingCalculatorInputService.cs" />
+    <Compile Include="Services\GetMultiCoverBlockCalculatorInputService.cs" />
+    <Compile Include="Services\GetPlanCalculatorInputService.cs" />
+    <Compile Include="Services\GetRiskCalculatorInputService.cs" />
+    <Compile Include="Calculators\Inputs\FactorACalculatorInput.cs" />
+    <Compile Include="Calculators\Inputs\CoverCalculatorInput.cs" />
+    <Compile Include="Calculators\Inputs\FactorBCalculatorInput.cs" />
+    <Compile Include="Calculators\MultiCoverDiscountCalculator.cs" />
+    <Compile Include="Calculators\Inputs\MultiCoverDiscountCalculatorInput.cs" />
+    <Compile Include="Calculators\Inputs\MultiCoverDiscountCoverCalculatorInput.cs" />
+    <Compile Include="Calculators\RiskCalculator.cs" />
+    <Compile Include="Data\CoverDivisionalFactorDtoRepository.cs" />
+    <Compile Include="Data\ModalFrequencyFactorDtoRepository.cs" />
+    <Compile Include="Data\MultiCoverDiscountFactorDtoRepository.cs" />
+    <Compile Include="Data\MultiPlanDiscountFactorDtoRepository.cs" />
+    <Compile Include="Data\PremiumReliefFactorDtoRepository.cs" />
+    <Compile Include="Models\CoverDivisionalFactorDto.cs" />
+    <Compile Include="Models\CoverDivisionalFactorDtoMapper.cs" />
+    <Compile Include="Models\ICoverFactors.cs" />
+    <Compile Include="Models\IPolicyFactors.cs" />
+    <Compile Include="Models\ModalFrequencyFactorDto.cs" />
+    <Compile Include="Models\ModalFrequencyFactorDtoMapper.cs" />
+    <Compile Include="Models\MultiCoverDiscountFactorDto.cs" />
+    <Compile Include="Models\MultiCoverDiscountFactorDtoMapper.cs" />
+    <Compile Include="Models\MultiPlanDiscountFactorDto.cs" />
+    <Compile Include="Models\MultiPlanDiscountFactorDtoMapper.cs" />
+    <Compile Include="Models\PremiumCalculatorFactors.cs" />
+    <Compile Include="Models\PremiumReliefFactorDto.cs" />
+    <Compile Include="Models\PremiumReliefFactorDtoMapper.cs" />
+    <Compile Include="Models\RiskPremiumCalculationResult.cs" />
+    <Compile Include="Configuration\PremiumCalculationConfigurationProvider.cs" />
+    <Compile Include="Data\CoverBaseRateDtoRepository.cs" />
+    <Compile Include="Data\LargeSumInsuredDiscountFactorDtoRepository.cs" />
+    <Compile Include="Data\OccupationClassFactorDtoRepository.cs" />
+    <Compile Include="Data\OccupationMappingDtoRepository.cs" />
+    <Compile Include="Data\SmokerFactorDtoRepository.cs" />
+    <Compile Include="Data\WaitingPeriodFactorDtoRepository.cs" />
+    <Compile Include="Ioc\RegistrationModule.cs" />
+    <Compile Include="Models\CoverBaseRateLookupRequest.cs" />
+    <Compile Include="Models\CoverBaseRateDto.cs" />
+    <Compile Include="Models\CoverBaseRateDtoMapper.cs" />
+    <Compile Include="Models\CoverCalculationRequest.cs" />
+    <Compile Include="Models\CoverPremiumCalculationResult.cs" />
+    <Compile Include="Models\IBaseRate.cs" />
+    <Compile Include="Models\IBaseRateCriteria.cs" />
+    <Compile Include="Models\IPlanFactors.cs" />
+    <Compile Include="Models\IRiskFactors.cs" />
+    <Compile Include="Models\IPremiumCalculationFactorResult.cs" />
+    <Compile Include="Models\LargeSumInsuredDiscountFactorDto.cs" />
+    <Compile Include="Models\LargeSumInsuredDiscountFactorDtoMapper.cs" />
+    <Compile Include="Models\OccupationClassFactorDto.cs" />
+    <Compile Include="Models\OccupationClassFactorDtoMapper.cs" />
+    <Compile Include="Models\OccupationMappingDto.cs" />
+    <Compile Include="Models\OccupationMappingDtoMapper.cs" />
+    <Compile Include="Models\PlanCalculationRequest.cs" />
+    <Compile Include="Models\PlanPremiumCalculationResult.cs" />
+    <Compile Include="Models\PremiumCalculationRequest.cs" />
+    <Compile Include="Models\PremiumCalculationResult.cs" />
+    <Compile Include="Models\RiskCalculationRequest.cs" />
+    <Compile Include="Models\SmokerFactorDto.cs" />
+    <Compile Include="Models\SmokerFactorDtoMapper.cs" />
+    <Compile Include="Models\WaitingPeriodFactorDto.cs" />
+    <Compile Include="Models\WaitingPeriodFactorDtoMapper.cs" />
+    <Compile Include="PremiumCalculationService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CoverBaseRateLookupRequestProvider.cs" />
+    <Compile Include="Services\GetCoverCalculatorInputService.cs" />
+    <Compile Include="Services\GetFactorACalculatorInputService.cs" />
+    <Compile Include="Services\GetFactorBCalculatorInputService.cs" />
+    <Compile Include="Services\GetMultiCoverDiscountCalculatorInputService.cs" />
+    <Compile Include="Services\MultiPlanDiscountFactorService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TAL.QuoteAndApply.DataLayer\TAL.QuoteAndApply.DataLayer.csproj">
+      <Project>{B2DF77FB-A710-49CC-9AC9-286039356419}</Project>
+      <Name>TAL.QuoteAndApply.DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TAL.QuoteAndApply.DataModel\TAL.QuoteAndApply.DataModel.csproj">
+      <Project>{6E7E043C-A5B7-4DE6-9126-BC786543349C}</Project>
+      <Name>TAL.QuoteAndApply.DataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TAL.QuoteAndApply.Infrastructure\TAL.QuoteAndApply.Infrastructure.csproj">
+      <Project>{AF6718F8-8028-462F-BA2C-9EE5937C49B8}</Project>
+      <Name>TAL.QuoteAndApply.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,30 @@
+<div class="main-inner needs-analysis-left">
+    <div class="question"
+         ng-if="ctrl.currentQuestionIndex === $index"
+         ng-repeat="question in ctrl.questions">
+
+        <h3>{{question.title}}</h3>
+
+        <div ng-if="question.htmlText" ng-include="question.htmlText"></div>
+
+        <div ng-switch on="question.type">
+            <tal-why-insurance-question ng-switch-when="whyInsurance"
+                                        question="question"
+                                        on-next="ctrl.onNext()"
+                                        availability="ctrl.availability">
+            </tal-why-insurance-question>
+            <tal-single-select-buttons-question ng-switch-when="singleSelectButtons"
+                                                question="question"
+                                                on-next="ctrl.onNext()">
+            </tal-single-select-buttons-question>
+            <tal-multi-select-checkboxes-question ng-switch-when="multiSelectCheckboxes"
+                                                  question="question"
+                                                  on-next="ctrl.onNext()">
+            </tal-multi-select-checkboxes-question>
+            <tal-single-select-radio-question ng-switch-when="singleSelectRadio"
+                                              question="question"
+                                              on-next="ctrl.onNext()">
+            </tal-single-select-radio-question>
+        </div>
+    </div>
+</div>

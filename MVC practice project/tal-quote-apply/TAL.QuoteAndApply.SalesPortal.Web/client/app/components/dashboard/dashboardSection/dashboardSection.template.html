@@ -1,0 +1,6 @@
+<div class="tal-dashboard-section">
+    <h1>Hello {{user}}</h1>
+    <tal-underwriter-dashboard ng-if="roles.underwriter"></tal-underwriter-dashboard>
+    <tal-agent-dashboard ng-if="roles.agent"  external-ref-required="externalRefRequired"
+                  external-ref-label ="externalRefLabel"></tal-agent-dashboard>
+</div>

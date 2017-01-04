@@ -1,0 +1,51 @@
+<div class="tal-form-select">
+	<select
+		name="{{ctrl.name}}"
+		id="{{ctrl.id}}"
+		ng-model="ctrl.ngModel"
+		ng-if="ctrl.isCollection && !ctrl.trackByValue"
+        ng-options="item as item.text disable when item.disabled for item in ctrl.formSelectItems"
+        ng-change="ctrl.onChange()">	
+        <option
+        	ng-if="!ctrl.selectedValue"
+        	value=""
+        	disabled selected>
+        	{{ctrl.placeholder}}
+        </option>
+	</select>
+
+	<select
+		name="{{ctrl.name}}"
+		id="{{ctrl.id}}"
+		ng-model="ctrl.ngModel"
+		ng-if="ctrl.isCollection && ctrl.trackByValue"
+		ng-options="item.value as item.text disable when item.disabled for item in ctrl.formSelectItems"
+		ng-change="ctrl.onChange()">
+		<option
+			ng-if="!ctrl.selectedValue"
+			value=""
+			disabled selected>
+			{{ctrl.placeholder}}
+		</option>
+	</select>
+
+	<select
+		name="{{ctrl.name}}"
+		id="{{ctrl.id}}"
+		ng-model="ctrl.ngModel"
+		ng-if="!ctrl.isCollection && !ctrl.trackByValue"
+		ng-options="item as item for item in ctrl.formSelectItems"
+		ng-change="ctrl.onChange()">
+		<option
+			ng-if="!ctrl.selectedValue"
+			value=""
+			disabled selected>
+			{{ctrl.placeholder}}
+		</option>
+	</select>
+
+    <span class="tal-form-select-value" ng-if="ctrl.selectedValue && (ctrl.isCollection && !ctrl.trackByValue)">{{ctrl.selectedValue.text}}</span>
+    <span class="tal-form-select-value" ng-if="ctrl.selectedValue && (!ctrl.isCollection || ctrl.trackByValue)">{{ctrl.selectedValue}}</span>
+    <span class="tal-form-select-value" ng-if="!ctrl.selectedValue && (ctrl.isCollection && !ctrl.trackByValue)">{{ctrl.placeholder}}</span>
+    <span class="tal-form-select-value" ng-if="!ctrl.selectedValue && (!ctrl.isCollection || ctrl.trackByValue)">{{ctrl.placeholder}}</span>
+</div>

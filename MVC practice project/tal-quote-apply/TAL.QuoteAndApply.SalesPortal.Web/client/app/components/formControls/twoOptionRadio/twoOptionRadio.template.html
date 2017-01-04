@@ -1,0 +1,28 @@
+<div class="tal-two-option-radio" ng-form="twoOptionRadioForm" read-only-form="readOnly">
+
+    <div class="form-group" show-errors tal-inline-submit="inlineSubmit()" disable-inline-submit="{{noInlineSubmit}}">
+    <label class="control-label" ng-bind="label"></label>
+      <input type="hidden" class="form-control"
+             ng-model="model.value"
+             tal-server-validate="{{serverValidate}}"
+             name="value" emit-ui-update="true" />
+
+    <div class="form-group">
+      <label class="radio-inline">
+        <input type="radio" name="{{groupName}}" ng-value="{{option1Value}}"
+               ng-model="model.value"
+               inline-submit-use-server-validate-key="{{serverValidate}}"
+                ng-change="changeEvent()"/>
+          <span ng-bind="option1Label"></span>
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="{{groupName}}" ng-value="{{option2Value}}"
+               ng-model="model.value"
+               inline-submit-use-server-validate-key="{{serverValidate}}"
+               ng-change="changeEvent()"/>
+          <span ng-bind="option2Label"></span>
+      </label>
+    </div>
+      <tal-form-error ng-form-model="twoOptionRadioForm.value"></tal-form-error>
+  </div>
+</div>

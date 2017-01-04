@@ -1,0 +1,110 @@
+.tal-card {
+	background-color: @white;
+	// border-radius: 4px;
+	box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 35px;
+
+	&.top-padding{
+		padding-top:15px;
+		.bp(s, { padding-top:30px; })
+	}
+
+	&.is-off{
+		&.tal-card--topbar {
+			&:before {
+				background-color: @disabled-light;
+			}
+		}
+	}
+	&.tal-card--topbar {
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			z-index: 1;
+			height: 12px;
+			background-color: @grey-30;
+			//border-radius: 4px 4px 0 0;
+		}
+	}
+}
+
+tal-card-header {
+	//border-radius: 4px 4px 0 0;
+}
+
+tal-card-header,
+tal-card-body {
+	transition: all 300ms;
+	display: block;
+}
+
+.card-padding {
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+// At large mobile/small tablet breakpoints, cards are fixed width and centered
+.tal-card {
+	.bp(0, xs, {
+		max-width: 300px;
+		margin-left: auto;
+		margin-right: auto;
+	});
+}
+
+// ---- Question cards ----------------------------------------------------------------------------
+
+.question-container {
+  &.tal-card {
+    overflow: visible;
+    margin-bottom: 35px;
+  }
+
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 20px;
+
+  text-align: center;
+
+  .bp(s, {
+    min-height: 180px;
+    padding: 40px;
+  });
+
+  tal-progress-bar {
+    max-width: 720px;
+    margin: 0 auto;
+
+    margin-bottom: 30px ;
+    .bp(s, { margin-bottom: 40px; });
+  }
+
+  .tal-question {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .tal-question-label {
+    p {
+      .abs-font--feature-light;
+
+      &.unsupported {
+        color: @error-text-colour;
+      }
+    }
+
+    .bp(s, {
+      min-height: 180px;
+    });
+
+    &.form-align-left {
+      text-align: left;
+    }
+  }
+}

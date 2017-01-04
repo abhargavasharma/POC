@@ -1,0 +1,121 @@
+// ============================================================
+// Main Footer
+// ============================================================
+
+.tal-main-footer {
+	position: relative;
+	z-index: 0;
+
+	background-color: @grey-10;
+	color: @white;
+	padding-top: 40px;
+	&:extend(.abs-font--feature);
+
+	.col-sm-11 {
+		.bp(s, {
+			padding-left: 30px;
+			box-sizing: border-box;
+		});
+	}
+}
+
+.tal-main-footer-logo {
+	display: block;
+	width: 60px;
+	height: 28px;
+	margin-bottom: 30px;
+	.abs-link-block;
+	border:none;
+	.mxn-icon-pe(
+		@icon: brand-logo,
+		@color-base: @tal-green,
+		@color-hover: @tal-green-hover,
+		@color-active: @tal-green-dark,
+		@size: 50px,
+		@position: center
+	);
+}
+
+.tal-main-footer-nav {
+
+}
+
+.tal-main-footer-nav-list {
+	.mxn-list-reset;
+}
+
+.tal-main-footer-navitem {
+	margin-bottom: 8px;
+}
+
+.tal-main-footer-link {
+	.mxn-font-size(13);
+
+	border-bottom-color: @grey-30;
+	margin-bottom: 5px;
+
+	&:hover, &:focus, &:active {
+		color: @white;
+		background-color: transparent;
+		border-bottom-color: @tal-green;
+	}
+}
+
+.bp(xs, {
+	.tal-main-footer-link {
+		width: 100%;
+		display: inline-block;
+		margin-bottom: 0;
+	}
+
+	.tal-main-footer-nav-list {
+		.mxn-list-horizontal;
+		width: 100%;
+	}
+});
+
+.bp(xs, s, {
+	.tal-main-footer-navitem {
+		margin-left: 4%;
+		width: 48%;
+		&:nth-child(2n+1) { margin-left: 0; }
+	}
+});
+
+.bp(m, {
+	.tal-main-footer-navitem {
+		margin-left: 5.33%;
+		width: 28%;
+		&:first-child { margin-left: 0; }
+	}
+});
+
+.bp(xl, {
+	.tal-main-footer-navitem {
+		margin-left: 6.66%;
+		width: 24%;
+	}
+});
+
+.tal-main-footer-copy {
+	margin-top: 30px;
+	.mxn-font-size(11, 20);
+	color: @grey-80;
+
+	p {
+		font: inherit;
+		color: inherit;
+	}
+
+	a {
+		padding-bottom: 0;
+	}
+}
+
+.tal-main-footer-legal {
+	margin: 35px 0 75px; // 75px is to allow space for the fixed quote footer.
+
+	.bp(m, {
+		margin-bottom: 50px;
+	});
+}

@@ -1,0 +1,37 @@
+<div class="tal-why-insurance-question">
+
+    <div class="tal-form-checkbox-list">
+        <form-checkbox tal-name="checkbox-hmc-1" class="tal-form-checkbox" ng-model="ctrl.question.options[0]"
+                       ng-change="ctrl.onOptionChanged()" ng-if="ctrl.availability.life">
+            help look after my loved ones if I pass away
+
+        </form-checkbox>
+        <form-checkbox tal-name="checkbox-hmc-2" class="tal-form-checkbox" ng-model="ctrl.question.options[1]"
+                       ng-change="ctrl.onOptionChanged()" ng-if="ctrl.availability.tpd || ctrl.availability.ri || ctrl.availability.ip">
+            help support my loved ones if I become ill or injured
+
+        </form-checkbox>
+        <form-checkbox tal-name="checkbox-hmc-3" class="tal-form-checkbox" ng-model="ctrl.question.options[2]"
+                       ng-change="ctrl.onOptionChanged()" ng-if="ctrl.availability.ip">
+            still receive an income if I become ill or injured
+
+        </form-checkbox>
+        <form-checkbox tal-name="checkbox-hmc-4" class="tal-form-checkbox" ng-model="ctrl.question.options[3]"
+                       ng-change="ctrl.onOptionChanged()" ng-if="ctrl.availability.tpd || ctrl.availability.life">
+            help pay off my debts if I pass away or become totally and permanently disabled
+        </form-checkbox>
+        <form-checkbox tal-name="checkbox-hmc-5" class="tal-form-checkbox" ng-model="ctrl.question.options[4]"
+                       ng-change="ctrl.onOptionChanged()" ng-if="ctrl.availability.ri">
+            receive a lump sum if I become seriously ill or injured
+
+        </form-checkbox>
+    </div>
+
+    <div class="question-actions">
+        <button type="submit" class="tal-btn--secondary" angular-ripple
+                ng-disabled="!ctrl.isSubmitEnabled()" ng-click="ctrl.onNext()">
+            Continue
+        </button>
+    </div>
+
+</div>

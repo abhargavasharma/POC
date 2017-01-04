@@ -1,0 +1,34 @@
+<tal-card ng-class="{'is-off':!data.isOn}">
+  <tal-cover-product ng-class="{'tal-cover-product-off':!data.isOn}" >
+
+    <div class="tal-cover-product tal-cover-product-blue">
+      <tal-card-header tal-cover-product-header product-is-on="data.isOn" product-value="1234">
+        <h3>Critical illness (CI) cover</h3>
+        <p class="tal-cover-product-link">
+          <a class="tal-link-minor" href="#">Learn more about (CI) Cover</a>
+        </p>
+      </tal-card-header>
+      <div class="tal-cover-product-content" ng-show="data.isOn">
+        <div>
+          <label for="coverAmountProduct">Cover amount</label>
+        </div>
+        <div>
+
+
+        <form-select-textfield  tal-id="coverAmountProduct" tal-name="name1"
+        placeholder="select a value" ng-model="data.value" form-select-items="data.selectItems">
+        </form-select-textfield>
+        </div>
+        <div class="tal-btn-set">
+          <a href="#" class="tal-btn--secondary" ng-disabled="!data.isOn">Critical illness options</a>
+        </div>
+        <div class="tal-form-checkbox-list">
+          <form-checkbox tal-name="checkbox11" tal-id="checkbox11" class="tal-form-checkbox" ng-model="data.value">
+            Bundle with life cover
+          </form-checkbox>
+        </div>
+      </div>
+    </div>
+  </tal-cover-product>
+  <div class="tal-cover-product-content" ng-show="!data.isOn"></div>
+</tal-card>

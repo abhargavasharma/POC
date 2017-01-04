@@ -1,0 +1,161 @@
+<PolicyNewBusinessOrderProcess xmlns="http://www.acord.org/schema/data/draft/ReusableDataComponents/1">
+  <MessageHeader>
+    <ACORDStandardVersionCode>AML_1_1_0</ACORDStandardVersionCode>
+    <MessageId>85A62CB6-31BE-4FED-A9FF-4BFB1AB97025</MessageId>
+    <CorrelationId>85A62CB6-31BE-4FED-A9FF-4BFB1AB97025</CorrelationId>
+    <MessageDateTime>2016-02-02T10:15:07.569</MessageDateTime>
+    <Sender key="SalesPortal"/>
+    <Receiver key="IntegrationLayer"/>
+  </MessageHeader>
+  <PolicyOrder key="A32049119">
+    <FileAttachment>
+      <Description>It's a file</Description>
+      <AttachmentDocument>
+        <DocumentURI>https://dev.sharepoint.tal.lan</DocumentURI>
+      </AttachmentDocument>
+    </FileAttachment>
+    <Address key="ADDRESS1">
+      <LineOne>Level 12</LineOne>
+      <LineTwo>7 Ramsgate</LineTwo>
+      <LineThree>Road</LineThree>
+      <SuburbName>Drummoyne</SuburbName>
+      <StateOrProvinceName>^R*#^*^#*</StateOrProvinceName>
+      <PostalCode>2014</PostalCode>
+      <CountryName>Australia</CountryName>
+    </Address>
+    <Person key="PERSON1">
+      <PersonName>
+        <Surname>Ferrari</Surname>
+        <GivenName>Charlie</GivenName>
+        <PersonTitlePrefixCode>Mr</PersonTitlePrefixCode>
+      </PersonName>
+      <PersonCommunication>
+        <Telephone>
+          <PrimaryIndicator>true</PrimaryIndicator>
+          <TypeCode>Mobile</TypeCode>
+          <PhoneNumber>0414236524</PhoneNumber>
+        </Telephone>
+        <Email>
+          <TypeCode>Business</TypeCode>
+          <EmailAddress>TALITGLSTesting@tal.com.au</EmailAddress>
+        </Email>
+        <MailingAddress>
+          <AddressReferences addressReference="ADDRESS1"/>
+        </MailingAddress>
+      </PersonCommunication>
+      <GenderCode>Male</GenderCode>
+      <BirthDate>1982-11-05</BirthDate>
+      <Employment>
+        <Employer>
+          <OrganizationReferences>
+            <OrganizationName>
+              <FullName>Acme Co Pty Ltd</FullName>
+            </OrganizationName>
+          </OrganizationReferences>
+        </Employer>
+      </Employment>
+      <Health>
+        <SmokerIndicator>false</SmokerIndicator>
+      </Health>
+    </Person>
+    <DocumentId>85A62CB6-31BE-4FED-A9FF-4BFB1AB97025</DocumentId>
+    <TransactionFunctionCode>CreateApplication</TransactionFunctionCode>
+    <ApplicationTypeCode>Increase</ApplicationTypeCode>
+    <Description>Personal case (LifeInsured is PolicyOwner), All covers, including prior</Description>
+    <CaseId>BCEE125B-1D0C-47AA-BD5B-25BBAD6B1EA3</CaseId>
+    <PreparedDate>2013-09-14</PreparedDate>
+    <PreparedTime>10:00:00</PreparedTime>
+    <Policy>
+      <LineOfBusinessCode>Life</LineOfBusinessCode>
+      <AssignedIdentifier>
+        <RoleCode>Insurer</RoleCode>
+        <Id>SoapUI-CreateManualUWv2-1</Id>
+      </AssignedIdentifier>
+      <ProductReferences key="34"/>
+      <PolicySection>
+        <PolicyInterestedParty key="PERSON1">
+          <RoleCode>PolicyOwner</RoleCode>
+        </PolicyInterestedParty>
+        <PolicyInterestedParty key="PERSON1">
+          <RoleCode>LifeInsured</RoleCode>
+        </PolicyInterestedParty>
+        <PolicyInterestedParty key="PERSON2">
+          <RoleCode>LifeInsured</RoleCode>
+        </PolicyInterestedParty>
+        <PolicyMember>
+          <Member key="623956139">
+            <PersonReferences personReference="PERSON1"/>
+          </Member>
+        </PolicyMember>
+      </PolicySection>
+      <LifeItemSection>
+        <Coverage>
+          <TypeCode>Death</TypeCode>
+          <Limit>
+            <LimitAppliesCode>AutomaticAcceptanceLimit</LimitAppliesCode>
+            <LimitAmount>700000</LimitAmount>
+          </Limit>
+          <Limit>
+            <LimitAppliesCode>ForwardUnderwritingLimit</LimitAppliesCode>
+            <LimitAmount>1100000</LimitAmount>
+          </Limit>
+          <Limit>
+            <ValuationTypeCode>SumInsured</ValuationTypeCode>
+            <LimitAmount>1500000</LimitAmount>
+          </Limit>
+        </Coverage>
+        <Coverage>
+          <TypeCode>TotalAndPermanentDisability</TypeCode>
+          <Option>
+            <OptionCode>OwnOccupation</OptionCode>
+          </Option>
+          <Limit>
+            <LimitAppliesCode>AutomaticAcceptanceLimit</LimitAppliesCode>
+            <LimitAmount>700001</LimitAmount>
+          </Limit>
+          <Limit>
+            <LimitAppliesCode>ForwardUnderwritingLimit</LimitAppliesCode>
+            <LimitAmount>1100001</LimitAmount>
+          </Limit>
+          <Limit>
+            <ValuationTypeCode>SumInsured</ValuationTypeCode>
+            <LimitAmount>1500001</LimitAmount>
+          </Limit>
+        </Coverage>
+        <Coverage>
+          <TypeCode>IncomeProtection</TypeCode>
+          <BenefitPeriodCode>ToAge65</BenefitPeriodCode>
+          <WaitingPeriodCode>Day60</WaitingPeriodCode>
+          <Option>
+            <OptionCode>Indemnity</OptionCode>
+          </Option>
+          <Limit>
+            <LimitAppliesCode>AutomaticAcceptanceLimit</LimitAppliesCode>
+            <LimitAmount>2502</LimitAmount>
+          </Limit>
+          <Limit>
+            <LimitAppliesCode>ForwardUnderwritingLimit</LimitAppliesCode>
+            <LimitAmount>3002</LimitAmount>
+          </Limit>
+          <Limit>
+            <ValuationTypeCode>MonthlyBenefit</ValuationTypeCode>
+            <LimitAmount>4002</LimitAmount>
+            <UnitCount>10</UnitCount>
+          </Limit>
+        </Coverage>
+        <EmployeeInformation>
+          <OccupationClassCode>Class1</OccupationClassCode>
+          <OccupationDescription>Account Executive</OccupationDescription>
+          <FinancialAmountItem>
+            <TypeCode>Annually</TypeCode>
+            <AmountItemValue>
+              <ItemAmount>80000</ItemAmount>
+            </AmountItemValue>
+          </FinancialAmountItem>
+        </EmployeeInformation>
+      </LifeItemSection>
+    </Policy>
+    <BroadLineOfBusinessCode>Individual</BroadLineOfBusinessCode>
+    <LodgementTypeCode>Manual</LodgementTypeCode>
+  </PolicyOrder>
+</PolicyNewBusinessOrderProcess>

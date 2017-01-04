@@ -1,0 +1,4068 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+   ====================================================================== 
+    ===== Business Data Type Schema Module ===== 
+   NON NORMATIVE EXAMPLE PROVIDED FOR ACORD NDR ILLUSTRATION 
+    ====================================================================== 
+   
+      Standard Organization: ACORD
+       Version: M210AULI - AllMsgs 
+      Generated on: 11/14/2014
+    
+     COPYRIGHT NOTICE:
+     
+(c) 2014 ACORD. All Rights Reserved.
+
+Use of this Schema and its documentation are covered by the terms and conditions file that was included in the distribution file that you found this Schema.http://www.ACORD.org
+
+-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:acord-doc="http://www.acord.org/schema/documentation/draft/Annotations/1" xmlns="http://www.acord.org/schema/data/draft/ReusableDataComponents/1" targetNamespace="http://www.acord.org/schema/data/draft/ReusableDataComponents/1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1">
+   <xsd:annotation>
+      <xsd:appinfo>
+         <acord-doc:GenerationDateTime>11/11/2014</acord-doc:GenerationDateTime>
+      </xsd:appinfo>
+   </xsd:annotation>
+   <xsd:include schemaLocation="../codelists/ACORD_CodeLists_doc.xsd"/>
+<!--
+*******************************************************************************
+            Business Data Types
+*******************************************************************************
+-->
+
+   <xsd:complexType name="ACORDClosedCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>ACORDClosedCode Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>An ACORD closed list type is an ACORD specific type that represents a list of valid values that are defined within this specification. An element of type ACORDClosedCode_Type can not be extended or restricted. A list of this type can only be modified throguh the ACORD maintenance request process.</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="ACORDCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDClosedCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft10</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ACORDCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>ACORDCode Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>An ACORD open list type is an ACORD specific type that represents a list of valid values that are defined within this specification. An element of type ACORDOpenList_Type can be extended or restricted.</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="ACORDCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft10</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ACORDStandardVersionCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>ACORDStandardVersionCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft9</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft9</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="ACORDStandardVersionCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDClosedCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft10</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft10</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ActionCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Action Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft9</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft9</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="ActionCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="Amount_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Amount Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>An amount type is an ACORD specific type that represents a monetary amount. To completely define a monetary amount you need an amount and the type of currency the value is being reported in. The Amount_Type allows the element to contain the amount and provide a currency type as an attribute. The currency type can be defined globally at the top of a message, or it can be specified or override this global default at the element level. See &lt;ref idref="defaultCurrency"/&gt; for more details.be specified or override this global default at the element level. See &lt;ref idref="defaultCurrency"/&gt; for more details.</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="AmountContent_Type">
+            <xsd:attribute name="currencyCode" type="CurrencyCodeContent_Type">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attribute>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="AnswerCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Answer Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="AnswerCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft10</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="AntiTheftDeviceProductCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Anti Theft Device Product Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="AntiTheftDeviceProductCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="AntiTheftDeviceTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>AntiTheftDeviceTypeCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="AntiTheftDeviceTypeCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDClosedCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft15za0</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft15za0</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ApplicationTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Application Type Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft29al0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft29al0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="ApplicationTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="AssigningEntityCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Assigning Entity Code</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft15za0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft15za0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="AssigningEntityCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="AttachmentTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>AttachmentTypeCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft9</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft9</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="AttachmentTypeCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft10</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="BenefitPeriodCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Benefit Period Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft29al0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft29al0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="BenefitPeriodCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="BusinessActivityFinancialAmountItemTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Business Activity Financial Amount Item Type Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft10</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft10</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="BusinessActivityFinancialAmountItemTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="BusinessActivityTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Business Activity Type Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft10</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft10</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="BusinessActivityTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="CalculationMethodCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>CalculationMethodCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft24</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft24</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="CalculationMethodCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="CancellationEvidenceObtainedCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Cancellation Evidence Obtained Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft9</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft9</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="CancellationEvidenceObtainedCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="CancellationPremiumCalculationCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>CancellationPremiumCalculationCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft9</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft9</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="CancellationPremiumCalculationCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="CancellationReasonCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Cancellation Reason Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft9</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft9</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="CancellationReasonCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="CancellationTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Cancellation Type Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft9</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft9</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="CancellationTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="CauseCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Cause Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="CauseCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ChassisExternalIdentifierTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>ChassisExternalIdentifierTypeCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="ChassisExternalIdentifierTypeCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDClosedCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft15za0</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft15za0</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ClaimAmountItemTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Claim Amount Item Type Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft10</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft10</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="ClaimAmountItemTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ClaimEventLogStatusCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Claim Event Log Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft30au0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft30au0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="ClaimEventLogStatusCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ClaimLodgementTransactionFunctionCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>ClaimLodgementTransaction Function Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft29al0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft29al0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="ClaimLodgementTransactionFunctionCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ClaimLodgementTransactionSubFunctionCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>ClaimLodgementTransaction Sub Function Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft29al0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft29al0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="ClaimLodgementTransactionSubFunctionCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ClaimReasonCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Claim Reason Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft28za0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft28za0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="ClaimReasonCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ClaimStatusCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Claim Status Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft10</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft10</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="ClaimStatusCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ClaimTransactionAmountItemTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>ClaimTransaction Amount Item Type Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft10</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft10</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="ClaimTransactionAmountItemTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="Code_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>An open list type is an ACORD specific type that represents a list of valid values that are defined OUTSIDE this specification and is maintained by another organization. An element of type ACORDOpenList_Type can be extended or restricted.</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="CodeContent_Type">
+            <xsd:attributeGroup ref="CodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft10</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="CommunicationChannelCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>CommunicationChannelCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft9</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft9</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="CommunicationChannelCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="CommunicationProcessCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>CommunicationProcessCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft9</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft9</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="CommunicationProcessCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ContactRoleCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>ContactRoleCode Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>The Contact Role Code of an object e.g. - for parties - the code that represent an person Contact in the Insurance process: "Accountant" "Underwriter" etc.</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="ContactRoleCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDClosedCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ContinuingEducationStatusCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>ContinuingEducationStatusCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft28pl0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft28pl0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="ContinuingEducationStatusCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ContractAmountItemTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Contract Amount Item Type Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft10</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft10</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="ContractAmountItemTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ContractStatusCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>ContracStatusCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft35al0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft35al0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="ContracStatusCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ControlCountTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Control Count Type Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft23wc0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft23wc0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="ControlCountTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="CoreRoleCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>CoreRoleCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>The Core Role Code of an object e.g. - for parties - "Insurer" "Insured" etc.</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="CoreRoleCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDClosedCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="CoverageStatusCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>CoverageStatusCode Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft10</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft10</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="CoverageStatusCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft10</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft10</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="CoverageTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>CoverageTypeCode Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="CoverageTypeCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="CoverTransactionFunctionCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Cover Transaction Function Code</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft35al0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft35al0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="CoverTransactionFunctionCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="DamageDescriptionCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Damage Description Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft27za0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft27za0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="DamageDescriptionCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="DamageExtentCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Damage Extent Code</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft35sa0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft35sa0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="DamageExtentCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="DeductibleAmountItemTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Deductible AmountItemTypeCode Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft28za0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft28za0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="DeductibleAmountItemTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="DeductibleAppliesCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>DeductibleAppliesCode Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft10</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft10</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="DeductibleAppliesCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft10</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft10</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="DisabilitySectionCoverageTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Disability Section Coverage Type Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft24</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft24</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="DisabilitySectionCoverageTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="DisabilitySectionTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Disability Section Type Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft24</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft24</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="DisabilitySectionTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="DomesticForeignCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Domestic Foreign Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft10</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft10</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="DomesticForeignCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="DriverExternalIdentifierTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>DriverExternalIdentifierTypeCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="DriverExternalIdentifierTypeCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDClosedCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="DriversLicenseTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Drivers License Type Code</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft9</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft9</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="DriversLicenseTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="EmailTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>EmailTypeCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>The kind of Email, e.g. cell, pager etc.</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="EmailTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="EmployeeInformationFinancialAmountItemTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Employee Information Financial Amount Item Type Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft28za0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft28za0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="EmployeeInformationFinancialAmountItemTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="EmployeeInformationStatusCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>EmployeeInformationStatusCode Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft29wc0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft29wc0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="EmployeeInformationStatusCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="EmployerCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>EmployerCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="EmployerCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft10</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft10</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="EmploymentStatusCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>EmploymentStatusCode Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft30au0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft30au0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="EmploymentStatusCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="EndPointActorContactRoleCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>EndPointActorContactRoleCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft9</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft9</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="EndPointActorContactRoleCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDClosedCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="EngineExternalIdentifierTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>EngineExternalIdentifierTypeCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="EngineExternalIdentifierTypeCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDClosedCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft15za0</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft15za0</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="EventCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Event Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft27za0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft27za0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="EventCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ExclusionCategoryCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Exclusion Category Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft29al0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft29al0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="ExclusionCategoryCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ExtendedStatusCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>ExtendedStatusCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft9</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft9</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="ExtendedStatusCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ExternalIdentifierTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>ExternalIdentifierTypeCode Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="ExternalIdentifierTypeCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDClosedCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft10</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft10</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="FinancialAmountItemTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Financial Amount Item Type Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft10</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft10</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="FinancialAmountItemTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="FinancialPeriodCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Financial Period Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft10</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft10</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="FinancialPeriodCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="FinancialReviewFinancialAmountItemTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Financial Review Financial Amount Item Type Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft30au0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft30au0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="FinancialReviewFinancialAmountItemTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="FinancialReviewTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>FinancialReviewTypeCode</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft30au0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft30au0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="FinancialReviewTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="FinancialTransactionCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>FinancialTransactionCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft9</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft9</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="FinancialTransactionCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="FrequencyCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>FrequencyCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft9</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft9</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="FrequencyCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft10</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft10</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="FuelTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>FuelTypeCode Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="FuelTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="FundExternalIdentifierTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>FundExternalIdentifierTypeCode Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft24</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft24</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="FundExternalIdentifierTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="GenderCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>GenderCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="GenderCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="GeocodeMatchLevelCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Geocode Match Level Code</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft15za0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft15za0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="GeocodeMatchLevelCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="HazardZoneSchemeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Hazard Zone Scheme Code</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft15za0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft15za0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="HazardZoneSchemeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="HealthSectionCoverageTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Health Section Coverage Type Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft24</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft24</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="HealthSectionCoverageTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="HealthSectionTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Health Section Type Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft24</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft24</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="HealthSectionTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="HumanResourcesTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Human Resources Type Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft10</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft10</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="HumanResourcesTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="InsuranceAmountItemTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Insurance Amount Item Type Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft24</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft24</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="InsuranceAmountItemTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="InsuredBusinessRelationshipRoleCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>InsuredBusinessRelationshipRoleCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="InsuredBusinessRelationshipRoleCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="InsurerContactRoleCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>InsurerContactRoleCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>The Contact Role Code of an object e.g. - for parties - the code that represent an person Contact in the Insurance process: "Accountant" "Underwriter" etc.</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="InsurerContactRoleCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDClosedCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="InterestedPartyContactRoleCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Interested Party ContactRoleCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>The Contact Role Code of an object e.g. - for parties - the code that represent an person Contact in the Insurance process: "Accountant" "Underwriter" etc.</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft10</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft10</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="InterestedPartyContactRoleCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDClosedCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="InterestedPartyRoleCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Interested Party Role Code_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft10</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft10</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="InterestedPartyBusinessRelationshipRoleCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="IntervieweeBusinessRelationshipRoleCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>IntervieweeBusinessRelationshipRoleCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft30au0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft30au0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="IntervieweeBusinessRelationshipRoleCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="InterviewTerminationReasonCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Interview Termination Reason Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft29al0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft29al0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="InterviewTerminationReasonCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="InterviewTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Interview Type Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft29al0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft29al0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="InterviewTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ItemValueTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>ItemValueTypeCode Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft17za0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft17za0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="ItemValueTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="JobCategoryCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Job Category Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft10</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft10</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="JobCategoryCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="LatitudeDegreeMeasure_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Latitude Degree Measure Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>The latitude type is an ACORD specific type that represents the angular distance north or south from the earth's equator measured Through 90 degrees. The format of the data follows &lt;bibref idref="ISO6709"/&gt;and is sent as +/-XX.YYYYYYYY</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="LatitudeDegreeMeasureContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="LegalEntityCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>LegalEntityCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft9</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft9</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="LegalEntityCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="LicenseStatusCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>LicenseStatusCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="LicenseStatusCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="LifeCoverageOptionCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>LifeCoverageOptionCode Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft29al0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft29al0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="LifeCoverageOptionCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="LifeItemSectionCoverageTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>LifeItemSectionCoverageTypeCode Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft28al0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft30au0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="LifeItemSectionCoverageTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="LifeItemSectionOptionCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>LifeItemSectionOptionCode Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft28al0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft30au0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="LifeItemSectionOptionCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="LifeItemSectionOptionQuestionCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>LifeItemSectionOptionQuestionCode Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft28al0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft30au0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="LifeItemSectionOptionQuestionCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="LifeItemSectionTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Life Item Section Type Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft28al0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft28al0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="LifeItemSectionTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="LifePrimaryCoverageCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Life PrimaryCoverageCode Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft28al0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft28al0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="LifePrimaryCoverageCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="LifeSectionCoverageTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Life Section Coverage Type Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft24</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft24</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="LifeSectionCoverageTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="LifeSectionTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Life Section Type Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft24</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft24</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="LifeSectionTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="LimitAppliesCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>LimitAppliesCode Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft30au0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft30au0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="LimitAppliesCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="LodgementTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Lodgement Type Code</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft28al0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft28al0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="LodgementTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="LongitudeDegreeMeasure_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Longitude Degree Measure Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>The phone number type is an ACORD specific type that represents the arc or portion of the earth's equator intersected between the meridian of a given place and the prime meridian and expressed in degrees. The format of the data follows &lt;bibref idref="ISO6709"/&gt; and is sent as +/-XXX.YYYYYYYY.</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="LongitudeDegreeMeasureContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="MaritalStatusCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>MaritalStatusCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="MaritalStatusCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="Measure_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Measure Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>A measure type is an ACORD specific type that represents a measured value. To completely define a measurement you need a value and the unit of measurement the value is being reported in. The Measure_Type allows the element to contain the value and provide a unit of measure as an attribute. See &lt;ref idref="specifyngMeasurements"/&gt; for more details.</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="MeasureContent_Type">
+            <xsd:attribute name="unitCode" type="UnitCodeContent_Type">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attribute>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="MembershipTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>MembershipTypeCode Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft24</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft24</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="MembershipTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="MessageDocumentResultStatusCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>MessageDocumentResultStatusCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft9</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft9</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="MessageDocumentResultStatusCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="MessageResultStatusCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>MessageResultStatusCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft9</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft9</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="MessageResultStatusCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ModificationCategoryCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Modification Class Code</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft17za0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft17za0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="ModificationCategoryCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="NameTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>NameTypeCode Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>The type code of the name</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="NameTypeCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft10</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft10</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="OccupationalRatingCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>OccupationalRatingCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft24</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft24</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="OccupationalRatingCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="OccupationClassCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>OccupationClassCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="OccupationClassCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft10</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft10</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="OccupationExternalIdentifierTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>OccupationExternalIdentifierTypeCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="OccupationExternalIdentifierTypeCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDClosedCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft35al02</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft35al02</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="OperationsFinancialAmountItemTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Operations Financial Amount Item Type Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft10</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft10</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="OperationsFinancialAmountItemTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="OperationsHumanResourcesTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Operations Human Resources Type Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft10</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft10</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="OperationsHumanResourcesTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="OperationsTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>OperationsTypeCode Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="OperationsTypeCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="OperatorExperienceRestrictionCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Operator Experience Restriction Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="OperatorExperienceRestrictionCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="OptionCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>OptionCode Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="OptionCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="OptionQuestionCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>OptionQuestionCode Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="OptionQuestionCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="OrganizationExternalIdentifierTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>OrganizationExternalIdentifierTypeCode Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft24</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft24</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="OrganizationExternalIdentifierTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="OrganizationNameTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>OrganizationNameTypeCode Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>The type code of the Organization name</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="OrganizationNameTypeCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDClosedCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="PartyRoleTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>PartyRoleTypeCode Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="PartyRoleTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="PaymentTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>PaymentTypeCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft9</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft9</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="PaymentTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="PerilCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Peril Code</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft15za0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft15za0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="PerilCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="PerilExcludedCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Peril Excluded Code</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft15za0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft15za0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="PerilCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="PerilIncludedCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Peril Included Code</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft15za0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft15za0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="PerilCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="PersonExternalIdentifierTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>PersonExternalIdentifierTypeCode Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft24</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft24</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="PersonExternalIdentifierTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="PersonNameTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Person NameTypeCode Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>The type code of the Person name</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="PersonNameTypeCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDClosedCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="PersonTitlePrefixCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Person Title Prefix Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="PersonTitlePrefixCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="PolicyDriverTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>PolicyDriverTypeCode Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="PolicyDriverTypeCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDClosedCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="PolicyholderTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Policyholder Type Code</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft32ex0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft32ex0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="PolicyholderTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="PolicyOrderTransactionFunctionCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Policy Order Transaction Function Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft29al0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft29al0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="PolicyOrderTransactionFunctionCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="PolicyOrderTransactionSubFunctionCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>PolicyOrderTransaction Sub Function Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft29al0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft29al0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="PolicyOrderTransactionSubFunctionCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="PolicyPropertyTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Policy Property Type Code</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft15za0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft15za0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="PolicyPropertyTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="PolicyQuestionCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Policy Question Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft24</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft24</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="PolicyQuestionCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="PolicyStatusCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>PolicyStatusCode Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft30au0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft30au0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="PolicyStatusCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="PrimaryCoverageCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Primary Coverage Code</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft16za0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft16za0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="PrimaryCoverageCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ProducerBusinessRelationshipRoleCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>ProducerBusinessRelationshipRoleCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="ProducerBusinessRelationshipRoleCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDClosedCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ProducerContactRoleCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>ProducerContactRoleCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>The Contact Role Code of an object e.g. - for parties - the code that represent an person Contact in the Insurance process: "Accountant" "Underwriter" etc.</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="ProducerContactRoleCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDClosedCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ProducerLicenseTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Producer License Type Code</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft9</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft9</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="ProducerLicenseTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ProductExternalIdentifierTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>ProductExternalIdentifierTypeCode Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft24</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft24</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="ProductExternalIdentifierTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="QuestionCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Question Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="QuestionCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="RadiusUseCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Radius Use Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="RadiusUseCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="RegistrationExternalIdentifierTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>RegistrationExternalIdentifierTypeCode Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="RegistrationExternalIdentifierTypeCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDClosedCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ReinstatementReasonCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Reinstatement Reason Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft9</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft9</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="ReinstatementReasonCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ReinstatementTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Reinstatement Type Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft9</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft9</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="ReinstatementTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="RelationshipToInsuredCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Relationship To Insured Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft34wc0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft34wc0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="RelationshipToInsuredCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="RemarkTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Remark Type Code</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft28za0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft28za0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="RemarkTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="RequirementEventCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Requirement Event Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft29al0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft29al0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="RequirementEventCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="RequirementEventLogStatusCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Requirement Event Log Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft29al0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft29al0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="RequirementEventLogStatusCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ResultPendedCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>ResultPendedCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft9</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft9</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="ResultPendedCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ResultRejectCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>ResultRejectCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft9</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft9</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="ResultRejectCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ResultSuccessCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>ResultSuccessCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft9</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft9</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="ResultSuccessCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="TaxFilingStatusCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>TaxFilingStatusCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft29wc0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft29wc0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="TaxFilingStatusCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="TelephoneTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>TelephoneTypeCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>The kind of telephone, e.g. cell, pager etc.</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="TelephoneTypeCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ThirdPartyDriverRoleCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Third Party Driver Role Code</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft25za0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft25za0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="ThirdPartyDriverRoleCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="TitleRelationshipCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>TitleRelationshipCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="TitleRelationshipCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="TransactionFunctionCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Transaction Function Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft10</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft10</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="TransactionFunctionCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="TransactionSubFunctionCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Transaction Sub Function Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft29al0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft29al0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="TransactionSubFunctionCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="TransmissionExternalIdentifierTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>TransmissionExternalIdentifierTypeCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="TransmissionExternalIdentifierTypeCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDClosedCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft15za0</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft15za0</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="TransmissionTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Transmission Type Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="TransmissionTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="UnrepairedDamageTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>UnrepairedDamageTypeCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft17za0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft17za0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="UnrepairedDamageTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ValuationTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>ValuationTypeCode Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft10</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft10</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="ValuationTypeCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft10</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft10</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="VehicleArticulatedCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Vehicle Articulated Code</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft17za0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft17za0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="VehicleArticulatedCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="VehicleBodyTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>VehicleBodyTypeCode Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="VehicleBodyTypeCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDClosedCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="VehicleClassCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Vehicle Class Code</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft17za0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft17za0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="VehicleClassCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="VehicleExternalIdentifierTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>VehicleExternalIdentifierTypeCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="VehicleExternalIdentifierTypeCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDClosedCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="VehicleGaragingCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Vehicle Garaging Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="VehicleGaragingCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="VehicleInspectionStatusCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Vehicle Inspection Status Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="VehicleInspectionStatusCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="VehicleModificationTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>VehicleModificationTypeCode_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft17za0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft17za0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="VehicleModificationTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="VehicleOptionCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Vehicle Option Code</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft28za0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft28za0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="VehicleOptionCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="VehicleOvernightLocationCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Vehicle Overnight Location Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft32za0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft32za0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="VehicleOvernightLocationCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="VehiclePerformanceCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Vehicle Performance Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="VehiclePerformanceCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="VehicleSpecialUseCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Vehicle Special Use Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="VehicleSpecialUseCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="VehicleTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>VehicleTypeCode Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="VehicleTypeCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDClosedCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="VehicleUseTypeCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>VehicleUseTypeCode Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="VehicleUseTypeCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDClosedCodeAttribute_Sequence">
+               <xsd:annotation>
+                  <xsd:documentation/>
+                  <xsd:appinfo>
+                     <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+                     <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+                  </xsd:appinfo>
+               </xsd:annotation>
+            </xsd:attributeGroup>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="WaitingPeriodCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Waiting Period Code Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft29al0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft29al0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="WaitingPeriodCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="WorkPerformedCode_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Work Performed Code</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft15za0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft15za0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:simpleContent>
+         <xsd:extension base="WorkPerformedCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:simpleType name="ACORDCodeContent_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>ACORDCodeContent Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="AmountContent_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>AmountContent Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:decimal"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="CodeContent_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>CodeContent Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:token"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="CurrencyCodeContent_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>CurrencyCodeContent Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="CodeContent_Type"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="DegreeMeasureContent_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>DegreeMeasureContent Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="MeasureContent_Type">
+         <xsd:fractionDigits value="8"/>
+         <xsd:totalDigits value="12"/>
+         <xsd:minInclusive value="-180"/>
+         <xsd:maxInclusive value="180"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="DisabilitySectionCoverageTypeCodeContent_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Disability Section Coverage Type Code Content Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft24</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft24</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="CoverageTypeCodeContent_Type"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="Identifier_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Identifier Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>A lexical unit that names a language object, such as a variable, array, record, label, or procedure</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="IdentifierContent_Type"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="IdentifierContent_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>IdentifierContent Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:token"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="InfiniteText_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>InfiniteText Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>Character (C) indicates an element that allows character data up to a maximum number of characters, regardless of the number of bytes required to represent each character. The number specifies the maximum number of characters allowed. A tag of type CInfiniteText is allowed to have an infinite at the top of the message. There is no ability to override or specify a different language use for this data type. For other variations of this type, see: CInfiniteLanguageText.</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="InfiniteTextContent_Type"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="InfiniteTextContent_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>InfiniteTextContent Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="TextContent_Type">
+         <xsd:minLength value="1"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="LatitudeDegreeMeasureContent_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Latitude DegreeMeasureContent Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="DegreeMeasureContent_Type">
+         <xsd:fractionDigits value="8"/>
+         <xsd:totalDigits value="12"/>
+         <xsd:minInclusive value="-180"/>
+         <xsd:maxInclusive value="180"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="LifeItemSectionOptionQuestionCodeContent_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>LifeItemSectionOptionQuestionCodeContent_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft28al0</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft28al0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="QuestionCodeContent_Type"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="LongitudeDegreeMeasureContent_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Longitude DegreeMeasureContent Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="DegreeMeasureContent_Type">
+         <xsd:fractionDigits value="8"/>
+         <xsd:totalDigits value="12"/>
+         <xsd:minInclusive value="-180"/>
+         <xsd:maxInclusive value="180"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="LongText_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>LongText Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>A tag of type LongText is allowed to have 255 characters and must be in the language specified in the xml:lang attribute at the top of the message. There is no ability to override or specify a different language use for this data type. For other variations of this type, see: LongLanguageText.</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="LongTextContent_Type"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="LongTextContent_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>LongTextContent Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="TextContent_Type">
+         <xsd:maxLength value="255"/>
+         <xsd:minLength value="1"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="MeasureContent_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>MeasureContent Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draftza0</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:decimal">
+         <xsd:fractionDigits value="8"/>
+         <xsd:totalDigits value="12"/>
+         <xsd:minInclusive value="-999999999999"/>
+         <xsd:maxInclusive value="999999999999"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="Numeric_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Numeric Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>A number or numeral.</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:decimal">
+         <xsd:totalDigits value="15"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="OptionQuestionCodeContent_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>OptionQuestionCodeContent_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="ACORDCodeContent_Type"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="Percent_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Percent Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>A Percent type is an ACORD specific type that represents a decimal value used as a percentage. If the sign is omitted, "+" is assumed. Absence of a decimal point implies one to the right of the right most digit (i.e., an integer). Example: 12345 implies 12345. Any value should be used directly as the percentage. Example 1.0 is 1.0% and 0.1 is 0.1%.directly as the percentage. Example 1.0 is 1.0% and 0.1 is 0.1%.</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:decimal"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="PhoneNumberText_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>PhoneNumberText Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>The phone number type is an ACORD specific type that represents a phone number.. It must begin with a plus sign "+" followed by country code, a hyphen, city/area code, another hyphen, then the local phone number. If a PBX extension is to be included, it must appear at the end of the field, separated from the rest of the telephone number by a plus sign.</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="PhoneNumberTextContent_Type"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="PhoneNumberTextContent_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>PhoneNumberTextContent Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="TextContent_Type">
+         <xsd:maxLength value="32"/>
+         <xsd:minLength value="1"/>
+         <xsd:pattern value="\+\S+\-\S+\-\S+(\+\S+)?"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="SimpleIdentifier_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>SimpleIdentifier Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>An assigned identifier type is an ACORD specific type that represents a unique identifier created by an organization, carrier, agent, state, or other body. These include policy numbers, social security numbers, passport ids, drivers license numbers, etc.</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="SimpleIdentifierContent_Type"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="SimpleIdentifierContent_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>SimpleIdentifierContent Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="IdentifierContent_Type">
+         <xsd:maxLength value="255"/>
+         <xsd:minLength value="1"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="TextContent_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>TextContent Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:string"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="UnitCodeContent_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>Unit Code Content Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="CodeContent_Type"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="UnsignedIntegerNumeric_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>UnsignedIntegerNumeric_Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>The value space of xsd:unsignedInt is the range of integers between 0 and 4294967295. The unsigned values that can fit in a word of 32 bits. Its lexical space allows an optional plus sign and leading zeros before the significant digits.</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:unsignedInt"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="UUIDIdentifier_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>UUIDIdentifier Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>Universally Unique Identifier</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="UUIDIdentifierContent_Type"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="UUIDIdentifierContent_Type">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>UUIDIdentifierContent Type</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>TBD</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+         <xsd:appinfo>
+            <acord-doc:ComponentCreatedVersionId>Draft8</acord-doc:ComponentCreatedVersionId>
+            <acord-doc:ComponentUpdatedVersionId>Draft8</acord-doc:ComponentUpdatedVersionId>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="IdentifierContent_Type">
+         <xsd:maxLength value="36"/>
+         <xsd:minLength value="36"/>
+         <xsd:pattern value="[0-9A-Fa-f]{8}(-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <!--
+      *******************************************************************************
+     AttributeGroup
+      *******************************************************************************
+   -->
+   <xsd:attributeGroup name="ACORDClosedCodeAttribute_Sequence">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>ACORDClosedCodeAttribute_Sequence</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>Unrestricted attribute group for ACORD Closed Codes</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:attribute name="name" type="LongText_Type">
+         <xsd:annotation>
+            <xsd:documentation/>
+            <xsd:appinfo>
+               <acord-doc:ComponentCreatedVersionId>Draft10</acord-doc:ComponentCreatedVersionId>
+               <acord-doc:ComponentUpdatedVersionId>Draft10</acord-doc:ComponentUpdatedVersionId>
+            </xsd:appinfo>
+         </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute name="lang" type="xsd:language">
+         <xsd:annotation>
+            <xsd:documentation/>
+            <xsd:appinfo>
+               <acord-doc:ComponentCreatedVersionId>Draft10</acord-doc:ComponentCreatedVersionId>
+               <acord-doc:ComponentUpdatedVersionId>Draft10</acord-doc:ComponentUpdatedVersionId>
+            </xsd:appinfo>
+         </xsd:annotation>
+      </xsd:attribute>
+   </xsd:attributeGroup>
+   <xsd:attributeGroup name="ACORDCodeAttribute_Sequence">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>ACORDCodeAttribute_Sequence</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>Unrestricted attribute group for ACORD Open Codes</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:attribute name="name" type="LongText_Type">
+         <xsd:annotation>
+            <xsd:documentation/>
+            <xsd:appinfo>
+               <acord-doc:ComponentCreatedVersionId>Draft10</acord-doc:ComponentCreatedVersionId>
+               <acord-doc:ComponentUpdatedVersionId>Draft10</acord-doc:ComponentUpdatedVersionId>
+            </xsd:appinfo>
+         </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute name="lang" type="xsd:language">
+         <xsd:annotation>
+            <xsd:documentation/>
+            <xsd:appinfo>
+               <acord-doc:ComponentCreatedVersionId>Draft10</acord-doc:ComponentCreatedVersionId>
+               <acord-doc:ComponentUpdatedVersionId>Draft10</acord-doc:ComponentUpdatedVersionId>
+            </xsd:appinfo>
+         </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute name="codeListReference" type="SimpleIdentifier_Type">
+         <xsd:annotation>
+            <xsd:documentation/>
+            <xsd:appinfo>
+               <acord-doc:ComponentCreatedVersionId>Draft10</acord-doc:ComponentCreatedVersionId>
+               <acord-doc:ComponentUpdatedVersionId>Draft10</acord-doc:ComponentUpdatedVersionId>
+            </xsd:appinfo>
+         </xsd:annotation>
+      </xsd:attribute>
+   </xsd:attributeGroup>
+   <xsd:attributeGroup name="CodeAttribute_Sequence">
+      <xsd:annotation>
+         <xsd:documentation>
+            <acord-doc:ExpandedName>CodeAttribute_Sequence</acord-doc:ExpandedName>
+            <acord-doc:Description>
+               <acord-doc:p>Unrestricted attribute group for non-ACORD Codes</acord-doc:p>
+            </acord-doc:Description>
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:attribute name="name" type="LongText_Type">
+         <xsd:annotation>
+            <xsd:documentation/>
+            <xsd:appinfo>
+               <acord-doc:ComponentCreatedVersionId>Draft10</acord-doc:ComponentCreatedVersionId>
+               <acord-doc:ComponentUpdatedVersionId>Draft10</acord-doc:ComponentUpdatedVersionId>
+            </xsd:appinfo>
+         </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute name="lang" type="xsd:language">
+         <xsd:annotation>
+            <xsd:documentation/>
+            <xsd:appinfo>
+               <acord-doc:ComponentCreatedVersionId>Draft10</acord-doc:ComponentCreatedVersionId>
+               <acord-doc:ComponentUpdatedVersionId>Draft10</acord-doc:ComponentUpdatedVersionId>
+            </xsd:appinfo>
+         </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute name="codeListReference" type="SimpleIdentifier_Type">
+         <xsd:annotation>
+            <xsd:documentation/>
+            <xsd:appinfo>
+               <acord-doc:ComponentCreatedVersionId>Draft10</acord-doc:ComponentCreatedVersionId>
+               <acord-doc:ComponentUpdatedVersionId>Draft10</acord-doc:ComponentUpdatedVersionId>
+            </xsd:appinfo>
+         </xsd:annotation>
+      </xsd:attribute>
+   </xsd:attributeGroup>
+   
+</xsd:schema>

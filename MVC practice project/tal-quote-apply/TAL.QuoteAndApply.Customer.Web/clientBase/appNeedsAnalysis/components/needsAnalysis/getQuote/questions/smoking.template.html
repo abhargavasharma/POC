@@ -1,0 +1,23 @@
+<div class="needs-analysis-smoking">
+    <h3>
+        General information
+    </h3>
+
+    <div class="question-centered">
+        <p>Have you smoked tobacco products in the last 12 months?</p>
+        
+        <div class="answers">
+            <form-radio ng-repeat="opt in ctrl.smokerOptions"
+                        class="tal-form-radio-button"
+                        name="isSmoker{{$index}}"
+                        value="opt.value"
+                        ng-model="ctrl.basicInfo.isSmoker"
+                        tal-server-validate="basicInfoViewModel.isSmoker"
+                        on-option-clicked="ctrl.onQuoteNext()"
+                        tal-form-id="isSmoker{{$index}}">
+                {{opt.label}}
+            </form-radio>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,50 @@
+<div class="tal-manage-interview" cg-busy="ctrl.loadingPromise">
+
+    <h2>Search Interview ID</h2>
+
+    <form class="search-form clearfix" name="interviewIdForm">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group" show-errors>
+                    <input type="text"
+                           name="interviewId"
+                           id="interviewId"
+                           class="form-control"
+                           ng-model="ctrl.searchCriteria.interviewId"
+                           empty-to-null />
+                    <tal-form-error ng-form-model="interviewIdForm.interviewId"></tal-form-error>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="button-area pull-left">
+                    <input type="submit" class="btn btn-primary" value="Search" ng-click="ctrl.onSearchInterviewIdClick()" />
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <hr>
+
+    <div ng-show="ctrl.searchPerformed">
+        <div ng-show="ctrl.interviewExists" class="row">
+            <div class="col-md-12">
+                <h2>Interview Found</h2>
+                <label class="control-label">What do you want to do with the interview?</label>
+                <div class="row">
+                    <div class="col-md-6">
+                        <select class="form-control" name="interviewAction"
+                                ng-model="ctrl.interviewAction"
+                                ng-options="a.value as a.name for a in ctrl.interviewActions">
+                            <option value="" disabled selected>Please select</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-open-action" ng-click="ctrl.performInterviewAction(ctrl.interviewAction)">Perfrom Action</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2 ng-show="!ctrl.interviewExists">Interview Not Found</h2>
+    </div>
+
+</div>

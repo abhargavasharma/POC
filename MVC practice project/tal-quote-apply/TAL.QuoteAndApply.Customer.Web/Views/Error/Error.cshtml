@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Error";
+    ViewBag.AppName = "Exit";
+    ViewBag.hideNavigation = "true";
+    ViewBag.HideMobileNavigation = "true";
+    ViewBag.hideSaveButton = true;
+    ViewBag.hideClickToChat = "true";
+    ViewBag.HideQuoteReference = "true";
+    ViewBag.HideQuotePremium = "true";
+    ViewBag.PageCssClass = "page-error";
+}
+
+<section class="tal-section-confirmation">
+    @{
+        Html.RenderPartial("~/Views/Shared/_PageHeader.cshtml");
+    }
+    <div class="container">
+        <main class="tal-layout-main row">
+
+            <p>Sorry, we are experiencing some technical issues.</p>
+            <p>We apologise for the inconvenience.</p>
+
+        </main>
+    </div>
+</section>

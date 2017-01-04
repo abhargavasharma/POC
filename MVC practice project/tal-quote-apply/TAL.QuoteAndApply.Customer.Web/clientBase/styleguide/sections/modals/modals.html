@@ -1,0 +1,244 @@
+<article class="sg--padded sg--dark">
+	<header>
+		<h1>Modals</h1>
+	</header>
+
+	<section class="sg__family">
+		<p>
+			The modals are implemented using <a href="https://github.com/likeastore/ngDialog" target="_blank">ngDialog</a>, and their behavior can be heavily customized though the API of event callback hooks.
+		</p>
+
+		<p>
+			Opening the modals
+		</p>
+
+		<div hljs hljs-language="js">
+/* The open method */
+ngDialog.open(options);
+
+/* Example of opening a specific modal, which cannot be dismissed except using standard navigation, or clicking away. */
+ngDialog.open({
+	templateUrl: '/path/to/template/',
+	closeByNavigation: false,
+	closeByEscape: false,
+	closeByDocument: false,
+});
+		</div>
+
+	</section>
+
+
+	<section class="sg__family">
+		<h2 class="h3">Modal - basic</h2>
+		<button 
+			angular-ripple class="tal-btn tal-btn--secondary sg-inline-spacing" 
+			ng-click="openModal('/client/styleguide/sections/modals/partials/modalBasic.html')">
+			Open example
+		</button><br/>
+		<tal-documentation
+			index="data.index"
+			tal-documentation-path="'/client/styleguide/sections/modals/partials/modalBasic.html'">
+		</tal-documentation>
+	</section>
+
+
+
+	<section class="sg__family">
+		<h2 class="h3">Modal - Help Me Choose</h2>
+		<button 
+			angular-ripple class="tal-btn tal-btn--secondary sg-inline-spacing" 
+			ng-click="openModal('/client/styleguide/sections/modals/partials/modalHelpMeChoose.html')">
+			Open example
+		</button><br/>
+		<tal-documentation
+			index="data.index"
+			tal-documentation-path="'/client/styleguide/sections/modals/partials/modalHelpMeChoose.html'">
+		</tal-documentation>
+	</section>
+
+
+	<section class="sg__family">
+		<h2 class="h3">Modal - with header</h2>
+		<button 
+			angular-ripple class="tal-btn tal-btn--secondary sg-inline-spacing" 
+			ng-click="openModal('/client/styleguide/sections/modals/partials/modalHeader.html')">
+			Open example
+		</button><br/>
+		<tal-documentation
+			index="data.index"
+			tal-documentation-path="'/client/styleguide/sections/modals/partials/modalHeader.html'">
+		</tal-documentation>
+	</section>
+
+
+	<section class="sg__family">
+		<h2 class="h3">Modal - Your Cover Amounts</h2>
+		<button 
+			angular-ripple class="tal-btn tal-btn--secondary sg-inline-spacing" 
+			ng-click="openModal('/client/styleguide/sections/modals/partials/modalYourCoverAmounts.html')">
+			Open example
+		</button><br/>
+		<tal-documentation
+			index="data.index"
+			tal-documentation-path="'/client/styleguide/sections/modals/partials/modalYourCoverAmounts.html'">
+		</tal-documentation>
+	</section>
+
+
+	<section class="sg__family">
+		<h2 class="h3">Modal - with dark header</h2>
+		<button 
+			angular-ripple class="tal-btn tal-btn--secondary sg-inline-spacing" 
+			ng-click="openModal('/client/styleguide/sections/modals/partials/modalHeaderDark.html')">
+			Open example
+		</button><br/>
+		<tal-documentation
+			index="data.index"
+			tal-documentation-path="'/client/styleguide/sections/modals/partials/modalHeaderDark.html'">
+		</tal-documentation>
+	</section>
+
+	
+	<section class="sg__family">
+		<h2 class="h3">Save Quote - Details</h2>
+		<button 
+			angular-ripple class="tal-btn tal-btn--secondary sg-inline-spacing" 
+			ng-click="openModalNotDismissable('/client/styleguide/sections/modals/partials/modalSaveDetail.html')">
+			Open example
+		</button><br/>
+		<tal-documentation
+			index="data.index"
+			tal-documentation-path="'/client/styleguide/sections/modals/partials/modalSaveDetail.html'">
+		</tal-documentation>
+	</section>
+
+
+	<section class="sg__family">
+		<h2 class="h3">Save Quote - Password</h2>
+		<button 
+			angular-ripple class="tal-btn tal-btn--secondary sg-inline-spacing" 
+			ng-click="openModalNotDismissable('/client/styleguide/sections/modals/partials/modalSavePassword.html')">
+			Open example
+		</button><br/>
+		<tal-documentation
+			index="data.index"
+			tal-documentation-path="'/client/styleguide/sections/modals/partials/modalSavePassword.html'">
+		</tal-documentation>
+	</section>
+	
+
+	<section class="sg__family">
+		<h2 class="h3">Save Quote - Success</h2>
+		<button 
+			angular-ripple class="tal-btn tal-btn--secondary sg-inline-spacing" 
+			ng-click="openModalNotDismissable('/client/styleguide/sections/modals/partials/modalSaveSuccess.html')">
+			Open example
+		</button><br/>
+		<tal-documentation
+			index="data.index"
+			tal-documentation-path="'/client/styleguide/sections/modals/partials/modalSaveSuccess.html'">
+		</tal-documentation>
+	</section>
+
+	
+	<section class="sg__family">
+		<h2 class="h3">Example - Product options modal</h2>
+		<p>
+			The tabs module exposes an api object which can be exposed to the current controller using the tabsApi attribute on tabTals. This contains next() and prev() methods for navigating between tabs.
+		</p>
+		<button 
+			angular-ripple class="tal-btn tal-btn--secondary sg-inline-spacing" 
+			ng-click="openModal('/client/styleguide/sections/modals/partials/modalOptions.html')">
+			Open example
+		</button><br/>
+		<tal-documentation
+			index="data.index"
+			tal-documentation-path="'/client/styleguide/sections/modals/partials/modalOptions.html'">
+		</tal-documentation>
+	</section>
+
+
+	<section class="sg__family">
+		<h2 class="h3">Example - Contact us</h2>
+		<button 
+			angular-ripple class="tal-btn tal-btn--secondary sg-inline-spacing" 
+			ng-click="openModal('/client/styleguide/sections/modals/partials/modalContact.html')">
+			Open example
+		</button><br/>
+		<tal-documentation
+			index="data.index"
+			tal-documentation-path="'/client/styleguide/sections/modals/partials/modalContact.html'">
+		</tal-documentation>
+	</section>
+
+
+	<section class="sg__family">
+		<h2 class="h3">Modal - with aside</h2>
+		<p>
+			This flavour of modal can have an aside (the teal region) either always below the main card, or on the left or right on larger screens. Which version is used is specified by passing a class name in the options when opening the modal, as shown in the code snippet.
+		</p>
+		<button 
+			angular-ripple class="tal-btn tal-btn--secondary sg-inline-spacing" 
+			ng-click="openModal('/client/styleguide/sections/modals/partials/modalAside.html')">
+			Aside below
+		</button>
+		<button 
+			angular-ripple class="tal-btn tal-btn--secondary sg-inline-spacing" 
+			ng-click="openModal('/client/styleguide/sections/modals/partials/modalAside.html', 'tal-modal-variant-left')">
+			Aside on left
+		</button>
+		<button 
+			angular-ripple class="tal-btn tal-btn--secondary sg-inline-spacing" 
+			ng-click="openModal('/client/styleguide/sections/modals/partials/modalAside.html', 'tal-modal-variant-right')">
+			Aside on right
+		</button>
+		<tal-documentation
+			index="data.index"
+			tal-documentation-path="'/client/styleguide/sections/modals/partials/modalAside.html'">
+		</tal-documentation>
+	</section>
+
+
+	<section class="sg__family">
+		<h2 class="h3">Example - Learn more</h2>
+		<button 
+			angular-ripple class="tal-btn tal-btn--secondary sg-inline-spacing" 
+			ng-click="openModal('/client/styleguide/sections/modals/partials/modalLearnMore.html', 'tal-modal-variant-left')">
+			Open example
+		</button><br/>
+		<tal-documentation
+			index="data.index"
+			class="tal-modal-variant-left" 
+			tal-documentation-path="'/client/styleguide/sections/modals/partials/modalLearnMore.html'">
+		</tal-documentation>
+	</section>
+
+
+	<section class="sg__family">
+		<h2 class="h3">Example - Premium Types</h2>
+		<button 
+			angular-ripple class="tal-btn tal-btn--secondary sg-inline-spacing" 
+			ng-click="openModal('/client/styleguide/sections/modals/partials/modalPremiumTypes.html')">
+			Open example
+		</button><br/>
+		<tal-documentation
+			index="data.index"
+			tal-documentation-path="'/client/styleguide/sections/modals/partials/modalPremiumTypes.html'">
+		</tal-documentation>
+	</section>
+
+
+	<section class="sg__family">
+		<h2 class="h3">Example - Bundle prompt</h2>
+		<button 
+			angular-ripple class="tal-btn tal-btn--secondary sg-inline-spacing" 
+			ng-click="openModalNotDismissable('/client/styleguide/sections/modals/partials/modalBundle.html')">
+			Open example
+		</button><br/>
+		<tal-documentation
+			index="data.index"
+			tal-documentation-path="'/client/styleguide/sections/modals/partials/modalBundle.html'">
+		</tal-documentation>
+	</section>
+
+</article>

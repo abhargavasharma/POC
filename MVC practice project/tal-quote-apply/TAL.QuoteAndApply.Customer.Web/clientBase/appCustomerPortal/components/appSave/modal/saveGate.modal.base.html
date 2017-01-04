@@ -1,0 +1,35 @@
+﻿<div class="tal-modal tal-modal-secondary" tabindex="0" cg-busy="loadingPromise">
+	<div ng-show="ctrl.view === 'details'">
+		<header class="tal-modal-header tal-modal-space-for-close row">
+			<h2>Save your quote &nbsp;<span ng-bind="ngDialogData.quoteNumber.quoteReferenceNumber"></span></h2>
+		</header>
+		<main class="tal-modal-body">
+			<ng-include src="'/client/appCustomerPortal/components/appSave/modal/saveGate.modal.details.html'"></ng-include>
+		</main>
+	</div>
+	<div ng-show="ctrl.view === 'password'">
+		 <header class="tal-modal-header tal-modal-space-for-close row">
+			 <h2>Save Quote &nbsp;<span ng-bind="ngDialogData.quoteNumber.quoteReferenceNumber"></span></h2>
+		 </header>
+	   <main class="tal-modal-body">
+			<ng-include src="'/client/appCustomerPortal/components/appSave/modal/saveGate.modal.password.html'"></ng-include>
+		</main>
+	</div>
+	<div ng-show="ctrl.view === 'success'">
+		 <header class="tal-modal-header tal-modal-space-for-close row">
+			 <h2>Quote Reference Number &nbsp;<span id="saveGateQuoteRef" ng-bind="ngDialogData.quoteNumber.quoteReferenceNumber"></span></h2>
+		 </header>
+	   <main class="tal-modal-body">
+			<ng-include src="'/client/appCustomerPortal/components/appSave/modal/saveGate.modal.success.html'"></ng-include>
+		</main>
+	</div>
+	
+	<a href="" class="tal-modal-close"
+		ng-hide="ngDialogData.forced"
+		ng-click="closeThisDialog()">
+	</a>
+	<a href="" class="tal-modal-close"
+		ng-show="ngDialogData.errorWithSave"
+		ng-click="ctrl.submitWithoutPassword()">
+	</a>
+</div>

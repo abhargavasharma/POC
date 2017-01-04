@@ -1,0 +1,65 @@
+<header>
+  <h1>Guided welcome</h1>
+</header>
+
+<section
+	ng-intro-options="introOptions"
+	ng-intro-method="startTour"
+	ng-intro-oncomplete="onCompletedEvent"
+	ng-intro-onexit="onExitEvent"
+	ng-intro-onchange="onChangeEvent"
+	ng-intro-onbeforechange="onBeforeChangeEvent"
+	ng-intro-onafterchange="onAfterChangeEvent"
+	ng-intro-autostart="shouldAutoStart">
+
+	<button 
+		type="submit"
+		class="tal-btn--primary"
+		angular-ripple
+		ng-click="startTour()">
+	    Start guided welcome
+	</button>
+
+	<p>The guided welcome is built on top of the angular-intro.js directive, which in turn uses intro.js. Details of the API can be found at the <a href="https://github.com/mendhak/angular-intro.js" target="_blank">Angular Intro.js github page</a>. The tooltip targets and content are configured in the introOptions object in the controller. Any selectors can be used, but using IDs or unique classes specifically for intro targeting will be the most surgical approach.</p>
+
+	<p>Be aware that the relative position of the tooltip is hardcoded in the configuration, and does not adapt dynamically. In cases when the highlighted content is close to full viewport width, the tooltip should be positioned top or bottom.</p>
+
+	<div class="tal-select-product-wrapper">
+		<tal-card ng-repeat="item in items1" class="{{item.classCols}}" ng-class="{'is-off':!item.isOn}">
+			<tal-cover-product ng-class="{'tal-cover-product-off':!item.isOn}" >
+				<div class="tal-cover-product tal-cover-product-blue">
+					<tal-card-header
+						tal-cover-product-header 
+						product-is-on="item.isOn" 
+						product-value="item.premium"
+					>
+						<h3 ng-bind="item.title"></h3>
+						<p class="tal-cover-product-link">
+							<a class="tal-link-minor" href="#">Learn more about (CI) Cover</a>
+						</p>
+					</tal-card-header>
+					<div class="tal-cover-product-content" ng-show="item.isOn">
+						<div>
+							<label>Cover amount</label>
+						</div>
+						<div>
+							<form-select-textfield  tal-id="id1" tal-name="name1"
+								placeholder="select a value" ng-model="item.value" form-select-items="[200000, 500000]">
+							</form-select-textfield>
+						</div>
+						<div class="tal-btn-set">
+							<a href="#" class="tal-btn--secondary" ng-disabled="!item.isOn">Critical illness options</a>
+						</div>
+						<div class="tal-form-checkbox-list">
+							<form-checkbox tal-name="checkbox11" tal-id="checkbox11" class="tal-form-checkbox" ng-model="item.value">
+								Bundle with life cover
+							</form-checkbox>
+						</div>
+					</div>
+				</div>
+			</tal-cover-product>
+			<div class="tal-cover-product-content" ng-show="!item.isOn"></div>
+		</tal-card>
+	</div>
+
+</section>

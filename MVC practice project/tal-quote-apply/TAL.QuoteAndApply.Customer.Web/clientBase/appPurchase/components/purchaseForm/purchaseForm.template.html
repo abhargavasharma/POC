@@ -1,0 +1,20 @@
+<div class="purchase-form" cg-busy="ctrl.loadingPromise">
+    <form class="form-horizontal" name="purchaseForm" novalidate tal-focus-on-error>
+        <tal-customer-details risk-id="::ctrl.purchaseModel.riskId" personal-details="ctrl.purchaseModel.personalDetails"></tal-customer-details>
+        <div class="purchase-hr"></div>
+        <tal-payment-section payment-type="ctrl.selectedPaymentType"
+                             expiry-date-default="ctrl.expiryDateDefault"
+                             payment-options="ctrl.purchaseModel.paymentOptions"
+                             payment-message="ctrl.paymentErrorMessage">
+        </tal-payment-section>
+
+        <div class="purchase-hr"></div>
+        <tal-beneficiaries risk-id="::ctrl.purchaseModel.riskId" beneficiaries="ctrl.purchaseModel.beneficiaries" personal-details="ctrl.purchaseModel.personalDetails"></tal-beneficiaries>
+        <div class="purchase-hr"></div>
+        <tal-declaration declaration-agree="ctrl.purchaseModel.declarationAgree" dnc-selection="ctrl.purchaseModel.dncSelection"></tal-declaration>
+        <fieldset class="submit-buttons">
+            <button id="submitApplication" type="submit" class="tal-btn--primary tal-btn--major" ng-disabled="purchaseForm.$invalid || ctrl.showSubmissionFailureMessage" ng-click="ctrl.submit()">Submit my application</button>
+            <div id="submissionFailureMessage" class="tal-style error" ng-show="ctrl.showSubmissionFailureMessage" ng-bind-html="ctrl.submissionErrorMessage"></div>
+        </fieldset>
+    </form>
+</div>

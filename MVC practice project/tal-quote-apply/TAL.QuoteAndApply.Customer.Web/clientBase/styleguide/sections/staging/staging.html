@@ -1,0 +1,44 @@
+<div>
+  <h1>Section Staging</h1>
+</div>
+DATA :{{data}}
+<tal-documentation index="data.index" data="figure" include-inverse="true" tal-documentation-path="'/client/styleguide/sections/staging/partials/yourDetails.html'"></tal-documentation>
+<tal-documentation index="data.index" data="ctrl" include-inverse="true" tal-documentation-path="'/client/styleguide/sections/staging/partials/basicInfo.html'"></tal-documentation>
+
+<fieldset>
+	<legend>[appBasicInfo] Basic info form</legend>
+
+	<div ng-include="'/client/styleguide/sections/staging/partials/basicInfo.html'"></div>
+</fieldset>
+
+<fieldset>
+	<legend>[appPurchase] Beneficiaries</legend>
+
+	<div ng-include="'client/appPurchase/components/Beneficiaries/Beneficiaries.template.html'"></div>
+</fieldset>
+<fieldset>
+	<legend>[appPurchase] Customer Details</legend>
+
+	<div ng-include="'client/appPurchase/components/customerDetails/customerDetails.template.html'"></div>
+</fieldset>
+<fieldset>
+	<legend>[appPurchase] Customer Details</legend>
+
+	<div ng-include="'client/appPurchase/components/declaration/declaration.template.html'"></div>
+</fieldset>
+<fieldset>
+	<legend>[appPurchase] Purchase Form</legend>
+	<div ng-include="'client/appPurchase/components/purchaseForm/purchaseForm.template.html'"></div>
+</fieldset>
+<fieldset>
+	<legend>[appQualification] Underwriting</legend>
+
+	<div ng-include="'client/appQualification/components/underwriting/underwriting.template.html'"></div>
+</fieldset>
+
+<fieldset>
+	<legend>[appSelectCover] selectCover</legend>
+
+	<div ng-include="'client/appSelectCover/components/selectCover/selectCover.template.html'"></div>
+</fieldset>
+

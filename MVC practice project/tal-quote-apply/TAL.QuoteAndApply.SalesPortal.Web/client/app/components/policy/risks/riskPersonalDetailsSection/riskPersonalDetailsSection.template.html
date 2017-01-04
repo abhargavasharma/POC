@@ -1,0 +1,285 @@
+<div id="personal-details" class="form-section risk-personal-details-section" cg-busy="loadingPromise" read-only-form="readOnly">
+<div class="container-fluid">
+    <tal-form-updating-indicator promise="updatingPromise"></tal-form-updating-indicator>
+</div>
+
+
+<div ng-form="ownerDetailsForm">
+    <div class="row">
+        <h3 class="col-sm-4">Policy Owner</h3>
+    </div>
+
+    <div class="container-fluid">
+        <hr/>
+        <div class="row" ng-show="isFundNameVisible">
+            <div class="form-group col-sm-12" show-errors tal-inline-submit="submitForm()">
+                <label class="control-label">Fund Name</label>
+                <input type="text" class="form-control" name="fundName" ng-readonly="!isFundNameEditable"
+                       ng-model="ownerDetails.fundName" maxlength="25"
+                       tal-server-validate="ownerDetailsRequest.fundName">
+                <tal-form-error ng-form-model="ownerDetailsForm.fundName"></tal-form-error>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group" show-errors tal-inline-submit="submitForm()">
+                    <label class="control-label">Title</label>
+                    <select class="form-control" name="title"
+                            tal-server-validate="ownerDetailsRequest.title"
+                            ng-model="ownerDetails.title" ng-options="t for t in titles">
+                        <option value="" disabled selected>Please select</option>
+                    </select>
+                    <tal-form-error ng-form-model="ownerDetailsForm.title"></tal-form-error>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group" show-errors tal-inline-submit="submitForm()">
+                    <label class="control-label">Name</label>
+                    <input type="text" class="form-control" name="firstName"
+                           ng-model="ownerDetails.firstName" maxlength="22"
+                           tal-server-validate="ownerDetailsRequest.firstName">
+                    <tal-form-error ng-form-model="ownerDetailsForm.firstName"></tal-form-error>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group" show-errors tal-inline-submit="submitForm()">
+                    <label class="control-label">Surname</label>
+                    <input type="text" class="form-control" name="surname"
+                           ng-model="ownerDetails.surname" maxlength="22"
+                           tal-server-validate="ownerDetailsRequest.surname">
+                    <tal-form-error ng-form-model="ownerDetailsForm.surname"></tal-form-error>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-show="externalRefRequired" class="container-fluid">
+        <h3>External Customer Details</h3>
+        <hr/>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group" show-errors tal-inline-submit="submitForm()">
+                    <label class="control-label">{{ externalRefLabel || "External Customer Reference"}}</label>
+                    <input type="text" class="form-control" name="externalCustomerReference"
+                           ng-model="ownerDetails.externalCustomerReference" maxlength="20"
+                           tal-server-validate="ownerDetailsRequest.externalCustomerReference">
+                    <tal-form-error ng-form-model="ownerDetailsForm.externalCustomerReference"></tal-form-error>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <h3>Home Address</h3>
+        <hr/>
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="form-group" show-errors tal-inline-submit="submitForm()">
+                    <label class="control-label">Address</label>
+                    <input type="text" class="form-control" name="address"
+                           ng-model="ownerDetails.address" maxlength="50"
+                           tal-server-validate="ownerDetailsRequest.address">
+                    <tal-form-error ng-form-model="ownerDetailsForm.address"></tal-form-error>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group" show-errors tal-inline-submit="submitForm()">
+                    <label class="control-label">Suburb</label>
+                    <input type="text" class="form-control" name="suburb"
+                           ng-model="ownerDetails.suburb" maxlength="20"
+                           tal-server-validate="ownerDetailsRequest.suburb">
+                    <tal-form-error ng-form-model="ownerDetailsForm.suburb"></tal-form-error>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group" show-errors tal-inline-submit="submitForm()">
+                    <label class="control-label">State</label>
+                    <select class="form-control" name="state"
+                            ng-model="ownerDetails.state"
+                            tal-server-validate="ownerDetailsRequest.state"
+                            ng-options="s for s in states">
+                        <option value="" disabled selected>Please select</option>
+                    </select>
+                    <tal-form-error ng-form-model="ownerDetailsForm.state"></tal-form-error>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group" show-errors tal-inline-submit="submitForm()">
+                    <label class="control-label">Postcode</label>
+                    <input type="text" class="form-control" name="postcode"
+                           ng-model="ownerDetails.postcode" maxlength="4"
+                           tal-server-validate="ownerDetailsRequest.postcode">
+                    <tal-form-error ng-form-model="ownerDetailsForm.postcode"></tal-form-error>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <h3>Contact</h3>
+        <hr/>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group" show-errors tal-inline-submit="submitForm()">
+                    <label class="control-label">Mobile</label>
+                    <input type="tel" class="form-control" name="mobileNumber"
+                           ng-model="ownerDetails.mobileNumber" maxlength="10"
+                           tal-server-validate="ownerDetailsRequest.mobileNumber">
+                    <tal-form-error ng-form-model="ownerDetailsForm.mobileNumber"></tal-form-error>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group" show-errors tal-inline-submit="submitForm()">
+                    <label class="control-label">Email</label>
+                    <input type="text" class="form-control" name="emailAddress"
+                           ng-model="ownerDetails.emailAddress" maxlength="80"
+                           tal-server-validate="ownerDetailsRequest.emailAddress">
+                    <tal-form-error ng-form-model="ownerDetailsForm.emailAddress"></tal-form-error>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group" show-errors tal-inline-submit="submitForm()">
+                    <label class="control-label">Home</label>
+                    <input type="tel" ng-model-options="{ debounce: 1000 }" class="form-control" name="homeNumber"
+                           ng-model="ownerDetails.homeNumber" maxlength="10"
+                           tal-server-validate="ownerDetailsRequest.homeNumber">
+                    <tal-form-error ng-form-model="ownerDetailsForm.homeNumber"></tal-form-error>
+                </div>
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group" tal-inline-submit="submitForm()">
+                    <label class="control-label">
+                        <input type="checkbox"
+                               name="OwnerExpressConsent"
+                               ng-model="ownerConsentsModel.expressConsent"
+                               tal-server-validate="ownerConsentsModel.expressConsent"/>
+                        <span for="OwnerExpressConsent">Does the owner consent to receive marketing material from TAL?</span>
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <uib-accordion close-others="false" class="form-panel dnc-options">
+                    <uib-accordion-group class="accordion-group-padding" is-open="ownerDncOpen">
+                        <uib-accordion-heading class="panel-heading">
+                            <div class="col-md-1"><i class="fa fa-lg minimise" ng-class="{'fa-minus-square': ownerDncOpen, 'fa-plus-square': !ownerDncOpen}"></i>
+                            </div>
+                            <div class="col-md-11">Do Not Contact Options</div>
+                        </uib-accordion-heading>
+                        <div class="form-group dnc-checkboxes" ng-show="ownerDncOpen">
+                            <label class="control-label">
+                                <input type="checkbox"
+                                       name="AllOwnerDncs"
+                                       ng-click="toggleAllOwnerDncs()"
+                                       ng-checked="areAllDncsForOwnerSelected"/>
+                                <span for="AllOwnerDncs">All</span>
+                            </label>
+                            <label class="control-label" ng-repeat="dnc in ownerConsentsModel.dncs">
+                                <input type="checkbox"
+                                       name="dnc.name"
+                                       ng-change="dncOptionToggled()"
+                                       ng-model="dnc.selected"
+                                       tal-server-validate="dnc.selected"
+                                       read-only-element="readOnly"/>
+                                <span for="dnc.name" ng-bind="dnc.description"></span>
+                            </label>
+                        </div>
+                    </uib-accordion-group>
+                </uib-accordion>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ng-form="lifeInsuredDetailsForm" ng-show="isOwnerSeparateFromLifeInsured">
+    <div class="row">
+        <div class="col-sm-8">
+            <h3 class="col-sm-4">Life Insured</h3>
+        </div>
+        <div class="col-sm-4 text-right" ng-if="!readOnly">
+            <div class="btn-group" uib-dropdown is-open="status.isopen">
+                <a id="single-button" class="btn-secondary action-icon" uib-dropdown-toggle ng-disabled="disabled">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <div uib-dropdown-menu role="menu" aria-labelledby="single-button" class="dropdown-menu-right">
+                    <div role="menuitem">
+                        <a ng-click="copyRiskDetails()">
+                            <i class="fa fa-files-o"></i>Pre-fill based on policy owner
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <hr/>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group" show-errors tal-inline-submit="submitForm()">
+                    <label class="control-label">Title</label>
+                    <select class="form-control" name="title"
+                            tal-server-validate="lifeInsuredDetailsRequest.title"
+                            ng-class="{'highlight' : lifeInsuredDetails.highlight}"
+                            ng-model="lifeInsuredDetails.title" ng-options="t for t in titles">
+                        <option value="" disabled selected>Please select</option>
+                    </select>
+                    <tal-form-error ng-form-model="lifeInsuredDetailsForm.title"></tal-form-error>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group" show-errors tal-inline-submit="submitForm()">
+                    <label class="control-label">Name</label>
+                    <input type="text" class="form-control" name="firstName"
+                           ng-model="lifeInsuredDetails.firstName" maxlength="22"
+                           ng-class="{'highlight' : lifeInsuredDetails.highlight}"
+                           tal-server-validate="lifeInsuredDetailsRequest.firstName">
+                    <tal-form-error ng-form-model="lifeInsuredDetailsForm.firstName"></tal-form-error>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group" show-errors tal-inline-submit="submitForm()">
+                    <label class="control-label">Surname</label>
+                    <input type="text" class="form-control" name="surname"
+                           ng-model="lifeInsuredDetails.surname" maxlength="22"
+                           ng-class="{'highlight' : lifeInsuredDetails.highlight}"
+                           tal-server-validate="lifeInsuredDetailsRequest.surname">
+                    <tal-form-error ng-form-model="lifeInsuredDetailsForm.surname"></tal-form-error>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group" show-errors tal-inline-submit="submitForm()">
+                    <label class="control-label">Postcode</label>
+                    <input type="text" class="form-control" name="postcode"
+                           ng-model="lifeInsuredDetails.postcode" maxlength="4"
+                           ng-class="{'highlight' : lifeInsuredDetails.highlight}"
+                           tal-server-validate="lifeInsuredDetailsRequest.postcode">
+                    <tal-form-error ng-form-model="lifeInsuredDetailsForm.postcode"></tal-form-error>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group" tal-inline-submit="submitForm()">
+                    <label class="control-label">
+                        <input type="checkbox"
+                               name="lifeInsuredExpressConsent"
+                               ng-model="lifeInsuredConsentsModel.expressConsent"
+                               ng-class="{'highlight' : lifeInsuredDetails.highlight}"
+                               tal-server-validate="lifeInsuredConsentsModel.expressConsent"/>
+                        <span for="ExpressConsent">Does the life insured consent to receive marketing material from TAL?</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>

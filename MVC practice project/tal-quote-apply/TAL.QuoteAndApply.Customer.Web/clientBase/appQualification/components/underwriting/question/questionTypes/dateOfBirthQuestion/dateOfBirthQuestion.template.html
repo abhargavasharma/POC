@@ -1,0 +1,28 @@
+<div class="tal-date-of-birth-question">
+    <form name="dateOfBirthForm" novalidate>
+        <fieldset>
+            <input id="dateOfBirth" type="tel" class="form-control" name="dateOfBirth"
+                   ng-model="ctrl.dateOfBirth"
+                   autocomplete="off"
+                   required
+                   tal-server-validate="basicInfoViewModel.dateOfBirth"
+                   tal-date tal-date-mask-format="DDMMYYYY"
+                   placeholder="DD/MM/YYYY"
+                   ui-mask="99/99/9999"
+                   maxlength="10">
+            <tal-form-input-error show-server-error-for="dateOfBirthForm.dateOfBirth"></tal-form-input-error>
+            <tal-form-input-error show-error-for="dateOfBirthForm.dateOfBirth" show-error-when="required">Date of birth is required</tal-form-input-error>
+            <tal-form-input-error show-error-for="dateOfBirthForm.dateOfBirth" show-error-when="invalidFormat">Date of birth is invalid</tal-form-input-error>
+
+        </fieldset>
+
+        <fieldset class="underwriting-toolbar submit-buttons text-center">
+            <button type="button" class="tal-btn--primary"
+                    ng-disabled="dateOfBirthForm.$invalid"
+                    ng-click="ctrl.onContinueClick()">
+                Continue
+            </button>
+        </fieldset>
+    </form>
+
+</div>

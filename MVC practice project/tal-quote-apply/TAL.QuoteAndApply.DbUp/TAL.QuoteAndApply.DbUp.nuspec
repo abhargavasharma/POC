@@ -1,0 +1,17 @@
+﻿<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>TAL.QuoteAndApply.DbUp</id>
+    <title>TAL Quote And Apply - Database Scripts</title>
+    <version>1.0.0</version>
+    <authors>TAL</authors>
+    <owners>TAL</owners>
+    <licenseUrl>https://tdgitlab/tal/tal-quote-apply</licenseUrl>
+    <projectUrl>https://tdgitlab/tal/tal-quote-apply</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Database deployment scripts for the TAL.QuoteAndApply application.</description>
+  </metadata>
+  <files>
+    <file src="\..\lib\DbUp\**" />
+  </files>
+</package>

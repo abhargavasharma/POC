@@ -1,0 +1,61 @@
+<div class="tal-personal-details-form" ng-form="personalDetailsForm" novalidate>
+  <h1>Policy Owner Details <span class="description">(optional)</span></h1>
+  <hr/>
+
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="form-group" show-errors>
+        <label class="control-label">Title</label>
+        <select class="form-control" name="title"
+                tal-server-validate="createClientRequest.policyOwner.personalDetails.title"
+                ng-model="personalDetails.title"
+                ng-options="t for t in titles">
+          <option value="" disabled selected>Please select</option>
+        </select>
+        <tal-form-error ng-form-model="personalDetailsForm.title"></tal-form-error>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="form-group" show-errors>
+        <label class="control-label">Name</label>
+        <input type="text" class="form-control" name="firstName"
+               ng-model="personalDetails.firstName" maxlength="200"
+               tal-server-validate="createClientRequest.policyOwner.personalDetails.firstName">
+        <tal-form-error ng-form-model="personalDetailsForm.firstName"></tal-form-error>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="form-group" show-errors>
+        <label class="control-label">Surname</label>
+        <input type="text" class="form-control" name="surname"
+               ng-model="personalDetails.surname" maxlength="200"
+               tal-server-validate="createClientRequest.policyOwner.personalDetails.surname">
+        <tal-form-error ng-form-model="personalDetailsForm.surname"></tal-form-error>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="form-group" show-errors>
+        <label class="control-label">Phone</label>
+        <input type="tel" class="form-control" name="phoneNumber" ng-model="personalDetails.phoneNumber"
+               tal-server-validate="createClientRequest.policyOwner.personalDetails.phoneNumber"
+               maxlength="10" placeholder="Enter 10 Digits including area code">
+        <tal-form-error ng-form-model="personalDetailsForm.phoneNumber"></tal-form-error>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="form-group" show-errors>
+        <label class="control-label">State</label>
+        <select class="form-control" name="state"
+                ng-model="personalDetails.state"
+				tal-server-validate="createClientRequest.policyOwner.personalDetails.state"
+                ng-options="s for s in states">
+          <option value="" disabled selected>Please select</option>
+        </select>
+        <tal-form-error ng-form-model="personalDetailsForm.state"></tal-form-error>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>

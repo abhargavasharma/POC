@@ -1,0 +1,139 @@
+<form cg-busy="loadingPromise" name="policyForm" ng-submit="submit()" novalidate >
+    <div class="nav form-section">
+
+        <div class="tal-policy-risk-edit">
+            
+            <div class="section-menu">
+                <div class="section-menu-item quote-reference-info">
+                    <div>Quote #: <span class="ref-no">{{vm.quoteReferenceNumber}}</span></div>
+                    <div class="status">Status: {{vm.statusLabel}}</div>
+                    <div class="last-updated">Last updated: {{vm.lastUpdated | date: 'dd.MM.yy'}}</div>
+                </div>
+
+                <div class="risk-menu-section" ng-repeat="risk in vm.risks">
+                    <tal-policy-progress-select ng-if="isAgentAccessing()" quote-reference-number="vm.quoteReferenceNumber"></tal-policy-progress-select>
+                    <div class="secondary-menu-group" ng-hide="validateClientName(risk.firstName, risk.surname)">
+                        New Customer
+                    </div>
+                    <div class="secondary-menu-group" ng-hide="!validateClientName(risk.firstName, risk.surname)">
+                        {{risk.firstName}} {{risk.surname}}
+                    </div>
+                    <tal-section-menu-item section="risk.sections.personalDetails" hide-sections="hideAllSections" is-open-section-valid="isOpenSectionValid" risk="risk"></tal-section-menu-item>                    
+                    <tal-section-menu-item section="risk.sections.ratingFactors"   hide-sections="hideAllSections" is-open-section-valid="isOpenSectionValid" risk="risk"></tal-section-menu-item>
+                    <tal-section-menu-item section="risk.sections.underwriting" hide-sections="hideAllSections" is-open-section-valid="isOpenSectionValid" risk="risk"></tal-section-menu-item>
+
+                    <tal-section-menu-item section="risk.sections.insurancePlans" hide-sections="hideAllSections" is-open-section-valid="isOpenSectionValid" risk="risk">
+                        <div class="sub-menu-items ownershipMenu" ng-hide="!isOwnerTypeSelectAvailable()">
+                            <label class="control-label">Ownership</label>
+                            <select class="form-control" name="ownerType" ng-change="ownerChanged()"
+                                    read-only-element="vm.readOnly"
+                                    tal-input-propagation
+                                    ng-model="vm.ownerType"
+                                    ng-options="o.value as o.displayName for o in ownerTypes" ng-disabled="vm.readOnly" ></select>
+                        </div>
+
+                        <tal-premium-summary quote-reference-number="vm.quoteReferenceNumber" risk="risk"></tal-premium-summary>
+                    </tal-section-menu-item>
+                    <tal-section-menu-item section="risk.sections.beneficiaries"      hide-sections="hideAllSections" is-open-section-valid="isOpenSectionValid" risk="risk"></tal-section-menu-item>
+                    <tal-section-menu-item section="risk.sections.payment"            hide-sections="hideAllSections" is-open-section-valid="isOpenSectionValid" risk="risk"></tal-section-menu-item>
+                    <tal-section-menu-item section="risk.sections.noteSection"        hide-sections="hideAllSections" is-open-section-valid="isOpenSectionValid" risk="risk"></tal-section-menu-item>
+                    <tal-section-menu-item section="risk.sections.interactionSection" hide-sections="hideAllSections" is-open-section-valid="isOpenSectionValid" risk="risk" ></tal-section-menu-item>
+                    <tal-section-menu-item section="risk.sections.sendQuoteSection"   hide-sections="hideAllSections" is-open-section-valid="isOpenSectionValid" risk="risk" ></tal-section-menu-item>
+                </div>
+
+                <tal-refer-to-underwriter ng-if="isFullAgentAccess()" quote-reference-number="vm.quoteReferenceNumber"></tal-refer-to-underwriter>
+                <tal-complete-referral ng-if="isPolicyReferredToUnderwriter() && isUnderwriterAccessing()" quote-reference-number="vm.quoteReferenceNumber"></tal-complete-referral>
+
+                <div ng-if="!isPolicyRaisedToPolicyAdminSystem()" class="section-menu-item quote-reference-info" >
+                    <button id="btnActivateReview" type="button" class="btn btn-primary btn-fit" ng-click="activateReview()">
+                        <span  ng-if="!isPolicyRaisedToPolicyAdminSystem()">Set policy to 'in-force'</span>
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="widget-container">
+                <tal-section-container section="risk.sections.underwriting" risk="risk" is-model-valid="true" ng-repeat="risk in vm.risks">
+                    <tal-risk-underwriting-section
+                        section="risk.sections.underwriting"
+                        quote-reference-number="vm.quoteReferenceNumber"
+                        risk="risk"
+                        read-only="vm.readOnly">
+                    </tal-risk-underwriting-section>
+                    
+                </tal-section-container>
+
+                <tal-section-container section="risk.sections.insurancePlans" risk="risk" is-model-valid="true" ng-repeat="risk in vm.risks">
+                    <tal-risk-insurance-plans-section validate-sections-and-submit="validateSectionsAndSubmit()"
+                                                      section="risk.sections.insurancePlans"
+                                                      quote-reference-number="vm.quoteReferenceNumber"
+                                                      risk="risk"
+                                                      read-only="vm.readOnly">
+                    </tal-risk-insurance-plans-section>
+                </tal-section-container>
+
+                <tal-section-container section="risk.sections.personalDetails" risk="risk" is-model-valid="true" ng-repeat="risk in vm.risks">
+                    <tal-risk-personal-details-section quote-reference-number="vm.quoteReferenceNumber"
+                                                       risk="risk"
+                                                       owner-type="vm.ownerType"
+                                                       section="risk.sections.personalDetails"
+                                                       read-only="vm.readOnly"
+                                                       external-ref-required="vm.externalRefRequired"
+                                                       external-ref-label ="vm.externalRefLabel">
+                    </tal-risk-personal-details-section>
+
+                </tal-section-container>
+
+                <tal-section-container section="risk.sections.ratingFactors" risk="risk" is-model-valid="true" ng-repeat="risk in vm.risks">
+                    <tal-risk-rating-factors-section quote-reference-number="vm.quoteReferenceNumber"
+                                                     risk="risk"
+                                                     section="risk.sections.ratingFactors"
+                                                     read-only="vm.readOnly">
+                    </tal-risk-rating-factors-section>
+                </tal-section-container>
+                <tal-section-container section="risk.sections.beneficiaries" risk="risk" is-model-valid="true" ng-repeat="risk in vm.risks">
+                    <tal-risk-beneficiaries-section quote-reference-number="vm.quoteReferenceNumber"
+                                                    risk="risk"
+                                                    section="risk.sections.beneficiaries"
+                                                    read-only="vm.readOnly">
+                    </tal-risk-beneficiaries-section>
+                </tal-section-container>
+                <tal-section-container section="risk.sections.payment" risk="risk" is-model-valid="true" ng-repeat="risk in vm.risks">
+                    <tal-risk-payment-section quote-reference-number="vm.quoteReferenceNumber"
+                                              risk="risk"
+                                              section="risk.sections.payment"
+                                              read-only="vm.readOnly">
+                    </tal-risk-payment-section>
+                </tal-section-container>
+                <tal-section-container section="risk.sections.noteSection" risk="risk" is-model-valid="true" ng-repeat="risk in vm.risks">
+                    <tal-policy-notes-texts quote-reference-number="vm.quoteReferenceNumber"
+                                             read-only="vm.readOnly" risk="risk" section="risk.sections.noteSection">
+                    </tal-policy-notes-texts>
+                </tal-section-container>
+                <tal-section-container section="risk.sections.interactionSection" risk="risk"  is-model-valid="true" ng-repeat="risk in vm.risks">
+                    <tal-policy-interactions quote-reference-number="vm.quoteReferenceNumber"
+                                           read-only="vm.readOnly" risk="risk" section="risk.sections.interactionSection">
+                    </tal-policy-interactions>
+                </tal-section-container>
+
+                <tal-section-container section="risk.sections.sendQuoteSection" risk="risk"  is-model-valid="true" ng-repeat="risk in vm.risks">
+                    <tal-quote-send quote-reference-number="vm.quoteReferenceNumber" read-only="vm.readOnly"
+                                    risk="risk" section="risk.sections.sendQuoteSection">
+                    </tal-quote-send>
+                </tal-section-container>
+
+                <tal-section-container section="vm.reviewSection" is-model-valid="true" ng-repeat="risk in vm.risks">
+                    <tal-policy-review-section inforce-allowed="isFullAgentAccess()"
+                                               validate-sections-and-submit="validateSectionsAndSubmit()"
+                                               section="vm.reviewSection"
+                                               quote-reference-number="vm.quoteReferenceNumber"
+                                               risk="risk" status="vm.status">
+                    </tal-policy-review-section>
+                </tal-section-container>
+
+                <tal-policy-notes ng-if="isNoteSectionAvailable()" quote-number="quoteNumber"></tal-policy-notes>
+            </div>
+        </div>
+
+    </div>
+</form>

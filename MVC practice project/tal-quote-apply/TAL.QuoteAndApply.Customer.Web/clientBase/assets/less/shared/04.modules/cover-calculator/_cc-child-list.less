@@ -1,0 +1,139 @@
+.cc-child-list {
+	.cc-cdl__error {
+		//color: $error-red;
+		margin: 0;
+
+		//@include font-size($base-font-size - 3);
+	}
+
+	.cc-cdl__list {
+		padding-left: 0;
+		list-style-type: none;
+		list-style-image: none;
+
+		width: 100%;
+	}
+
+	.cc-cdl__child {
+		.clearfix;
+
+		border-top: 1px solid #d4d4d4;
+		padding: 15px 0;
+		margin: 0;
+
+		&:last-child {
+			border-bottom: 1px solid #d4d4d4;
+		}
+
+		.cc-cdl__label-wrapper {
+			.bp(0, xs, {
+				.clearfix;
+			});
+		}
+
+
+		.cc-cdl__child-label {
+			float: left;
+
+			line-height: 42px;
+
+			width: 40%;
+
+			.bp(s, {
+				width: 15%;
+			});
+		}
+
+		.cc-cdl__child-age {
+			float: left;
+			width: 60%;
+
+			.bp(s, {
+				float: left;
+				width: calc(~"25% - 40px");
+				margin-left: 20px;
+				margin-right: 20px;
+			});
+
+			select {
+				width: 100%;
+				min-width: inherit;
+
+				&.ng-invalid {
+					//background-color: $error-red-faint;
+				}
+			}
+		}
+
+		.cc-cdl__child-education-type {
+			float: left;
+			width: 100%;
+
+			margin-top: 20px;
+
+			.bp(s, {
+				margin-top: 0;
+				width: 60%;
+			});
+
+			.cc-radio-slider {
+				width: 100%;
+			}
+		}
+	}
+}
+
+.cc-question.is-assumptions-page {
+	.cc-child-list {
+		.cc-cdl__error {
+			.bp(m, {
+				margin-top: 0;
+				float: right;
+				width: calc(~"60% - 20px");
+			});
+
+			.bp(l, {
+				margin-top: 0;
+				width: calc(~"50% - 20px");
+			});
+		}
+
+		.cc-cdl__list {
+			max-width: none;
+
+			.bp(s, s, {
+				margin-top: 20px;
+			});
+		}
+
+		.cc-cdl__child {
+			.bp(m, {
+				.cc-cdl__child-label {
+					width: 40%;
+				}
+
+				.cc-cdl__child-age {
+					width: calc(~"20% - 40px");
+				}
+
+				.cc-cdl__child-education-type {
+					width: 40%;
+				}
+			});
+
+			.bp(l, {
+				.cc-cdl__child-label {
+					width: 50%;
+				}
+
+				.cc-cdl__child-age {
+					width: calc(~"15% - 40px");
+				}
+
+				.cc-cdl__child-education-type {
+					width: 35%;
+				}
+			});
+		}
+	}
+}

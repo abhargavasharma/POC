@@ -1,0 +1,17 @@
+<div class="tal-policy-notes" ng-class="{'expanded': expanded, 'collapsed': !expanded}">
+    <div class="toolbar-header" ng-click="toggleExpanded()">
+        <h4 class="title"><i class="fa fa-file-text-o"></i> Customer Notes</h4>
+        <tal-form-updating-indicator promise="updatingPromise" error-message="Not updated"></tal-form-updating-indicator>
+        <span class="show-notes-toggle">
+            <span ng-if="!expanded"><i class="fa fa-chevron-up action-icon btn-secondary" title="Show Notes"></i></span>
+            <span ng-if="expanded"><i class="fa fa-chevron-down action-icon btn-secondary" title="Hide Notes"></i></span>
+        </span>
+    </div>
+    <div ng-show="expanded" tal-inline-submit="updateNote()">
+        <textarea id="customerNotesText" name="customerNotes"
+                  class="form-control note-textarea"
+                  ng-model="sessionPolicyNote.noteText"
+                  tal-server-validate="noteUpdateRequest.noteText"
+                  nmaxlength="2000"></textarea>
+    </div>
+</div>

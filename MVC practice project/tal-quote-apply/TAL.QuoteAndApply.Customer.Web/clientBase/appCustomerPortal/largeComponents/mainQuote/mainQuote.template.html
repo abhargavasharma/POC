@@ -1,0 +1,15 @@
+<div class="main-quote inverse-colors" ng-cloak ng-hide="ctrl.hideQuoteReference && ctrl.hideQuotePremium" ng-class="{'show-mobile-footer': ctrl.forceShowFooter}">
+    <div class="main-quote-header cf">
+        <div class="main-quote-number">
+            <span class="main-quote-title">QUOTE #</span>
+            <span id="headerQuoteReference" class="main-quote-id" ng-bind="ctrl.quoteReferenceNumber"></span>
+        </div>
+        <tal-app-save ng-hide="ctrl.hideSaveButton"  quote-reference-number="ctrl.quoteReferenceNumber" saved-status="ctrl.savedStatus"></tal-app-save>
+    </div>
+    <div class="main-quote-values" ng-hide="ctrl.hideQuotePremium">
+        <div class="main-quote-discount" ng-show="ctrl.discount" ng-animate="'slidefade'">
+          incl. <strong><tal-figure-simple value="ctrl.discount"></tal-figure-simple></strong> Multi policy discount
+        </div>
+        <tal-figure value="ctrl.totalPremium" period="ctrl.premiumPeriod" type="total"></tal-figure>
+    </div>
+</div>

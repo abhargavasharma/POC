@@ -1,0 +1,55 @@
+<div id="payment-form" class="form-section form-section-payment" ng-form="selfManagedSuperFundPayment" cg-busy="loadingPromise" read-only-form="policyIsReadonlyOrPaymentDetailsReadOnly()">
+    <div class="container-fluid">
+        <hr/>
+        <div class="form-group form-title row">
+            <label class="col-xs-3">Payment Amount:</label>
+            <div class="col-xs-9">
+                <label ng-bind="paymentModel.amount | currency:'$':2"></label>
+            </div>
+        </div>
+        <p>Customers may elect to pay for their premiums via their Self Managed Super Funds. All benefits are applicable.</p>
+        <hr/>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group" show-errors>
+                    <label class="control-label">Account Name</label>
+                    <input id="AccountNameDDInput" type="text" class="form-control" name="accountName" maxlength="32"
+                           ng-model="paymentModel.accountName" ng-change="setPaymentsChanged()"
+                           tal-server-validate="selfManagedSuperFundPayment.accountName">
+                    <tal-form-error ng-form-model="selfManagedSuperFundPayment.accountName"></tal-form-error>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group" show-errors>
+                    <label class="control-label">BSB Number</label>
+                    <input id="BsbNumberDDInput" type="text" class="form-control" name="bsbNumber" maxlength="6"
+                           ng-model="paymentModel.bsbNumber" ng-change="setPaymentsChanged()"
+                           tal-server-validate="directDebitPayment.bSBNumber">
+                    <tal-form-error ng-form-model="selfManagedSuperFundPayment.bsbNumber"></tal-form-error>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group" show-errors>
+                    <label class="control-label">Account Number</label>
+                    <input id="AccountNumberDDInput" type="text" class="form-control" name="accountNumber" maxlength="9"
+                           ng-model="paymentModel.accountNumber" ng-change="setPaymentsChanged()"
+                           tal-server-validate="selfManagedSuperFundPayment.accountNumber">
+                    <tal-form-error ng-form-model="selfManagedSuperFundPayment.accountNumber"></tal-form-error>
+                </div>
+            </div>
+        </div>
+        <div class="row bottom-section pull-right">
+            <div class="col-sm-12" ng-hide="paymentModel.isValidForInforce">
+                <button id="btnConfirm" type="button" class="btn btn-tertiary" ng-click="validateForm()" ng-disabled="readOnly">Confirm Payment Details</button>
+
+            </div>
+            <div class="col-sm-12" ng-show="paymentModel.isValidForInforce">
+                <button id="btnEdit" type="button" class="btn btn-tertiary" ng-click="editForm()" ng-disabled="readOnly">Edit Payment Details</button>
+            </div>
+        </div>
+    </div>
+</div>

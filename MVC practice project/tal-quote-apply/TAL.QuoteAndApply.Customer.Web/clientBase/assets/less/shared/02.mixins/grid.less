@@ -1,0 +1,346 @@
+// ==============================================================
+// MIXINS - GRID SYSTEM
+// 
+// The classes in this grid system should be used as abstract classes
+// to extend specific classes used in the layout.
+// ==============================================================
+
+@grid-columns: 12;
+@grid-gutter: 16px;
+@grid-max-width: unit(@bp-max-l, px);
+
+// Utility variable — you should never need to modify this
+@grid-system-width: @grid-columns * 1px;
+@grid-padding: @grid-gutter * 0.5;
+
+// Our row container
+.row(
+  @grid-max-width: @grid-max-width, 
+  @grid-padding: 0
+) {
+  .clearfix;
+  box-sizing: border-box;
+
+  max-width: @grid-max-width;
+  margin: 0 auto;
+  padding: 0 @grid-padding;
+}
+
+// Our column container
+.column(
+  @cols,
+  @grid-padding: @grid-padding, 
+  @grid-columns: @grid-columns, 
+  @break-at: s
+) {
+  box-sizing: border-box;
+  position: relative;
+
+  .bp(@break-at, {
+    float: left;
+
+    width: 100% * (@cols / @grid-columns);
+
+    & when (@cols = @grid-columns) {
+      padding: 0;
+    }
+
+    // When not full width, add appropriate padding
+    & when not (@cols = @grid-columns) {
+      padding: 0 @grid-padding;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  });
+}
+
+// The offset margins
+.offset(
+  @cols,
+  @grid-padding: @grid-padding, 
+  @grid-columns: @grid-columns, 
+  @break-at: s
+) {
+  .bp(@break-at, {
+    margin-left: 100% * (@cols / @grid-columns);
+  });
+}
+
+.column-reset {
+  width: 100%;
+  padding: 0;
+}
+
+
+// Concrete classes
+// ----------------
+// 
+// These can be used directly int he markup, but it's preferable to
+// use the abstract classes by extending them.
+// ========================================================================
+
+.row,
+.row-top-space,
+.row-bottom-space {
+  .row();
+}
+
+.row-top-space {
+  margin-top: 20px;
+}
+
+.row-bottom-space {
+  margin-bottom: 20px;
+  
+}
+
+// Not that to be compatible with the bootstrap grid naming, there's a special case for bp 'm'.
+.grid-generator (@index, @bp: xs) when (@index > 0) {
+
+  & when (@bp = xxs) {
+    .col-xxs-@{index} {
+      .column(
+        @cols: @index,
+        @break-at: @bp
+      );
+    }
+  }
+
+  & when (@bp = xs) {
+    .col-xs-@{index} {
+      .column(
+        @cols: @index,
+        @break-at: @bp
+      );
+    }
+  }
+  & when (@bp = s) {
+    .col-sm-@{index} {
+      .column(
+        @cols: @index,
+        @break-at: @bp
+      );
+    }
+  }
+
+  & when (@bp = m) {
+    .col-md-@{index} {
+      .column(
+        @cols: @index,
+        @break-at: @bp
+      );
+    }
+  }
+
+  & when (@bp = l) {
+    .col-lg-@{index} {
+      .column(
+        @cols: @index,
+        @break-at: @bp
+      );
+    }
+  }
+  & when (@bp = xl) {
+    .col-xl-@{index} {
+      .column(
+        @cols: @index,
+        @break-at: @bp
+      );
+    }
+  }
+
+  .grid-generator(@index - 1, @bp);
+}
+
+// Following BP order is vital for proper class interaction.
+.grid-generator(@grid-columns, xxs);
+.grid-generator(@grid-columns, xs);
+.grid-generator(@grid-columns, s);
+.grid-generator(@grid-columns, m);
+.grid-generator(@grid-columns, l);
+.grid-generator(@grid-columns, xl);
+
+// Helpers to force break on certain breakpoints
+.mxn-clr-left (@bp){
+  .bp(@bp, {
+     clear:left;
+  });
+}
+
+.mxn-clr-none (@bp){
+  .bp(@bp, {
+     clear:none;
+  });
+}
+
+.mxn-no-padding-left (@bp-min, @bp-max){
+  .bp(@bp-min, @bp-max, {
+    padding-left:0;
+  });
+}
+
+
+
+.col-xxs-clear-left{
+  .mxn-clr-left(xxs);
+}
+.col-xs-clear-left{
+  .mxn-clr-left(xs);
+}
+.col-s-clear-left{
+  .mxn-clr-left(s);
+}
+.col-m-clear-left{
+  .mxn-clr-left(m);
+}
+.col-l-clear-left{
+  .mxn-clr-left(l);
+}
+.col-xl-clear-left{
+  .mxn-clr-left(xl);
+}
+
+.col-xxs-clear-none{
+  .mxn-clr-none(xxs);
+}
+.col-xs-clear-none{
+  .mxn-clr-none(xs);
+}
+.col-s-clear-none{
+  .mxn-clr-none(s);
+}
+.col-m-clear-none{
+  .mxn-clr-none(m);
+}
+.col-l-clear-none{
+  .mxn-clr-none(l);
+}
+.col-xl-clear-none{
+  .mxn-clr-none(xl);
+}
+
+
+// Not that to be compatible with the bootstrap grid naming, there's a special case for bp 'm'.
+.offset-generator (@index, @bp: xs) when (@index >= 0) {
+
+  & when (@bp = xxs) {
+    .offset-xxs-@{index} {
+      .offset(
+        @cols: @index,
+        @break-at: @bp
+      );
+    }
+  }
+
+  & when (@bp = xs) {
+    .offset-xs-@{index} {
+      .offset(
+        @cols: @index,
+        @break-at: @bp
+      );
+    }
+  }
+  & when (@bp = s) {
+    .offset-sm-@{index} {
+      .offset(
+        @cols: @index,
+        @break-at: @bp
+      );
+    }
+  }
+
+  & when (@bp = m) {
+    .offset-md-@{index} {
+      .offset(
+        @cols: @index,
+        @break-at: @bp
+      );
+    }
+  }
+
+  & when (@bp = l) {
+    .offset-lg-@{index} {
+      .offset(
+        @cols: @index,
+        @break-at: @bp
+      );
+    }
+  }
+  & when (@bp = xl) {
+    .offset-xl-@{index} {
+      .offset(
+        @cols: @index,
+        @break-at: @bp
+      );
+    }
+  }
+
+  .offset-generator(@index - 1, @bp);
+}
+
+// Following BP order is vital for proper class interaction.
+.offset-generator(@grid-columns, xxs);
+.offset-generator(@grid-columns, xs);
+.offset-generator(@grid-columns, s);
+.offset-generator(@grid-columns, m);
+.offset-generator(@grid-columns, l);
+
+// Form grid
+// ===================================
+
+// Form that uses a grid as a layout.
+
+.ios-device {
+    .form-grid {
+        .form-group {
+            label {
+                display: block;
+            }
+        }
+    }
+}
+
+.form-grid {
+  .form-group {
+
+    // tal-col will force a padding everywhere
+    .tal-col {
+      margin-bottom: 20px;
+      padding:0 8px;
+      &:first-child,
+      &:last-child{
+        padding:0 8px;
+      }
+    }
+
+    // Stretching labels but not if they are visually hidden
+    label{
+      width:100%;
+      display: inline-block; // not block, was causing firefox issues
+
+      &.vh{
+        width:1px;
+      }
+    }
+
+    // Any input next to the label should also stretch apart from the DOB 
+    label + * {
+      width:100%;
+      &.form_dob_input{
+        width:36px;
+      }
+      &.form_dob_separator{
+         width:20px;
+      }
+    }
+    label + form-dob {
+      width:auto;
+    }
+  }
+}

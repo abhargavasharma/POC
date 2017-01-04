@@ -1,0 +1,83 @@
+<article>
+	<header>
+		<h1>Read me</h1>
+	</header>
+
+	<section class="sg__card">
+		<header class="sg__card__header">
+			<h2 class="h3">Overview</h2>
+		</header>
+		<div class="sg__family">
+			<p>This styleguide is a library of UI components for TAL Quote & Apply.</p>
+		</div>
+	</section>
+
+	<section class="sg__card">
+		<header class="sg__card__header">
+			<h2 class="h3">Atomic design principles</h2>
+		</header>
+		<div class="sg__family">
+			<p>
+				Atomic design is a UI design paradigm which involves building encapsulated, standalone components, and developing complexity largely by grouping and nesting simpler components. In practice, it involves the development of a library of standard components, much like this styleguide.
+			</p>
+		</div>
+		<div class="sg__family">
+			<p>
+				This library is hierarchical: the most basic components are called <strong>atoms</strong>, because they cannot be divided into simpler components. These for the basic building blocks of the UI, and include simple form fields, buttons, cards, and modals. These should be essentially immutable, their appearance and behavior not changing with their context, expect for a small and predefined set of parameters which form the components interface.
+			</p>
+			<p>
+				More complex <strong>molecules</strong> are built up of atomic subcomponents. 
+			</p>
+			<p>
+				<strong>Organisms</strong> are the most complex elements, formed out of multiple molecules. These generally correspond to full views in the UI.
+			</p>
+		</div>
+		<div class="sg__family">
+			<p>
+				Diligently employing this paradigm can improve front end codebases in several key ways:
+			</p>
+			<ul>
+				<li>
+					<strong>Scalability.</strong> New components are generally just collections of existing components, so minimal additional work or code is required to add views. 
+				</li>
+				<li>
+					<strong>Consistency.</strong> Most UI elements across the project should be instances of a UI component from the styleguide, and hence have a well defined interface and form. They can easily be compared to the styleguide to judge whether they have been correctly used.
+				</li>
+				<li>
+					<strong>Testability.</strong> Due to the encapsulated nature of components, especially atomic ones, it's easy set up unit tests, markup tests, and and even visual regression tests for the styleguide components.
+				</li>
+				<li>
+					<strong>Clarity of design.</strong> Complexity in the UI arises largely out of explicit composition, with minimal case-specific code. This makes it easy to reason about the design and how it has been translated into code.
+				</li>
+			</ul>
+		</div>
+	</section>
+
+	<section class="sg__card">
+		<header class="sg__card__header">
+			<h2 class="h3">Local development process</h2>
+		</header>
+
+		<div class="sg__family">
+			<pre hljs hljs-language="bash">grunt fedServe</pre>
+
+			<p>This will make the styleguide available at localhost:8000, and will watch the project files for changes, rebuilding and updating the served site when they occur.</p>
+
+			<pre hljs hljs-language="bash">grunt fedTpl</pre>
+
+			<p>This creates an Angular JS template cache from the current templates. Run this when new html files are added.</p>
+
+			<pre hljs hljs-language="bash">grunt fedInject</pre>
+
+			<p>This injects the latest css and js assets into the styleguide. Run this when new css and js files are added.</p>
+		</div>
+
+		<div class="sg__family">
+			<h3 class="h6">Preview server</h3>
+
+			<pre hljs hljs-language="bash">grunt fedDeploy</pre>
+
+			<p>This will build the styleguide app and deploy it to the preview server specified in the GruntFile.js. The credentials for the ftp transfer are stored in the .ftppass file</p>
+		</div>
+	</section>
+</article>

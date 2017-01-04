@@ -1,0 +1,80 @@
+﻿@model TAL.QuoteAndApply.Analytics.Models.AdobeHeaderViewModel
+<script>
+    var isDevice = {
+        Android: function () {
+            return navigator.userAgent.match(/Android/i);
+        },
+        AndroidChrome: function () {
+            return window.chrome && navigator.userAgent.match(/Android/i);
+        },
+        BlackBerry: function () {
+            return navigator.userAgent.match(/BlackBerry/i);
+        },
+        iOS: function () {
+            return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+        },
+        Opera: function () {
+            return navigator.userAgent.match(/Opera Mini/i);
+        },
+        Windows: function () {
+            return navigator.userAgent.match(/IEMobile/i);
+        },
+        any: function () {
+            var isany = (isDevice.Android() || isDevice.BlackBerry() || isDevice.iOS() || isDevice.Opera() || isDevice.Windows());
+            return (isany !== null);
+        },
+        touch: function () {
+            return 'ontouchstart' in window || 'onmsgesturechange' in window;
+        }
+    };
+
+    var digitalData = {
+        "page": {
+            "pageInfo": {
+                "pageID": "@Model.UniquePageIdentifier",
+                "pageName": "@Model.PageName",
+                "pageUrl": window.location.href,
+                "issueDate": "@Model.IssueDateString",
+                "updatedDate": "@Model.UpdatedDateString",
+                "brand": "@Model.Brand",
+                "generator": "@Model.Generator",
+                "domain": window.location.hostname,
+                "subDomain": "@Model.SubDomain",
+                "sysEnv": isDevice.any() ? 'Mobile' : 'Desktop',
+                "delayType": "Normal"
+            },
+            "category": {
+                "pageType": "@Model.CategoryPageType"
+            },
+            "productInfo": {}
+        },
+        "user": {
+            "profileInfo": {
+                "membershipType": "@Model.MembershipType",
+                "membershipTypeID": "@Model.MembershipTypeId"
+            }
+        },
+        "version": "1.0",
+        "events": [],
+        "vendor": {
+            "GoogleAnalytics": {
+                "account": "",
+                "eventCategory": ""
+            }
+        }
+    };
+
+    var categories = window.location.pathname.split('/').slice(1);
+
+    if (categories.length > 0) {
+        digitalData.page.category.primaryCategory = categories[0];
+    }
+
+    if (categories.length > 1) {
+        for (var i = 1; i < categories.length; i++) {
+            digitalData.page.category['subCategory' + i] = categories[i];
+        }
+    }
+</script>
+
+<script src="@Model.JavascriptAssetLocation"></script>

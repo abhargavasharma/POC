@@ -1,0 +1,17 @@
+<div class="tal-single-select-question">
+    <div class="row">
+        <tal-single-select-option-buttons options="ctrl.options"
+                                          group-name="{{ctrl.groupName}}"
+                                          ng-model="ctrl.selectedAnswerId"
+                                          column-layout="::ctrl.isColumnLayout"
+                                          on-option-changed="ctrl.optionChanged()"></tal-single-select-option-buttons>
+    </div>
+
+    <div class="row special-options" ng-if="ctrl.specialOptions.length">
+        <tal-single-select-option-buttons options="ctrl.specialOptions"
+                                          group-name="{{ctrl.groupName}}"
+                                          ng-model="ctrl.selectedAnswerId"
+                                          column-layout="::false"
+                                          on-option-changed="ctrl.optionChanged()"></tal-single-select-option-buttons>
+    </div>
+</div>

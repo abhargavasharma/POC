@@ -1,0 +1,212 @@
+.select-cover {
+    .cg-busy-backdrop {
+        opacity: 0.1;
+    }
+
+    .cover-block-container {
+        padding: 0;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .tal-select-product-wrapper {
+        padding-bottom: 10px;
+        .bp(m, {
+            padding-bottom:40px;
+        })
+    }
+
+    .cta-footer {
+        margin-top: 0px;
+        margin-bottom: 40px;
+        padding: 0 10px;
+        line-height: 2em;
+
+        .cover-calculator-link-container {
+            display:none;
+        }
+
+        .cta-content {
+            padding-right: 0;
+            margin-bottom: 20px;
+            min-height: 1px;
+            p {.mxn-font-size(13);}
+            .bp(m, {
+                padding-right: 40px;
+                p {.mxn-font-size(15);}
+            });
+        }
+
+        .bp(m, {
+            margin-top: 40px;
+            .cta-container {
+                margin-top: 40px;
+            }
+            .cover-calculator-link-container {
+                display: block;
+            }
+
+        });
+
+        .tal-btn--primary {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.use-calc-results-confirm {
+    position: relative;
+    z-index: 1;
+}
+
+.tal-card {
+    &.cb-DTH {
+        tal-card-header {
+            padding-left: 11px;
+            border-left: 4px solid @product-color-dth;
+        }
+    }
+
+    &.cb-TRS {
+        tal-card-header {
+            padding-left: 11px;
+            border-left: 4px solid @product-color-trs;
+        }
+    }
+
+    &.cb-TPS {
+        tal-card-header {
+            padding-left: 11px;
+            border-left: 4px solid @product-color-tps;
+            .bp(l, 1150, {
+                h3 { 
+                    .mxn-font-size(15);
+                }
+            })
+        }
+    }
+
+    &.cb-IP {
+        tal-card-header {
+            padding-left: 11px;
+            border-left: 4px solid @product-color-ip;
+        }
+    }
+    tal-card-header {
+        &.is-off {
+            border-left-color: transparent;
+        }
+    }
+}
+
+.cb-TRS {
+    padding-left: -4px;
+
+    .tal-card {
+        tal-card-header {
+            padding-left: 11px;
+            border-left: 4px solid @product-color-trs;
+        }
+
+        &.is-off {
+            tal-card-header {
+                border-left-color: transparent;
+            }
+        }
+
+    }
+}
+
+.cb-TPS {
+    padding-left: -4px;
+
+    .tal-card {
+        tal-card-header {
+            padding-left: 11px;
+            border-left: 4px solid @product-color-tps;
+        }
+
+        &.is-off {
+            tal-card-header {
+                border-left-color: transparent;
+            }
+        }
+    }
+}
+
+.cb-IP {
+    padding-left: -4px;
+
+    .tal-card {
+        tal-card-header {
+            padding-left: 11px;
+            border-left: 4px solid @product-color-ip;
+        }
+
+        &.is-off {
+            tal-card-header {
+                border-left-color: transparent;
+            }
+        }
+    }
+}
+
+.bp(xxs, s, {
+    .cover-block {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .select-cover {
+        tal-cover-product {
+            tal-card-header {
+                h3 {
+                    span {
+                        display: block;
+                        margin-right: 15px;
+                    }
+                }
+            }
+        }
+    }
+});
+
+.bp(m, {
+    .select-cover {
+        .cta-footer {
+            .cta-container {
+                margin-top: 0;
+
+                .error {
+                    line-height: 1.3em;
+                    padding: 10px 0;
+                }
+            }
+        }
+
+        tal-cover-product {
+            tal-card-header {
+                h3 {
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+            }
+        }
+    }
+}
+
+);
+
+/* OVERRIDERS */
+
+.introjs-tooltipReferenceLayer{
+
+    > .introjs-tooltip > .introjs-arrow.bottom{
+        bottom: -35px;
+    }
+
+    > .is-clone{
+        display: none;
+    }
+}

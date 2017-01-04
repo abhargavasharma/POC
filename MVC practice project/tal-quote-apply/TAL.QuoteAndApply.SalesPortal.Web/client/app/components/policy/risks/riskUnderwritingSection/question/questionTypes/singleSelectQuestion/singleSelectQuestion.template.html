@@ -1,0 +1,13 @@
+<div class="tal-single-select-question">
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <button type="button"
+                    class="btn btn-secondary"
+                    ng-click="ctrl.answerQuestion(answer)" 
+                    ng-repeat="answer in ctrl.question.answers"
+                    ng-class="{'selected' : ctrl.selectedAnswerId === answer.id}"
+                    ng-bind-html="answer.text"
+                     ng-disabled="ctrl.readOnly"></button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="single-select-option-buttons" ng-if="!ctrl.columnLayout">
+    <form-radio ng-repeat="o in ctrl.options" ng-if="!o.disableOnNeedsAnalysis"
+                disabled="o.isDisabled"
+                class="tal-form-radio-button"
+                name="radio_{{ctrl.groupName}}"
+                value="o.value"
+                ng-model="ctrl.ngModel"
+                on-option-clicked="setModelValue(o.value)"
+                ng-class="[o.classes]"
+                tal-form-id="radio_{{ctrl.groupName}}_{{o.value}}">
+        <span ng-if="o.classes" class="icon" ng-class="[o.classes]"></span>
+        <tal-tooltip ng-if="o.helpText" label="{{o.helpText}}">
+            {{o.helpText}}
+        </tal-tooltip>
+        <span class="label">{{o.label}}</span>
+    </form-radio>
+</div>
+
+<div class="single-select-option-buttons column-layout" ng-if="ctrl.columnLayout">
+    <div class="row" ng-repeat="r in ctrl.rows">
+        <form-radio ng-repeat="o in r" ng-if="!o.disableOnNeedsAnalysis"
+                    disabled="o.isDisabled"
+                    class="tal-form-radio-button"
+                    ng-class="[columnClass, o.classes]"
+                    name="radio_{{ctrl.groupName}}"
+                    value="o.value"
+                    ng-model="ctrl.ngModel"
+                    on-option-clicked="setModelValue(o.value)"
+                    tal-form-id="radio_{{ctrl.groupName}}_{{o.value}}">
+            <span ng-if="o.classes" class="icon" ng-class="[o.classes]"></span>
+            <tal-tooltip ng-if="o.helpText" label="{{o.helpText}}">
+                {{o.helpText}}
+            </tal-tooltip>
+            <span class="label">{{o.label}}</span>
+        </form-radio>
+    </div>
+</div>

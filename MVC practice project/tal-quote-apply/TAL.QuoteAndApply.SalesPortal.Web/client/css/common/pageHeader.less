@@ -1,0 +1,47 @@
+.page-header {
+  height: 80px;
+  background-color: @background-grey;
+  border-bottom: 1px solid #FFF;
+
+  .logo {
+    display: inline-block;
+    padding: 10px;
+
+    .sitename{
+      font-weight: bold; 
+      padding-left: 10px;
+    }
+  }
+
+  .logo-image {
+    display: inline-block;
+    width: @logo-width;
+    height: @logo-height;
+    background-image: url(@logo-image-path);
+    background-repeat: no-repeat;
+    background-position: center center;
+    vertical-align: middle;
+  }
+
+
+  .username {
+    color: #000;
+    font-size: 0.9em;
+    line-height: 80px;
+  }
+}
+
+.tal-header{
+    background-color:#fff;
+    height: 80px;
+    padding-left: 340px;
+    box-shadow:0px 0px 0px 1px #ccc;
+    min-width: 1405px;
+
+    &.collapsed{
+        padding-left: 340px;
+        box-shadow:0px 0px 0px 1px #ccc;
+        margin-left:-15px;
+        margin-right:-15px;
+    }
+}

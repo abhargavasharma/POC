@@ -1,0 +1,196 @@
+<div class="tal-customer-details">
+    <div class="row intro">
+        <div class="col-md-12">
+            <p>
+                Thank you for choosing TAL Lifetime Protection. Once you have made your initial payment and agreed to the terms and conditions below, please register with myTAL our online customer portal.
+            </p>
+
+            <p>Through myTAL you can update your payment details, add and remove beneficiaries and update your contact details.</p>
+
+            <h2>Your details</h2>
+        </div>
+    </div>
+    <div ng-form="purchaseRequest.personalDetails" class="row form-grid">
+        <div class="col-md-12">
+            <fieldset>
+              <legend class="vh">Customer details</legend>
+                <div class="form-group row">
+                    <div class="col-sm-6 col-lg-3">
+                        <label for="title">Title</label>
+                        <form-select tal-name="title"
+                                     required
+                                     class="form-control"
+                                     name="titleName"
+                                     tal-id="title"
+                                     placeholder="Please select"
+                                     ng-model="ctrl.personalDetails.title"
+                                     tal-server-validate="purchaseRequest.personalDetails.title"
+                                     form-select-items="ctrl.titles">
+                        </form-select>
+
+                        <tal-form-input-error show-server-error-for="purchaseRequest.personalDetails.titleName"></tal-form-input-error>
+                        <tal-form-input-error show-error-for="purchaseRequest.personalDetails.titleName" show-error-when="required">Title is required</tal-form-input-error>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-6 col-lg-3">
+                        <label for="firstName">First name</label>
+                        <input type="text"
+                               class="form-control"
+                               id="firstName"
+                               name="firstName"
+                               placeholder="First name"
+                               ng-change="ctrl.contactDetailsChange()"
+                               maxlength="22"
+                               required
+                               autocomplete="off"
+                               ng-model="ctrl.personalDetails.firstName"
+                               tal-server-validate="purchaseRequest.personalDetails.firstName">
+                        <tal-form-input-error show-server-error-for="purchaseRequest.personalDetails.firstName"></tal-form-input-error>
+                        <tal-form-input-error show-error-for="purchaseRequest.personalDetails.firstName" show-error-when="required">First name is required</tal-form-input-error>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <label for="lastName">Last name</label>
+                        <input type="text"
+                               class="form-control"
+                               id="lastName"
+                               name="lastName"
+                               placeholder="Last name"
+                               ng-change="ctrl.contactDetailsChange()"
+                               maxlength="22"
+                               required
+                               ng-model="ctrl.personalDetails.lastName"
+                               tal-server-validate="purchaseRequest.personalDetails.lastName">
+                        <tal-form-input-error show-server-error-for="purchaseRequest.personalDetails.lastName"></tal-form-input-error>
+                        <tal-form-input-error show-error-for="purchaseRequest.personalDetails.lastName" show-error-when="required">Last name is required</tal-form-input-error>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-6 col-lg-3">
+                        <label>Date of birth</label>
+                        <label name="dateOfBirth" class="form-control-static" ng-bind="ctrl.personalDetails.dateOfBirth"></label>
+                        <tal-form-input-error show-server-error-for="purchaseRequest.personalDetails.dateOfBirth"></tal-form-input-error>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-lg-6">
+                        <label for="residentialAddress">Residential address</label>
+                        <input type="text"
+                               class="form-control textbox-large"
+                               id="residentialAddress"
+                               name="residentialAddress"
+                               placeholder="Residential address"
+                               maxlength="50"
+                               required
+                               ng-model="ctrl.personalDetails.residentialAddress"
+                               tal-server-validate="purchaseRequest.personalDetails.residentialAddress">
+                        <tal-form-input-error show-server-error-for="purchaseRequest.personalDetails.residentialAddress"></tal-form-input-error>
+                        <tal-form-input-error show-error-for="purchaseRequest.personalDetails.residentialAddress" show-error-when="required">Residential address is required</tal-form-input-error>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-6 col-lg-3">
+                        <label for="suburb">Suburb</label>
+                        <input type="text"
+                               class="form-control textbox-large"
+                               id="suburb"
+                               name="suburb"
+                               placeholder="Suburb"
+                               maxlength="20"
+                               required
+                               ng-model="ctrl.personalDetails.suburb"
+                               tal-server-validate="purchaseRequest.personalDetails.suburb">
+                        <tal-form-input-error show-server-error-for="purchaseRequest.personalDetails.suburb"></tal-form-input-error>
+                        <tal-form-input-error show-error-for="purchaseRequest.personalDetails.suburb" show-error-when="required">Suburb is required</tal-form-input-error>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <label for="state">State</label>
+
+                        <form-select tal-name="state"
+                                     required
+                                     class="form-control"
+                                     name="stateName"
+                                     placeholder="Please select"
+                                     tal-id="state"
+                                     ng-model="ctrl.personalDetails.state"
+                                     tal-server-validate="personalDetailsRequest.state"
+                                     form-select-items="ctrl.states">
+                        </form-select>
+
+                        <tal-form-input-error show-server-error-for="purchaseRequest.personalDetails.stateName"></tal-form-input-error>
+                        <tal-form-input-error show-error-for="purchaseRequest.personalDetails.stateName" show-error-when="required">State is required</tal-form-input-error>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-6 col-lg-3">
+                        <label for="postcode">Postcode</label>
+                        <input type="tel"
+                               class="form-control"
+                               id="postcode"
+                               name="postcode"
+                               placeholder="Postcode"
+                               required
+                               ng-model="ctrl.personalDetails.postcode"
+                               maxlength="4" whole-numbers-only="true"
+                               tal-server-validate="purchaseRequest.personalDetails.postcode">
+                        <tal-form-input-error show-server-error-for="purchaseRequest.personalDetails.postcode"></tal-form-input-error>
+                        <tal-form-input-error show-error-for="purchaseRequest.personalDetails.postcode" show-error-when="required">Postcode is required</tal-form-input-error>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-lg-6">
+                        <label for="emailAddress">Email address</label>
+                        <input type="text"
+                               class="form-control"
+                               id="emailAddress"
+                               name="emailAddress"
+                               placeholder="Email address"
+                               ng-change="ctrl.contactDetailsChange()"
+                               maxlength="80"
+                               required
+                               ng-model="ctrl.personalDetails.emailAddress"
+                               tal-server-validate="purchaseRequest.personalDetails.emailAddress">
+                        <tal-form-input-error show-server-error-for="purchaseRequest.personalDetails.emailAddress"></tal-form-input-error>
+                        <tal-form-input-error show-error-for="purchaseRequest.personalDetails.emailAddress" show-error-when="required">Email address is required</tal-form-input-error>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-6 col-lg-3">
+                        <label for="mobileNumber">Mobile number</label>
+                        <input type="tel"
+                               class="form-control"
+                               id="mobileNumber"
+                               name="mobileNumber"
+                               placeholder="Mobile number"
+                               ng-change="ctrl.contactDetailsChange()"
+                               required
+                               numbers-only
+                               ng-model="ctrl.personalDetails.mobileNumber"
+                               maxlength="10"
+                               tal-server-validate="purchaseRequest.personalDetails.mobileNumber">
+                        <tal-form-input-error show-server-error-for="purchaseRequest.personalDetails.mobileNumber"></tal-form-input-error>
+                        <tal-form-input-error show-error-for="purchaseRequest.personalDetails.mobileNumber" show-error-when="required">Mobile number is required</tal-form-input-error>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <label for="homeNumber">Home number</label>
+                        <input type="tel"
+                               class="form-control"
+                               id="homeNumber"
+                               name="homeNumber"
+                               placeholder="Home number"
+                               ng-change="ctrl.contactDetailsChange()"
+                               ng-model="ctrl.personalDetails.homeNumber"
+                               maxlength="10"
+                               tal-server-validate="purchaseRequest.personalDetails.homeNumber">
+                        <tal-form-input-error show-server-error-for="purchaseRequest.personalDetails.homeNumber"></tal-form-input-error>
+                    </div>
+                </div>
+                <div class="form-group row">
+
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</div>

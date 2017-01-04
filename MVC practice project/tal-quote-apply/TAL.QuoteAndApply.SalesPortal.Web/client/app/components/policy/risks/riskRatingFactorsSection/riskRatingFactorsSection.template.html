@@ -1,0 +1,87 @@
+<div id="rating-factors" class="form-section risk-rating-factors-section" ng-form="riskRatingFactors" cg-busy="loadingPromise" read-only-form="readOnly">
+    <div class="container-fluid">
+        <tal-form-updating-indicator promise="updatingPromise"></tal-form-updating-indicator>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-6">
+                <tal-two-option-radio label="Gender *"
+                                      group-name="gender"
+                                      ng-model="ratingFactors.gender"
+                                      option-1-label="Male"
+                                      option-1-value="'M'"
+                                      option-2-label="Female"
+                                      option-2-value="'F'"
+                                      server-validate="ratingFactorsRequest.gender"
+                                      inline-submit="submitForm()"
+                                      read-only="readOnly"></tal-two-option-radio>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6">
+                <tal-dob-with-age warnings-enabled="false" section="section" label="Date Of Birth *"
+                                  ng-model="ratingFactors.dateOfBirth"
+                                  server-validate="ratingFactorsRequest.dateOfBirth"
+                                  inline-submit="submitForm()"
+                                  read-only="readOnly" ></tal-dob-with-age>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-6">
+                <tal-two-option-radio label="Australian Resident *"
+                                      group-name="australianResident"
+                                      ng-model="ratingFactors.australianResident"
+                                      server-validate="ratingFactorsRequest.australianResident"
+                                      inline-submit="submitForm()"
+                                      read-only="readOnly"></tal-two-option-radio>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group" show-errors tal-inline-submit="submitForm()">
+                    <tal-two-option-radio label="Smoker"
+                                          group-name="smokerStatus"
+                                          ng-model="ratingFactors.smokerStatus"
+                                          option-1-label="Yes"
+                                          option-1-value="'Yes'"
+                                          option-2-label="No"
+                                          option-2-value="'No'"
+                                          tal-server-validate="ratingFactorsRequest.smokerStatus"
+                                          inline-submit="submitForm()"
+                                          read-only="readOnly"></tal-two-option-radio>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-9">
+                <tal-occupation-search type="text"
+                                       ng-model="ratingFactors"
+                                       selected-title="ratingFactors.occupationTitle"
+                                       server-validate="ratingFactorsRequest.occupation"
+                                       placeholder="Begin typing to search" required
+                                       inline-submit="submitForm()">
+                </tal-occupation-search>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group" show-errors tal-inline-submit="submitForm(true)">
+                    <label class="control-label">Annual Income</label>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-usd"></i></span>
+                        <input class="form-control" type="tel" name="income"
+                               tal-currency-format
+                               whole-numbers-only="true"
+                               ng-model="ratingFactors.income"
+                               tal-server-validate="ratingFactorsRequest.income"
+                               placeholder="eg $90,000"
+                               maxlength="10">
+                    </div>
+                    <tal-form-error ng-form-model="riskRatingFactors.income"></tal-form-error>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

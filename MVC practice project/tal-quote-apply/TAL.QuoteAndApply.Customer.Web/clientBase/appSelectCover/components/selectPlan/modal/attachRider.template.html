@@ -1,0 +1,26 @@
+﻿<div class="tal-modal-aside" id="attachPlanModal" tabindex="0" cg-busy="$parent.ctrl.loadingPromise">
+    <div class="tal-modal-aside-main">
+        <h2 class="h5">Would you to bundle <span ng-bind-html="ngDialogData.presentation.planTitle"></span> with your Life policy?</h2>
+        <div ng-include="ngDialogData.presentation.attachRiderDescriptionHtml"></div>
+    </div>
+    <div class="tal-modal-aside-sidebar inverse-colors tal-centered">
+        <h3 class="h5">How would you like your <span ng-bind-html="ngDialogData.presentation.planTitle"></span> policy set up?</h3>
+        <div class="tal-btn-set">
+            <button type="submit"
+                    id="btnSubmitStandAlone"
+                    class="tal-btn--secondary"
+                    angular-ripple
+                    ng-click="closeThisDialog(false)">
+                Set as Stand-alone
+            </button>
+            <div class="tal-hr"><span>OR</span></div>
+            <button type="submit"
+                    id="btnSubmitBundled"
+                    class="tal-btn--secondary"
+                    angular-ripple
+                    ng-click="closeThisDialog(true)">
+                Set as Bundled
+            </button>
+        </div>
+    </div>
+</div>

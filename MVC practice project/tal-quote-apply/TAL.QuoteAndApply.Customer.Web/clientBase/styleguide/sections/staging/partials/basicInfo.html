@@ -1,0 +1,95 @@
+<div class="basic-info-form" cg-busy="ctrl.loadingPromise" ng-submit="ctrl.submit()">
+    <form class="form-horizontal" name="basicInfoForm" novalidate>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="tal-card tal-basic-card top-padding">
+                <tal-card-body  tal-cq="true">
+                    <fieldset class="form-grid">
+                        <div class="row form-group">
+                            <div class="col-xs-4 tal-col">
+                                <label for="dateOfBirth" class="control-label">Date of birth</label>
+                            </div>
+                            <div class="col-xs-8 tal-col">
+                                <input id="dateOfBirth" type="tel" name="dateOfBirth"
+                                       ng-model="ctrl.basicInfo.dateOfBirth"
+                                       autocomplete="off"
+                                       required
+                                       tal-server-validate="basicInfoViewModel.dateOfBirth"
+                                       tal-date tal-date-mask-format="DDMMYYYY"
+                                       placeholder="DD/MM/YYYY"
+                                       ui-mask="99/99/9999"
+                                       maxlength="10">
+                                <tal-form-input-error show-server-error-for="basicInfoForm.dateOfBirth"></tal-form-input-error>
+                                <tal-form-input-error show-error-for="basicInfoForm.dateOfBirth" show-error-when="required">Date of birth is required</tal-form-input-error>
+                                <tal-form-input-error show-error-for="basicInfoForm.dateOfBirth" show-error-when="invalidFormat">Date of birth is invalid</tal-form-input-error>
+
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-xs-4  tal-col">
+                                <label for="gender0" class="control-label">Gender</label>
+                            </div>
+                            <div class="col-xs-8  tal-col">
+                                    <form-radio
+                                            ng-repeat="opt in data.genderOptions"
+                                            class="tal-form-radio-button"
+                                            name="gender{{$index}}"
+                                            value="opt.value"
+                                            ng-model="ctrl.basicInfo.gender"
+                                            tal-server-validate="basicInfoViewModel.gender"
+                                            tal-form-id="gender{{$index}}" >
+                                        {{opt.label}}
+                                    </form-radio>
+                            </div>
+                        </div>
+                        <tal-form-input-error show-server-error-for="basicInfoForm.gender"></tal-form-input-error>
+                        <tal-form-input-error show-error-for="basicInfoForm.gender" show-error-when="required">Gender is required</tal-form-input-error>
+                        <div class="row form-group">
+                            <div class="col-xs-4 tal-col">
+                                <label for="isSmoker0" class="control-label">Smoker</label>
+                            </div>
+                            <div class="col-xs-8 tal-col">
+                                    <form-radio
+                                            ng-repeat="opt in data.smokerOptions" 
+                                            class="tal-form-radio-button"
+                                            name="isSmoker{{$index}}"
+                                            value="opt.value"
+                                            ng-model="ctrl.basicInfo.isSmoker"
+                                            tal-server-validate="basicInfoViewModel.isSmoker"
+                                            tal-form-id="isSmoker{{$index}}" >
+                                        {{opt.label}}
+                                    </form-radio>
+                            </div>
+                        </div>
+                        <tal-form-input-error show-server-error-for="basicInfoForm.isSmoker"></tal-form-input-error>
+                        <tal-form-input-error show-error-for="basicInfoForm.isSmoker" show-error-when="required">Smoker status is required</tal-form-input-error>
+                        <div class="row form-group">
+                            <div class="col-xs-4 tal-col">
+                                <label for="annualIncome" class="control-label">Annual income</label>
+                            </div>
+                            <div class="col-xs-8 tal-col">
+                                <span class="tal-form-amount tal-form-compact">
+                                    <label class="tal-form-compact-label" for="annualIncome">$</label>
+                                    <input type="text" id="annualIncome"  name="annualIncome" required ng-model="ctrl.basicInfo.annualIncome"
+                                            autocomplete="off"
+                                            tal-currency-format whole-numbers-only="true"
+                                            tal-server-validate="basicInfoViewModel.annualIncome"
+                                            maxlength="9">
+                                </span>
+                                <tal-form-input-error show-server-error-for="basicInfoForm.annualIncome"></tal-form-input-error>
+                                <tal-form-input-error show-error-for="basicInfoForm.annualIncome" show-error-when="required">Annual income is required</tal-form-input-error>
+                            </div>
+                        </div>
+                    </fieldset>
+                </tal-card-body>
+            </div>
+        </div>
+        <div class="col-md-6 feature-text-container">
+            <p class="feature-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.</p>
+            <fieldset class="submit-buttons text-center">
+                <button type="submit" class="tal-btn--primary" ng-disabled="basicInfoForm.$invalid">Calculate preliminary quote</button>
+            </fieldset>
+        </div>
+    </div>
+    </form>
+</div>

@@ -1,0 +1,86 @@
+<div class="tal-underwriting">
+
+	<div class="question-container tal-card" ng-repeat="question in questions">
+
+		<!-- <h2 ng-bind="question.questionType"></h2>-->
+		
+		<tal-progress-bar progress="25">
+				Your progress
+		</tal-progress-bar>
+
+		<div class="">
+			<tal-question question="question"></tal-question>
+		</div>
+
+	</div>
+
+	<section class="tal-section-needs-analysis">
+
+		<div class="">
+
+			<div class="tal-card" tal-cq="self" cg-busy="ctrl.loadingPromise">
+				<div class="question-container">
+					<div ng-include="'/client/appNeedsAnalysis/components/needsAnalysis/getQuote/questions/intro.template.html'"></div>
+				</div>
+			</div>
+
+		    <p class="question-back">
+		        <a class="tal-link-arrow-left" ng-click="ctrl.navigation.onPrevious()">
+		            Previous question
+		        </a>
+		    </p>
+		</div>
+
+
+		<div class="">
+
+			<div class="tal-card" tal-cq="self" cg-busy="ctrl.loadingPromise">
+				<div class="question-container">
+					<div ng-include="'/client/appNeedsAnalysis/components/needsAnalysis/getQuote/questions/birthdate.template.html'"></div>
+				</div>
+			</div>
+
+		    <p class="question-back">
+		        <a class="tal-link-arrow-left" ng-click="ctrl.navigation.onPrevious()">
+		            Previous question
+		        </a>
+		    </p>
+		</div>
+
+
+
+		<div class="">
+
+			<div class="tal-card" tal-cq="self" cg-busy="ctrl.loadingPromise">
+				<div class="question-container">
+					<div ng-include="'/client/appNeedsAnalysis/components/needsAnalysis/getQuote/questions/occupation.template.html'"></div>
+				</div>
+			</div>
+
+		    <p class="question-back">
+		        <a class="tal-link-arrow-left" ng-click="ctrl.navigation.onPrevious()">
+		            Previous question
+		        </a>
+		    </p>
+		</div>
+
+
+
+		<div class="">
+
+			<div class="tal-card" tal-cq="self" cg-busy="ctrl.loadingPromise">
+				<div class="question-container">
+					<div ng-include="'/client/appNeedsAnalysis/components/needsAnalysis/getQuote/questions/smoking.template.html'"></div>
+				</div>
+			</div>
+
+		    <p class="question-back">
+		        <a class="tal-link-arrow-left" ng-click="ctrl.navigation.onPrevious()">
+		            Previous question
+		        </a>
+		    </p>
+		</div>
+
+	<section>
+
+</div>

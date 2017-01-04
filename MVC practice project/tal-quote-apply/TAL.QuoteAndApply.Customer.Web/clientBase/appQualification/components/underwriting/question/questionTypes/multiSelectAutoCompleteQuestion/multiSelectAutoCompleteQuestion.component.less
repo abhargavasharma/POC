@@ -1,0 +1,72 @@
+.tal-multi-select-auto-complete-question {
+  .col {
+  }
+
+  .answers-container{
+
+
+    /*for anything smaller than breakpoint, make form-radio button 100% */
+    form-checkbox{
+      width: 100%;
+      .tal-form-checkbox-inner{
+        width: 100%;
+        .tal-form-checkbox-label{
+          width: 100%;
+          padding: 15px;
+          box-sizing: border-box;
+        }
+      }
+    }
+
+
+
+    /*for anything bigger than breakpoint apply flex */
+    .bp(m, {
+      .row {
+        display: flex;
+      }
+
+      form-checkbox{
+        margin-right: 0;
+        margin-bottom: 12px;
+
+        display: flex;
+        flex: 1;
+
+        .tal-form-checkbox-inner{
+          display: flex;
+          flex-grow: 1;
+        }
+
+        .tal-form-checkbox-label{
+          width: 100%;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          line-height: 1;
+
+          box-sizing: border-box;
+        }
+      }
+    });
+
+  }
+
+  .underwriting-toolbar{
+    margin: 10px 8px;
+  }
+}
+
+
+
+html.is-ie10{
+  form-checkbox{
+    flex-direction: column;
+
+    .tal-form-checkbox-label{
+      display: inline-block !important;
+    }
+  }
+}

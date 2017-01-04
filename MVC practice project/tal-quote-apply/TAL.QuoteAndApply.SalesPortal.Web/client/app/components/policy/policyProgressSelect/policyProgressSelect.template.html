@@ -1,0 +1,17 @@
+<div ng-form="policyStatusForm" cg-busy="loadingPromise" class="sub-menu-item policy-progress-select">
+    <div class="row">
+        <div class="col-md-12 form-group" show-errors tal-inline-submit="submitForm()">
+            <label class="control-label">
+                <span class="title col-md-10"><p>Pipeline Status</p></span>
+                <span class="status-icon"><span class="fa fa-exclamation-triangle" ng-show="progressUnknown()"></span></span>
+            </label>
+            <select id="ddPolicyStatus" class="form-control" name="progress"
+                    ng-model="policyProgress.progress"
+                    tal-server-validate="progressDetailsRequest.progress"
+                    ng-options="p.value as p.name for p in progresses">
+            </select>
+        </div>
+    </div>
+</div>
+
+

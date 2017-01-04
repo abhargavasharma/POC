@@ -1,0 +1,36 @@
+﻿
+@using TAL.QuoteAndApply.Analytics.Models
+@model TAL.QuoteAndApply.Customer.Web.Models.View.RetrieveQuoteRequest
+
+@{
+    ViewBag.Title = "Retrieve your quote";
+    ViewBag.AppName = "Retrieve";
+    ViewBag.HideQuotePremium = "true";
+    ViewBag.HideQuoteReference = "true";
+    ViewBag.HideNavigation = "true";
+    ViewBag.HideMobileNavigation = "true";
+    ViewBag.PageCssClass = "page-retrieve";
+
+    //TODO: something more elegant than html in ViewBag. doing this now cause can't put Sections inside Partial Views
+    ViewBag.HeaderText = "<p class=\"h-light\">Please enter your quote reference number (sent to you via email the day you saved your quote) and your password.</p>" +
+         "<p class=\"h-light\">Please note that any open quotes will need to be closed first.</p>";
+}
+
+@section Analytics
+{
+    @{
+        Html.RenderAction("Header", "Analytics", new { model = new AnalyticsPageModel("RetrieveQuotePage", ViewBag.Title, "Quote", DateTime.Now, DateTime.Now) });
+    }
+}
+
+<section class="tal-section-basic-info">
+    @{
+        Html.RenderPartial("~/Views/Shared/_PageHeader.cshtml");
+    }
+    <div class="container">
+        <main class="tal-layout-main row">
+            <tal-retrieve-form quote-reference-number="@Model.QuoteReference"></tal-retrieve-form>
+        </main>
+    </div>
+</section>
+

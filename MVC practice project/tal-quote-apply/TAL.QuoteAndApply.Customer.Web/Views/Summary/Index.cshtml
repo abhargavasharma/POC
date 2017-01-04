@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Summary";
+    ViewBag.AppName = "Summary";
+    ViewBag.ShowSpinnerOnStartup = "false";
+    ViewBag.hideNavigation = "true";
+    ViewBag.HideMobileNavigation = "true";
+    ViewBag.hideSaveButton = true;
+    ViewBag.hideQuoteReference = "true";
+    ViewBag.hideQuotePremium = "true";
+}
+
+<section class="tal-section-review">
+    @{
+        Html.RenderPartial("~/Views/Shared/_PageHeader.cshtml");
+    }
+    <main class="tal-layout-main row">
+        <tal-underwriting-summary></tal-underwriting-summary>
+    </main>
+</section>
+
+

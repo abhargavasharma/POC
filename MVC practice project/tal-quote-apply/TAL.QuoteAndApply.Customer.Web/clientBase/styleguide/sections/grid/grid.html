@@ -1,0 +1,57 @@
+<article>
+	<header>
+		<h1>Grids</h1>
+	</header>
+
+	<section class="sg__card">
+		<header class="sg__card__header">
+			<h2 class="h3">Basis grid</h2>
+		</header>
+
+		<p>
+			The grid classes use the same naming convention as bootstrap, but include additional breakpoints. The full set of breakpoints is:
+		</p>
+		<ul>
+			<li>xxs</li>
+			<li>xs</li>
+			<li>sm</li>
+			<li>md</li>
+			<li>lg</li>
+			<li>xl</li>
+			<li>xxl</li>
+		</ul>
+
+		<tal-documentation
+			data="colSets"
+			index="data.index"
+			tal-documentation-path="'/client/styleguide/sections/grid/partials/grid.html'">
+		</tal-documentation>
+	</section>
+
+	<section class="sg__card">
+		<header class="sg__card__header">
+			<h2 class="h3">Building complex responsive behavior</h2>
+		</header>
+		<p>
+			Using several column classes, you can specify behavior at different breakpoints, like in bootstrap.
+		</p>
+		<tal-documentation
+			index="data.index"
+			tal-documentation-path="'/client/styleguide/sections/grid/partials/gridCustom.html'">
+		</tal-documentation>
+	</section>
+
+	<section class="sg__card">
+		<header class="sg__card__header">
+			<h2 class="h3">Offset classes</h2>
+		</header>
+		<p>
+			Offset classes can be used to insert a space a given number of columns wide, to the left of a column element.
+		</p>
+		<tal-documentation
+			data="offsetSet"
+			index="data.index"
+			tal-documentation-path="'/client/styleguide/sections/grid/partials/gridOffsets.html'">
+		</tal-documentation>
+	</section>
+</article>

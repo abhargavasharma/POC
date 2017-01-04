@@ -1,0 +1,164 @@
+@using TAL.QuoteAndApply.Customer.Web.Extensions
+@using TAL.QuoteAndApply.Infrastructure.Extensions
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>TAL Customer Portal</title>
+    
+    <!-- START Favicons -->
+    <meta name="theme-color" content="#FFF">
+    <meta name="msapplication-TileColor" content="#FFF">
+    <meta name="msapplication-TileImage" content="/client/favicons/metro-tile.png">
+    <link rel="apple-touch-icon-precomposed" href="/client/favicons/apple-touch-icon.png">
+    <link rel="shortcut icon" href="/client/favicons/favicon.ico">
+    <!-- END Favicons -->
+
+    <!-- build:css assets/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/angular-busy/dist/angular-busy.css" />
+    <link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog.css" />
+    <link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog-theme-default.css" />
+    <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css" />
+    <link rel="stylesheet" href="bower_components/intro.js/introjs.css" />
+    <link rel="stylesheet" href="bower_components/angular-ui-select/dist/select.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    @if (!string.IsNullOrWhiteSpace(ViewBag.AppName))
+    {
+        Html.RenderPartial(string.Format("~/Views/Shared/GruntPartials/_GruntBuildCssInjectedFiles_app{0}.cshtml", (string)ViewBag.AppName));
+    }
+
+    @RenderSection("Analytics", false)
+    @Html.Partial("_Analytics")
+
+    <script>
+        window.digitalData = window.digitalData || {};
+        window.digitalData.applicationData = window.digitalData.applicationData || {};
+        window.digitalData.applicationData.journey = '@ViewBag.JourneyType';
+
+        var onDomReady = function(callBack) {
+            if(document.readyState === "complete") {
+                callBack();
+            }
+            else 
+            {
+                document.addEventListener("DOMContentLoaded", callBack, false);
+            }
+        };
+
+        if (isDevice && isDevice.iOS && isDevice.iOS()) {
+            onDomReady(function() {
+                document.getElementsByTagName('body')[0].className += ' ios-device';
+                document.getElementsByTagName('html')[0].className += ' ios-device';
+            });
+        }
+        if (isDevice && isDevice.any && isDevice.any()) {
+            onDomReady(function() {
+                document.getElementsByTagName('body')[0].className += ' mobile-device';
+                document.getElementsByTagName('html')[0].className += ' mobile-device';
+            });
+        }
+    </script>
+</head>
+<body class="@Html.CustomBrandStyle() @ViewBag.PageCssClass" @(ViewBag.AppName != null ? Html.Raw(string.Format(" ng-app=\"app{0}\"", ViewBag.AppName)) : "")>
+<tal-header hide-quote-premium="@(ViewBag.HideQuotePremium ?? "false")"
+            hide-quote-reference="@(ViewBag.HideQuoteReference ?? "false")"
+            hide-navigation="@(ViewBag.HideNavigation ?? "false")"
+            hide-mobile-navigation="@(ViewBag.HideMobileNavigation ?? "false")"
+            hide-save-button="@( ((bool)(!(ViewBag.IsQuoteSaveLoadEnabled ?? true) || (ViewBag.HideSaveButton ?? false))).ToJson()) "
+            hide-chat-link="@(ViewBag.hideClickToChat ?? "false")"
+            quote-reference-number="@ViewBag.QuoteReference"
+            total-premium="@(ViewBag.TotalPremium ?? 0)"
+            premium-period="@(ViewBag.PremiumPeriod ?? "monthly")"
+            saved-status="'@ViewBag.SavedStatus'"
+            step-index="@ViewBag.StepIndex"></tal-header>
+
+<div class="tal-main-content">
+    @RenderBody()
+</div>
+
+<tal-footer></tal-footer>
+
+<tal-click-to-chat hide="@ViewBag.hideClickToChat"></tal-click-to-chat>
+
+<spinner name="pageSpinner" class="page-spinner" show="@ViewBag.ShowSpinnerOnStartup">
+    <tal-page-spinner></tal-page-spinner>
+</spinner>
+
+<!-- build:js assets/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-busy/dist/angular-busy.js"></script>
+    <script src="bower_components/lodash/lodash.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/angular-ui-scroll/dist/ui-scroll.js"></script>
+    <script src="bower_components/angular-ui-scrollpoint/dist/scrollpoint.js"></script>
+    <script src="bower_components/angular-ui-event/dist/event.js"></script>
+    <script src="bower_components/angular-ui-mask/dist/mask.js"></script>
+    <script src="bower_components/angular-ui-validate/dist/validate.js"></script>
+    <script src="bower_components/angular-ui-indeterminate/dist/indeterminate.js"></script>
+    <script src="bower_components/angular-ui-uploader/dist/uploader.js"></script>
+    <script src="bower_components/ui-utils/index.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/ng-dialog/js/ngDialog.js"></script>
+    <script src="bower_components/angular-ripple/angular-ripple.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-highlightjs/build/angular-highlightjs.js"></script>
+    <script src="bower_components/angular-filter-count-to/src/angular-count-to.js"></script>
+    <script src="bower_components/enquire/dist/enquire.js"></script>
+    <script src="bower_components/ddbreakpoints/lib/dd.breakpoints.js"></script>
+    <script src="bower_components/angular-spinners/dist/angular-spinners.min.js"></script>
+    <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <script src="bower_components/ng-slide-down/dist/ng-slide-down.js"></script>
+    <script src="bower_components/matchmedia/matchMedia.js"></script>
+    <script src="bower_components/ngSticky/lib/sticky.js"></script>
+    <script src="bower_components/clipboard/dist/clipboard.js"></script>
+    <script src="bower_components/ngclipboard/dist/ngclipboard.js"></script>
+    <script src="bower_components/intro.js/intro.js"></script>
+    <script src="bower_components/angular-intro.js/src/angular-intro.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-ui-select/dist/select.js"></script>
+    <script src="bower_components/oclazyload/dist/ocLazyLoad.js"></script>
+    <script src="bower_components/angular-recaptcha/release/angular-recaptcha.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    @RenderSection("scripts", required: false)
+
+@if (!string.IsNullOrWhiteSpace(ViewBag.AppName))
+{
+    Html.RenderPartial(string.Format("~/Views/Shared/GruntPartials/_GruntBuildJsInjectedFiles_app{0}.cshtml", (string) ViewBag.AppName));
+}
+
+    @RenderSection("postApplicationScripts", required: false)
+
+    <script type="text/javascript">
+        angular.module('appCustomerPortal').constant('viewBagConfig', {
+            captchaEnabled: @(((bool)(ViewBag.UseCaptcha ?? false)).ToJson()),
+            journeySource: '@ViewBag.JourneyType',
+            saveStatus: '@ViewBag.SavedStatus',
+            quoteReference: '@ViewBag.QuoteReference',
+            setSaveStatusAsPasswordCreated: function() {
+                this.saveStatus = 'passwordCreated';
+            },
+            brand: '@Html.CustomBrandPath()',
+            debugEnabled: @(((bool)(ViewBag.DebugEnabled ?? false)).ToJson()),
+            callBackSubmitted: @(((bool)(ViewBag.CallBackSubmitted ?? false)).ToJson()),
+            isCalculatorEnabled: @(((bool)(ViewBag.isCalculatorEnabled ?? false)).ToJson()),
+            isQuoteSaveLoadEnabled: @(((bool)(ViewBag.IsQuoteSaveLoadEnabled ?? true)).ToJson()),
+            saveGatePosition: '@ViewBag.SaveGatePosition'
+        });
+    </script>
+
+@{Html.RenderPartial("~/Views/Shared/_BuildNumber.cshtml");}
+@{Html.RenderAction("Footer", "Analytics");}
+</body>
+</html>

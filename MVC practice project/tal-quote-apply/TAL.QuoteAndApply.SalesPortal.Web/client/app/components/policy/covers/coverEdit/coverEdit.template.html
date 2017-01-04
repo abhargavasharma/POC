@@ -1,0 +1,58 @@
+<div class="form-panel" ng-form="policyCoverEdit" read-only-form="planCover.planDisabled">
+    <div class="panel-heading">
+        <h3 class="panel-title"><span ng-bind="planCover.name"></span><span class="fa fa-info-circle info-icon"></span></h3>
+        <input type="hidden" name="warnings" ng-model="stuff" tal-server-validate="{{planCover.code.toLowerCase()}}" />
+        <tal-form-error ng-form-model="policyCoverEdit.warnings"></tal-form-error>
+    </div>
+    <div class="panel-body cover">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="form-group row">
+                    <label class="col-xs-1 form-label-text-extra">Premium: </label>
+                    <div class="col-xs-8 form-content-text" id="{{planCover.code + 'PlanPremium'}}">
+                        <tal-plan-premium premium="planCover.premium" premium-frequency="planCover.premiumFrequency"></tal-plan-premium>
+                        <span ng-show="!planCover.premium">$0.00</span>
+                    </div>
+                </div>
+                <div class="form-group row" show-errors tal-inline-submit="coverAmountChanged()">
+                    <div class="col-sm-12 add-on-gap">
+                        <label class="control-label col-sm-4 form-label form-label-text">Sum Insured</label>
+                        <div class="input-group  col-sm-8">
+                            <span class="input-group-addon white">$</span>
+                            <input id="{{planCover.code + 'PlanSumInsuredInput'}}" type="tel" tal-currency-format whole-numbers-only="true"
+                                   name="coverAmount"
+                                   ng-model="planCover.coverAmount"
+                                   class="form-control input-text"
+                                   maxlength="11"
+                                   tal-server-validate="{{coverAmountValidationModel}}">
+                        </div>
+                        <tal-form-error ng-form-model="policyCoverEdit.coverAmount"></tal-form-error>
+                        <tal-server-form-warning warning-key="coverAmountValidationModel"></tal-server-form-warning>
+                    </div>
+                </div>
+                <div class="form-group row" ng-repeat="planOption in planCover.OptionDefinitions">
+                    <label class="col-xs-6" ng-bind="planOption.name"></label>
+                    <div class="col-xs-6">
+                        <select id="policyRateInput" name="policyRate" class="form-control" data-ng-model="planOption.selectedValue" server-validate data-ng-options="value for (key, value) in OptionDefinition.options">
+                            <option value="" ng-hide="planOption.selectedValue">Select</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="form-group row">
+                    <div class="col-xs-5">
+                        <div ng-repeat="cover in planCover.covers">
+                            <tal-cover-select plan-model="planCover" cover-has-changed="coverHasChanged()" plan-index="planIndex" cover-index="$index" cover-model="cover" availability="availability" is-rider="isRider"></tal-cover-select>
+                        </div>
+                    </div>
+                    <div class="col-xs-7 add-top-gap160">
+                        <div ng-repeat="option in planCover.options">
+                            <tal-rider-option-select ng-if="isRider" plan-model="planCover" option-has-changed="optionHasChanged()" plan-index="planIndex" option-index="$index" option-model="option" availability="availability"></tal-rider-option-select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

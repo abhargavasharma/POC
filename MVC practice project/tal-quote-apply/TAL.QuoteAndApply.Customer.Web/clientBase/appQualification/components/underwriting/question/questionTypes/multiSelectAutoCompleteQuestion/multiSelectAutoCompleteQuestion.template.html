@@ -1,0 +1,21 @@
+<div class="tal-multi-select-auto-complete-question">
+
+    <div class="answers-container">
+
+        <tal-chips collection="ctrl.question.answers"
+                   ng-model="ctrl.selectedAnswers"
+                   tal-title="text"
+                   unique="true"
+                   class="center"
+                   single-only="::false">
+        </tal-chips>
+    </div>
+
+    <div class="text-center underwriting-toolbar row text-center">
+        <button type="button" class="tal-btn--primary"
+                ng-disabled="!ctrl.isContinueEnabled()"
+                ng-click="ctrl.onContinueClick()">Continue
+        </button>
+    </div>
+
+</div>

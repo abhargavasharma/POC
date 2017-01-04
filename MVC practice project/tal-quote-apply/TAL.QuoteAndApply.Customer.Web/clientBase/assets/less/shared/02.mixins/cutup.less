@@ -1,0 +1,19 @@
+@cutup: false;
+
+.mxn-cutup(@img) when (@cutup = true) {
+  border: 1px solid #f00;
+  
+  position: relative;
+  opacity: 0.5;
+  z-index: 2;
+
+  &:before {
+    content: '';
+    &:extend(.stretch-absolute);
+    background: url(@img) no-repeat #f00 !important;
+    background-position: 0 0;
+    z-index: 2;
+    opacity: 0.5;
+  }
+  
+}

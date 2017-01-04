@@ -1,0 +1,28 @@
+<div ng-form="policyCoverSelect" class="tal-cover-select" read-only-form="planModel.planDisabled">
+    <div class="form-group" show-errors>
+        <div class="checkbox-inline">
+            <label class="control-label">
+                <input type="hidden" class="form-control"
+                       ng-model="coverModel.selected"
+                       tal-server-validate="{{coverSelectedValidationModel}}"
+                       name="coverSelected" emit-ui-update="true" />
+                <input id="{{coverModel.code + 'CoverCheck'}}" type="checkbox"
+                     ng-model="coverModel.selected"
+                     name="value" ng-change="coverChanged(coverModel.selected)" />
+                <span ng-bind="coverModel.name"></span>
+            </label>
+            <span class="fa fa-info-circle info-icon"></span>
+            <div>
+                <span class="small">(Premium: {{coverModel.premium | currency}})</span>
+            </div>
+            <div>
+                <span class="small">(Underwriting: {{coverModel.underwritingIndicator}})</span>
+            </div>
+            <div ng-if="!coverModel.eligible">
+                <p class="small cover-unavailable-message" ng-repeat="message in coverModel.ineligibleReasons" ng-bind="message"></p>
+            </div>
+          <br />
+        </div>
+        <tal-form-error ng-form-model="policyCoverSelect.coverSelected"></tal-form-error>
+    </div>
+</div>

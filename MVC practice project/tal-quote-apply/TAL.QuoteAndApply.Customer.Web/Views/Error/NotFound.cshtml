@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Page Not Found";
+    ViewBag.AppName = "Exit";
+    ViewBag.hideNavigation = "true";
+    ViewBag.HideMobileNavigation = "true";
+    ViewBag.hideSaveButton = true;
+    ViewBag.hideClickToChat = "true";
+    ViewBag.HideQuoteReference = "true";
+    ViewBag.HideQuotePremium = "true";
+    ViewBag.PageCssClass = "page-not-found";
+}
+
+<section class="tal-section-confirmation">
+    @{
+        Html.RenderPartial("~/Views/Shared/_PageHeader.cshtml");
+    }
+    <div class="container">
+        <main class="tal-layout-main row">
+
+            <p>Sorry, the page you are looking for is not available.</p>
+            <p>Please return to the @Html.ActionLink("Home page", "Index", "BasicInfo").</p>
+
+        </main>
+    </div>
+</section>

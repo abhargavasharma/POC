@@ -1,0 +1,15 @@
+<form cg-busy="loadingPromise" name="planForm" novalidate class="form-section" read-only-form="planDetail.planDisabled">
+    <div class="container-fluid">
+        <div class="row">
+            <tal-cover-edit update-plan="updatePlan()" plan-cover="planDetail" plan-index="planIndex" is-rider="false"></tal-cover-edit>
+        </div>
+        <div class="row" ng-repeat="rider in planDetail.riders">
+            <tal-rider-edit available-definitions="availableDefinitions" parent-plan-disabled="planDetail.planDisabled" update-plan="updatePlan()" plan-rider="rider" plan-index="planIndex" premium-frequency="planDetail.premiumFrequency"></tal-rider-edit>
+        </div>
+    </div>
+    <hr/>
+    <div class="container-fluid">
+        <tal-plan-variables update-plan="updatePlan()" plan-detail="planDetail" available-definitions="availableDefinitions"></tal-plan-variables>
+    </div>
+    <hr/>
+</form>

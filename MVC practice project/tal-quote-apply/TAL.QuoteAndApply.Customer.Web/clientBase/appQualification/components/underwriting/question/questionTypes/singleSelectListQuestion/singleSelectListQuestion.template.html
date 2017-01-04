@@ -1,0 +1,14 @@
+<div class="tal-single-select-list-question">
+    <form-select is-collection="true"
+            ng-model="ctrl.selectedAnswer"
+            form-select-items="ctrl.question.answers"
+            ng-change="ctrl.onAnswerChanged()">
+    </form-select>
+
+    <div class="text-center underwriting-toolbar">
+        <button type="button" class="tal-btn--primary" ng-disabled="ctrl.continueDisabled()"
+                ng-click="ctrl.onContinueClick()">Continue
+        </button>
+    </div>
+
+</div>

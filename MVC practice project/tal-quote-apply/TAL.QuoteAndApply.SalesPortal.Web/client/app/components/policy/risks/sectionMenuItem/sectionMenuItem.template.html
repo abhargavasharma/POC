@@ -1,0 +1,11 @@
+<div id="{{section.id + 'HeaderBtn'}}" class="section-menu-item" ng-click="activate()" ng-class="{'selected': section.open}" tal-state-styling section="section" icon-style="false">
+    <div class="row">
+        <span class="title col-xs-10">{{section.heading}}</span>
+        <span class="menu-form-status"><span class="fa fa-check completed" ng-show="section.isCompleted && !section.ignoreValidation"></span></span>
+        <span class="menu-form-status"><span class="" tal-state-styling section="section" icon-style="true"></span></span>
+    </div>
+
+    <div ng-transclude></div>
+</div>
+
+

@@ -1,0 +1,89 @@
+<div class="needs-analysis-birthdate">
+    <h3>
+        General information
+    </h3>
+
+    <form class="form-horizontal" name="basicInfoForm" novalidate>
+        <div class="form-grid question-centered">
+            <div class="row form-group tal-input-wrapper">
+                <div class="col-sm-6">
+                    <label for="dateOfBirth">Date of Birth?</label>
+                    <input id="dateOfBirth" type="tel" class="form-control" name="dateOfBirth"
+                           ng-model="ctrl.basicInfo.dateOfBirth"
+                           autocomplete="off"
+                           required
+                           tal-server-validate="basicInfoViewModel.dateOfBirth"
+                           tal-date tal-date-mask-format="DDMMYYYY"
+                           placeholder="DD/MM/YYYY"
+                           ui-mask="99/99/9999"
+                           maxlength="10">
+                    <tal-form-input-error
+                        show-server-error-for="basicInfoForm.dateOfBirth">
+                    </tal-form-input-error>
+                    <tal-form-input-error
+                        show-error-for="basicInfoForm.dateOfBirth"
+                        show-error-when="required">
+                        Date of birth is required
+                    </tal-form-input-error>
+                    <tal-form-input-error
+                        show-error-for="basicInfoForm.dateOfBirth"
+                        show-error-when="invalidFormat">
+                        Date of birth is invalid
+                    </tal-form-input-error>
+                </div>
+            </div>
+            <fieldset class="row form-group tal-input-wrapper">
+                <legend class="label">Male or female?</legend>
+                <form-radio
+                    ng-repeat="opt in ctrl.genderOptions"
+                    class="tal-form-radio-button"
+                    name="gender{{$index}}"
+                    value="opt.value"
+                    ng-model="ctrl.basicInfo.gender"
+                    tal-server-validate="basicInfoViewModel.gender"
+                    tal-form-id="gender{{$index}}">
+                    {{opt.label}}
+                </form-radio>
+            </fieldset>
+
+            <div class="row form-group tal-input-wrapper">
+                <div class="col-sm-6">
+                    <label class="control-label" for="postcode">Postcode</label>
+                    <input class="form-control" type="tel" id="postcode" name="postcode" required ng-model="ctrl.basicInfo.postcode"
+                           autocomplete="off"
+                           tal-postcode-format
+                           tal-server-validate="basicInfoViewModel.postcode"
+                           maxlength="4">
+                    <tal-form-input-error show-server-error-for="basicInfoForm.postcode"></tal-form-input-error>
+                    <tal-form-input-error show-error-for="basicInfoForm.postcode" show-error-when="required">Postcode is required</tal-form-input-error>
+                    <tal-form-input-error show-error-for="basicInfoForm.postcode" show-error-when="format">Postcode is invalid</tal-form-input-error>
+                </div>
+            </div>
+
+            <div class="row form-group tal-input-wrapper" ng-if="ctrl.showCaptcha">
+                <div class="col-sm-6">
+                    <div vc-recaptcha
+                         class="g-recaptcha"
+                         ng-model="ctrl.basicInfo.recaptchaResponse">
+                    </div>
+                    <span class="error form-error"
+                            ng-bind="ctrl.recaptchaError">
+                    </span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="question-actions">
+            <button
+                type="submit"
+                class="tal-btn--secondary"
+                angular-ripple
+                ng-disabled="!ctrl.isBirthDateQuestionValid()"
+                ng-click="ctrl.validateGeneralInformation()">
+                Continue
+            </button>
+        </div>
+    </form>
+
+</div>

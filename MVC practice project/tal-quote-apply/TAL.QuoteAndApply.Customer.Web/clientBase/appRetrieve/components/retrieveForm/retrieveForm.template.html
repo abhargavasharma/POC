@@ -1,0 +1,70 @@
+
+<div class="tal-section-basic-info">
+    <form class="form-horizontal" name="retrieveForm" ng-submit="ctrl.submit()" novalidate>
+        <div class="row">
+            <div class="col-md-6 tal-layout-main-left">
+
+                <div class="tal-card tal-review-card">
+                    <tal-card-body tal-cq="true" cg-busy="ctrl.loadingPromise">
+                        <fieldset class="form-grid">
+                            <div class="row form-group">
+                                <div class="col-xs-4 tal-col">
+                                    <label class="control-label" for="quoteReference">Reference Number</label>
+                                </div>
+                                <div class="col-xs-8 tal-col">
+                                    <input id="quoteReference" type="text" class="form-control" name="quoteReference"
+                                           placeholder="e.g. M123456789"
+                                           ng-model="ctrl.vm.quoteReference"
+                                           autocomplete="off"
+                                           required
+                                           tal-server-validate="retrieveQuoteRequest.quoteReference"
+                                           tal-quote-reference-format-validate
+                                           maxlength="10"
+                                            ng-change="ctrl.inputChange()">
+                                    <tal-form-input-error show-server-error-for="retrieveForm.quoteReference"></tal-form-input-error>
+                                    <tal-form-input-error show-error-for="retrieveForm.quoteReference" show-error-when="required">Reference Number is required</tal-form-input-error>
+                                    <tal-form-input-error show-error-for="retrieveForm.quoteReference" show-error-when="quoteReferenceFormat">Reference Number format is invalid</tal-form-input-error>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-xs-4 tal-col">
+                                    <label class="control-label" for="password">Password</label>
+                                </div>
+                                <div class="col-xs-8 tal-col">
+                                    <input id="password" type="password" class="form-control" name="password"
+                                           ng-model="ctrl.vm.password"
+                                           autocomplete="off"
+                                           required
+                                           tal-server-validate="retrieveQuoteRequest.password"
+                                           maxlength="20"
+                                           ng-change="ctrl.inputChange()">
+                                    <tal-form-input-error show-server-error-for="retrieveForm.password"></tal-form-input-error>
+                                    <tal-form-input-error show-error-for="retrieveForm.password" show-error-when="required">Password is required</tal-form-input-error>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <p class="error text-center" ng-bind="ctrl.retrievalError"></p>
+
+                        <fieldset class="submit-buttons text-center">
+                            <button type="submit" class="tal-btn--primary" ng-disabled="retrieveForm.$invalid">
+                                Retrieve quote
+                            </button>
+                        </fieldset>
+                    </tal-card-body>
+                </div>
+
+            </div>
+            <div class="col-md-6 tal-layout-main-right feature-text-container">
+                <p class="feature-text p--larger">
+                    If you have any difficulties accessing your existing quote, please call&nbsp;
+                    <tal-phone-number-link></tal-phone-number-link>
+                    <tal-chat-to-agent-link class="chat-help-text" prefix="or" suffix="with a Life Insurance Specialist">Click-To-Chat</tal-chat-to-agent-link>
+                </p>
+
+            </div>
+        </div>
+    </form>
+
+</div>
+

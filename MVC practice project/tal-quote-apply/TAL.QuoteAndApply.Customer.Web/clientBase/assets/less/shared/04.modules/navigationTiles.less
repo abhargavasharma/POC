@@ -1,0 +1,105 @@
+// ============================================================
+// STYLES: Navigation Tiles
+// ============================================================
+
+.navigation-tiles {
+
+}
+
+.navigation-tiles__items {
+	display: flex;
+	align-items: stretch;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	
+	.item {
+		width: 100%;
+		.bp(xs, { width: 49%; });
+		.bp(l, { width: 24%; });
+
+		margin-bottom: 25px;
+		position: relative;
+		background-color: @grey-90;
+
+		.item-inner {
+			padding: 22px 22px 50px;
+
+			&:before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 4px;
+				background-color: @grey-10;
+				transition: all 200ms;
+			}
+		}
+
+		h1, h2, h3, h4 h5, h6, p, span {
+			color: inherit;
+		}
+	}
+
+	.item__header,
+	.item__content,
+	.item__icon {
+		position: relative;
+		z-index: 1;
+	}
+
+	.item__header {
+		.abs-font--size-xs;
+		.abs-font--base;
+		font-weight: 400;
+
+		h4 {
+			font: inherit;
+		}
+	}
+
+	.item__content {
+		height: 40px;
+		position: absolute;
+		bottom: 20px;
+
+		.abs-font--size-l;
+		.abs-font--feature-bold;
+
+		p {
+			font: inherit;
+		}
+	}
+
+	.item__icon {
+		position: absolute;
+		right: 22px;
+		bottom: 20px;
+		width: 20px;
+		height: 20px;
+	}
+
+	.item--color-1 {
+		.item-inner {
+			&:before {
+				background-color: @tal-orange;
+			}
+		}
+	}
+
+	.item--color-2 {
+		.item-inner {
+			&:before {
+				background-color: @tal-blue;
+			}
+		}
+	}
+
+	.item--color-3 {
+		.item-inner {
+			&:before {
+				background-color: @tal-aqua;
+			}
+		}
+	}
+}

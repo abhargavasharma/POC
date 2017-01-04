@@ -1,0 +1,15 @@
+<div class="tal-single-select-list-question">
+    <div class="row">
+        <div class="col-xs-6">
+            <select ng-model="ctrl.selectedAnswer" ng-change="ctrl.onAnswerChanged()"  ng-disabled="ctrl.readOnly">
+                <option ng-repeat="answer in ctrl.question.answers" value="{{answer.id}}">{{answer.text}}</option>
+            </select>
+        </div>
+        <div class="col-xs-6 underwriting-toolbar">
+            <button type="button" class="btn btn-secondary" ng-disabled="ctrl.continueDisabled() || ctrl.readOnly"
+                    ng-click="ctrl.onContinueClick()">
+                Continue
+            </button>
+        </div>
+    </div>
+</div>

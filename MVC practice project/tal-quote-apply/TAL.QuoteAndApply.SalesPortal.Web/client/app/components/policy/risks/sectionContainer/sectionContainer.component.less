@@ -1,0 +1,39 @@
+.section-container {
+    max-width: 1050px;
+
+    .menu-action {
+
+    }
+    &.fullscreen {
+        display: block;
+        z-index: 100;
+        position: fixed;
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        overflow: auto;
+        background-color: white;
+        transition-property: top, left, bottom, right, width, height;
+        transition-duration: 1000ms;
+
+        .heading {
+            background: @panel-heading-background-color;
+            font-size: 14px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    }
+
+    .btn-fullscreen {
+        margin-top: 23px;
+    }
+
+    .fa {
+        cursor: pointer;
+        text-decoration: none;
+    }
+}

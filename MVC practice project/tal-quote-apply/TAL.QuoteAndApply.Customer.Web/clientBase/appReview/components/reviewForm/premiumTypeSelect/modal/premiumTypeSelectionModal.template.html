@@ -1,0 +1,44 @@
+﻿<div class="tal-modal-aside" tabindex="0">
+    <div class="tal-modal-aside-main">
+        <header class="tal-modal-header">
+            <h2 class="h4"><strong>Stepped Premiums or Level Premiums</strong>
+            </h2>
+            <br/>
+        </header>
+        <main class="tal-modal-body row">
+            <div class="col-md-7">
+                <p>As you get older you'll find the cost of your Life Insurance will increase. This is because the older people get, the more likely they are to make a claim.</p>
+                <p>
+                    With <strong class="tal-stepped-premium-color">Stepped Premiums</strong> the cost of your premiums will increase each year, based on your age. Stepped Premiums will be lower than Level Premiums in the beginning.
+                </p>
+                <p><strong class="tal-level-premium-color">Level Premiums</strong> are higher than Stepped Premiums in the beginning, but the cost of your premiums generally won't change as you get older, other than where your cover increases (for example through Inflation Protection). Level Premiums are popular with those that want more control of their insurance costs.
+                </p>
+                <p>Level Premiums end at age 65 and will revert to the corresponding Stepped Premium for your age, until your policy expires.</p>
+            </div>
+            <div class="col-md-5">
+                <img title="Premium Type: Stepped vs Level"
+                     alt="Graph showing the two premium type: Stepped vs Level."
+                     src="./client/images/premium-type-graph.png"
+                     class="tal-image" />
+            </div>
+            <div class="col-md-12">
+                <p>
+                    Please note:  Rate rises can increase the cost of premiums for both Stepped and Level Premiums. 
+                </p>
+            </div>
+        </main>
+        <a href="" class="tal-modal-close" ng-click="closeThisDialog()"><span class="vh">Close Help Me Choose dialog.</span></a>
+    </div>
+    <div class="tal-modal-aside-sidebar inverse-colors tal-centered" ng-if="ngDialogData.showSelectableOptions">
+        <h3 class="h5">How would you like your policy set up?</h3>
+        <div class="tal-btn-set">
+            <button type="submit" class="tal-btn--secondary" angular-ripple ng-click="closeThisDialog(ngDialogData.premiumTotals[0])">
+                Select {{ngDialogData.premiumTotals[0].premiumTypeName}} Premiums
+            </button>
+            <div class="tal-hr"><span>OR</span></div>
+            <button type="submit" class="tal-btn--secondary" angular-ripple ng-click="closeThisDialog(ngDialogData.premiumTotals[1])">
+                Select {{ngDialogData.premiumTotals[1].premiumTypeName}} Premiums
+            </button>
+        </div>
+    </div>
+</div>

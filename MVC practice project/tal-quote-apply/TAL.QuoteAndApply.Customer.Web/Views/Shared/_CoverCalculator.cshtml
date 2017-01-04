@@ -1,0 +1,23 @@
+﻿<!--
+This partial is to load the cover calculator component and set the endpoints.
+-->
+@if (ViewBag.IsCalculatorEnabled)
+{
+
+    <script>
+        (function(window) {
+            // Cover calculator environment config
+
+            window.__ccEnvironment = window.__ccEnvironment || {};
+
+            window.__ccEnvironment.assumptionsEndpoint = '@ViewBag.CoverCalculatorBaseUrl/assumptions';
+            window.__ccEnvironment.calculateEndpoint = '@ViewBag.CoverCalculatorBaseUrl/calculate';
+            window.__ccEnvironment.contentEndpoint = '@ViewBag.CoverCalculatorBaseUrl/content';
+            window.__ccEnvironment.contactIdCookie = 'sc_ext_contact';
+
+            window.__ccEnvironment.calculatorScript = '@ViewBag.CoverCalculatorScriptsUrl';
+
+        }(window));
+    </script>
+    <script type="text/javascript" src="@ViewBag.CoverCalculatorScriptsUrl"></script>
+}

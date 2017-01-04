@@ -1,0 +1,236 @@
+<article>
+	<header>
+		<h1>Components</h1>
+	</header>
+
+	<section class="sg__card">
+		<header class="sg__card__header">
+			<h2 class="h3">Progress Bar</h2>
+		</header>
+
+		<div class="sg__family">
+			<h4 class="h6">Default</h4>
+			<p>
+				By default, the progress bar assumes the value passed is out of 100.
+			</p>
+		
+
+			<docs-api data="progressBar1"></docs-api>
+			<tal-documentation
+				index="data.index"
+				data="progressBar1"
+				include-inverse="true"
+				tal-documentation-path="'/client/styleguide/sections/components/partials/progressBar.html'">
+			</tal-documentation>
+		</div>
+
+		<div class="sg__family">
+			<h4 class="h6">Custom maximum</h4>
+			<p>
+				However, a custom total value may be supplied:
+			</p>
+			<div class="sg__api">
+				<div class="sg__api__item">
+					<label>Progress</label>
+					<input value="20" type="text" ng-init="progressBar2.progress = 20" ng-model="progressBar2.progress"/>
+				</div>
+				<div class="sg__api__item">
+					<label>Total</label>
+					<input value="30" type="text" ng-init="progressBar2.total = 30" ng-model="progressBar2.total" disabled="disabled"/>
+				</div>
+			</div>
+			<tal-documentation
+				index="data.index"
+				data="progressBar2"
+				tal-documentation-path="'/client/styleguide/sections/components/partials/progressBarCustomTotal.html'">
+			</tal-documentation>
+		</div>
+	</section>
+
+
+	<section class="sg__card">
+		<header class="sg__card__header">
+			<h2 class="h3">Horizontal Rule</h2>
+		</header>
+
+		<div class="sg__family">
+			<h4 class="h6">Basic</h4>
+			<tal-documentation
+				index="data.index"
+				data="figure"
+				include-inverse="true"
+				tal-documentation-path="'/client/styleguide/sections/components/partials/hrule.html'">
+			</tal-documentation>
+		</div>
+
+		<div class="sg__family">
+			<h4 class="h6">Grey</h4>
+			<tal-documentation
+				index="data.index"
+				data="figure"
+				tal-documentation-path="'/client/styleguide/sections/components/partials/hruleGrey.html'">
+			</tal-documentation>
+		</div>
+	</section>
+
+
+	<section class="sg__card">
+		<header class="sg__card__header">
+			<h2 class="h3">Global Spinner</h2>
+		</header>
+		<button ng-click="startGlobalSpinner()" class="tal-btn tal-btn--secondary">Start global spinner</button>
+	</section>
+
+
+	<section class="sg__card" cg-busy="showLocalSpinner">
+		<header class="sg__card__header">
+			<h2 class="h3">Local Spinner</h2>
+		</header>
+		<button ng-click="startLocalSpinner()" class="tal-btn tal-btn--secondary">Start local spinner</button>
+	</section>
+
+
+	<section class="sg__card">
+		<header class="sg__card__header">
+			<h2 class="h3">Dynamic content containers</h2>
+		</header>
+
+		<div class="sg__family">
+			<h4 class="h6">Tabs</h4>
+			<tal-documentation
+				index="data.index"
+				tal-documentation-path="'/client/styleguide/sections/components/partials/tabs.html'">
+			</tal-documentation>
+		</div>
+
+		<div class="sg__family">
+			<h4 class="h6">Accordion</h4>
+			<tal-documentation
+				index="data.index"
+				tal-documentation-path="'/client/styleguide/sections/components/partials/tabsECOnly.html'">
+			</tal-documentation>
+		</div>
+
+		<div class="sg__family">
+			<h4 class="h6">Accordion - multi open</h4>
+			<tal-documentation
+				index="data.index"
+				tal-documentation-path="'/client/styleguide/sections/components/partials/tabsECOnlyMulti.html'">
+			</tal-documentation>
+		</div>
+	</section>
+
+	<section class="sg__card">
+		<header class="sg__card__header">
+			<h2 class="h3">Button set</h2>
+		</header>
+		<tal-documentation
+			index="data.index"
+			include-inverse="true"
+			tal-documentation-path="'/client/styleguide/sections/components/partials/buttonSet.html'">
+		</tal-documentation>
+	</section>
+
+
+	<section class="sg__card">
+		<header class="sg__card__header">
+			<h2 class="h3">Figures</h2>
+		</header>
+
+		<div class="sg__family">
+			<h4 class="h6">Simple figure (no monthly/annual)</h4>
+			<div class="sg__api">
+				<div class="sg__api__item">
+					<label>Value</label>
+					<input type="text" ng-init="figure0.figValue = 30" ng-model="figure0.figValue"/>
+				</div>
+			</div>
+			<tal-documentation
+				index="data.index"
+				data="figure0"
+				tal-documentation-path="'/client/styleguide/sections/components/partials/figureSimple.html'">
+			</tal-documentation>
+		</div>
+
+		<div class="sg__family">
+			<h4 class="h6">Inline figure</h4>
+			<div class="sg__api">
+				<div class="sg__api__item">
+					<label>Value</label>
+					<input type="text" ng-init="figure1.figValue = 30" ng-model="figure1.figValue"/>
+				</div>
+				<div class="sg__api__item">
+					<label>Period</label>
+					<input type="text" ng-init="figure1.period = 'month'" ng-model="figure1.period"/>
+				</div>
+			</div>
+			<tal-documentation
+				index="data.index"
+				data="figure1"
+				tal-documentation-path="'/client/styleguide/sections/components/partials/figureInline.html'">
+			</tal-documentation>
+		</div>
+
+		<div class="sg__family">
+			<h4 class="h6">Review figure</h4>
+			<div class="sg__api">
+				<div class="sg__api__item">
+					<label>Value</label>
+					<input type="text" ng-init="figure2.figValue = 30" ng-model="figure2.figValue"/>
+				</div>
+				<div class="sg__api__item">
+					<label>Period</label>
+					<input type="text" ng-init="figure2.period = 'month'" ng-model="figure2.period"/>
+				</div>
+			</div>
+			<tal-documentation
+				index="data.index"
+				data="figure2"
+				tal-documentation-path="'/client/styleguide/sections/components/partials/figureReview.html'">
+			</tal-documentation>
+		</div>
+
+		<div class="sg__family">
+			<h4 class="h6">Total figure</h4>
+			<div class="sg__api">
+				<div class="sg__api__item">
+					<label>Value</label>
+					<input type="text" ng-init="figure3.figValue = 30" ng-model="figure3.figValue"/>
+				</div>
+				<div class="sg__api__item">
+					<label>Period</label>
+					<input type="text" ng-init="figure3.period = 'Monthly'" ng-model="figure3.period"/>
+				</div>
+			</div>
+			<tal-documentation
+				index="data.index"
+				data="figure3"
+				tal-documentation-path="'/client/styleguide/sections/components/partials/figureTotal.html'">
+			</tal-documentation>
+		</div>
+	</section>
+
+
+	<section class="sg__card">
+		<header class="sg__card__header">
+			<h2 class="h3">Toasts</h2>
+		</header>
+		<p>
+			Toasts can be triggered by using the <code>toastr</code> service.
+		</p>
+		<button class="tal-btn--secondary sg-vspace" ng-click="showToastSuccess()">Toast success</button>
+		<button class="tal-btn--secondary sg-vspace" ng-click="showToastError()">Toast error</button>
+		<button class="tal-btn--secondary sg-vspace" ng-click="showToastInfo()">Toast info</button>
+		<button class="tal-btn--secondary" ng-click="showToastWarning()">Toast warning</button>
+	</section>
+
+	<section class="sg__card">
+		<header class="sg__card__header">
+			<h2 class="h3">Click to chat</h2>
+		</header>
+		<p>
+			This will be fixed at the bottom right of the viewport.
+		</p>
+		<tal-documentation tal-documentation-path="'/client/styleguide/sections/components/partials/clickToChat.html'"></tal-documentation>
+	</section>
+</article>

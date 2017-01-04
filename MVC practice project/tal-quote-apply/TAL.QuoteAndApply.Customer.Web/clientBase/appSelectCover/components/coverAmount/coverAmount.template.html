@@ -1,0 +1,7 @@
+<div class="form-group">
+    <label for="lifeCoverAmount">Cover amount:</label>
+    <select id="lifeCoverAmount" class="form-control">
+        <option>select custom amount</option>
+        <option ng-repeat="option in options" value="{{option.value}}" ng-attr-selected="option.defaultSelected || undefined">{{option.displayValue}}</option>
+    </select>
+</div>

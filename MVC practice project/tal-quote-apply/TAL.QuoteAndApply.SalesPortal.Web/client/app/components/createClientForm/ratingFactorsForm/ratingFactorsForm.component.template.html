@@ -1,0 +1,86 @@
+<form name="createClientForm" class="client-rating-factors" ng-submit="ctrl.submit()" novalidate>
+    <h1>Rating Factors <span class="description">(mandatory)</span></h1>
+    <hr />
+
+    <tal-two-option-radio label="Gender"
+                          group-name="gender"
+                          ng-model="ctrl.ratingFactors.gender"
+                          option-1-label="Male" option-1-value="'M'"
+                          option-2-label="Female" option-2-value="'F'"
+                          server-validate="createClientRequest.policyOwner.ratingFactors.gender"
+                          no-inline-submit="true"></tal-two-option-radio>
+
+    <div class="row">
+        <div class="col-xs-6">
+            <tal-dob-with-age warnings-enabled="true" section="section" ng-model="ctrl.ratingFactors.dateOfBirth"
+                              no-inline-submit="true"
+                              server-validate="createClientRequest.policyOwner.ratingFactors.dateOfBirth"></tal-dob-with-age>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6">
+
+            <tal-two-option-radio label="Australian Resident"
+                                  group-name="resident"
+                                  ng-model="ctrl.ratingFactors.australianResident"
+                                  server-validate="createClientRequest.policyOwner.ratingFactors.australianResident"
+                                  no-inline-submit="true"></tal-two-option-radio>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <tal-two-option-radio label="Smoker"
+                                      group-name="smokerStatus"
+                                      option-1-label="Yes"
+                                      option-1-value="'Yes'"
+                                      option-2-label="No"
+                                      option-2-value="'No'"
+                                      ng-model="ctrl.ratingFactors.smokerStatus"
+                                      tal-server-validate="createClientRequest.policyOwner.ratingFactors.smokerStatus"
+                                      no-inline-submit="true"></tal-two-option-radio>
+            </div>
+        </div>
+    </div>
+
+    <tal-occupation-search type="text"
+                           ng-model="ctrl.ratingFactors"
+                           server-validate="createClientRequest.policyOwner.ratingFactors.occupationCode"
+                           no-inline-submit="true"
+                           placeholder="Begin typing to search" required>
+    </tal-occupation-search>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group" show-errors>
+                <label class="control-label">Annual Income</label>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-usd"></i></span>
+                    <input class="form-control" type="tel" name="income"
+                           tal-currency-format whole-numbers-only="true"
+                           ng-model="ctrl.ratingFactors.income"
+                           tal-server-validate="createClientRequest.policyOwner.ratingFactors.income"
+                           placeholder="eg $90,000"
+                           maxlength="10">
+                </div>
+                <tal-form-error ng-form-model="createClientForm.income"></tal-form-error>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group" show-errors>
+                <div class="input-group ng-hide">
+                    <input class="form-control" name="adobeData"
+                           ng-model="ctrl.ratingFactors.adobeData"
+                           tal-server-validate="createClientRequest.policyOwner.ratingFactors.adobeLead">
+                </div>
+                <tal-form-error ng-form-model="createClientForm.adobeData"></tal-form-error>
+            </div>
+        </div>
+    </div>
+
+</form>
+

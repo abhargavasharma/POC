@@ -1,0 +1,16 @@
+﻿<div class="form-group" show-errors ng-form="premiumTypeForm">
+    <label class="control-label" for="{{premiumTypeValidationKey}}">Premium Type
+        <span class="fa fa-info-circle info-icon"></span>
+        <div><span class="small"></span><br/></div>
+    </label>
+    <select class="form-control"
+            name="premiumType"
+            id="{{premiumTypeValidationKey}}"
+            tal-server-validate="{{premiumTypeValidationKey}}"
+            ng-change="submitPlanPremiumType()"
+            ng-options="p for p in premiumTypes"
+            ng-model="planDetail.premiumType">
+        <option value="" disabled selected>Please select</option>
+    </select>
+    <tal-form-error ng-form-model="premiumTypeForm.premiumType"></tal-form-error>
+</div>

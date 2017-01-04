@@ -1,0 +1,85 @@
+
+
+<form cg-busy="loadingPromise" name="paymentsForm" ng-submit="submit()" novalidate>
+
+    <div id="payments" class="form-section payments" ng-form="paymentsEditForm">
+        <input type="hidden" ng-model="payments.payment.selected" tal-server-validate="payments.payment.selected" name="selectPayment"/>
+        <uib-tabset justified="true">
+            <uib-tab active="payments.directDebit.active"
+                     id="{{paymentsReturnObj.directDebit.type + 'PaymentTab'}}"
+                     ng-hide="!isDirectDebitPaymentAvailable"
+                     disable="payments.directDebit.disabled"
+                     ng-switch on="payments.directDebit.type" 
+                     ng-click="checkPaymentChanged('directDebit')">
+                <uib-tab-heading><label class="plan-tab">Pay via Direct Debit</label></uib-tab-heading>
+            </uib-tab>
+            <uib-tab active="payments.creditCard.active"
+                     id="{{paymentsReturnObj.creditCard.type + 'PaymentTab'}}"
+                     ng-hide="!isCreditCardPaymentAvailable"
+                     disable="payments.creditCard.disabled"
+                     ng-switch on="payments.creditCard.type" 
+                     ng-click="checkPaymentChanged('creditCard')">
+                <uib-tab-heading><label class="plan-tab">Pay via Credit Card</label></uib-tab-heading>
+            </uib-tab>
+            <uib-tab active="payments.selfManagedSuperFund.active"
+                     id="{{paymentsReturnObj.selfManagedSuperFund.type + 'PaymentTab'}}"
+                     ng-hide="!isSelfManagementSuperFundPaymentAvailable"
+                     disable="payments.selfManagedSuperFund.disabled"
+                     ng-switch on="payments.selfManagedSuperFund.type"
+                     ng-click="checkPaymentChanged('selfManagedSuperFund')">
+                <uib-tab-heading><label class="plan-tab">Pay via SMSF</label></uib-tab-heading>
+            </uib-tab>
+            <uib-tab active="payments.superannuation.active"
+                     id="{{paymentsReturnObj.superannuation.type + 'PaymentTab'}}"
+                     ng-hide="!isSuperannuationPaymentAvailable"
+                     disable="payments.superannuation.disabled"
+                     ng-switch on="payments.superannuation.type"
+                     ng-click="checkPaymentChanged('superannuation')">
+                <uib-tab-heading><label class="plan-tab">Pay via Superannuation Fund</label></uib-tab-heading>
+            </uib-tab>
+
+            <tal-direct-debit payments-changed="paymentsChanged(paymentsReturnObj.directDebit)"
+                              submit-payment="submitPaymentOnChange(paymentsReturnObj.directDebit)"
+                              payment-model="paymentsReturnObj.directDebit"
+                              ng-show="payments.directDebit.active"
+                              section="section"
+                              quote-reference-number="quoteReferenceNumber"
+                              risk="risk.riskId"
+                              availability="availability"
+                              read-only="readOnly">
+            </tal-direct-debit>
+            <tal-super-annuation-payment payments-changed="paymentsChanged(paymentsReturnObj.superannuation)"
+                                         submit-payment="submitPaymentOnChange(paymentsReturnObj.superannuation)"
+                                         payment-model="paymentsReturnObj.superannuation"
+                                         ng-show="payments.superannuation.active"
+                                         risk="risk" read-only="readOnly">
+            </tal-super-annuation-payment>
+            <tal-credit-card payments-changed="paymentsChanged(paymentsReturnObj.creditCard)" 
+                             submit-payment="submitPaymentOnChange(paymentsReturnObj.creditCard)"
+                             payment-model="paymentsReturnObj.creditCard"
+                             expiry-date-default="expiryDateDefault"
+                             quote-reference-number="quoteReferenceNumber"
+                             server-response="serverErrorResponse"
+                             ng-show="payments.creditCard.active"
+                             read-only="readOnly">
+            </tal-credit-card>
+            <tal-self-managed-super-fund payments-changed="paymentsChanged(paymentsReturnObj.selfManagedSuperFund)"
+                                         submit-payment="submitPaymentOnChange(paymentsReturnObj.selfManagedSuperFund)"
+                                         payment-model="paymentsReturnObj.selfManagedSuperFund"
+                                         ng-show="payments.selfManagedSuperFund.active"
+                                         section="section"
+                                         quote-reference-number="quoteReferenceNumber"
+                                         risk="risk.riskId"
+                                         availability="availability"
+                                         read-only="readOnly">
+            </tal-self-managed-super-fund>
+        </uib-tabset>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8">
+                    <tal-form-error class="has-error help-block" ng-form-model="paymentsEditForm.selectPolicy"></tal-form-error>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

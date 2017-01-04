@@ -1,0 +1,174 @@
+// ================================================================================
+// MHEADER UPPER STYLES
+// ================================================================================
+
+@header-upper-bgd-color: @white;
+@header-mid-bgd-color: @grey-10;
+@header-lower-bgd-color: @white;
+
+// STYLES
+// ================================================================================
+
+.main-header {
+	position: relative;
+	z-index: 50000;
+}
+
+
+// ---- Upper ------------------------------------------------------------------------
+
+.main-header-upper {
+	padding-top: 6px;
+	background-color: @header-upper-bgd-color;
+	min-height: 35px;
+	height: auto;
+	z-index: 0;
+	position: relative;
+	top: 68px;
+
+	display: none;
+	.bp(l, { display: block; });
+}
+
+// If the quote premium is hidden
+.main-header[hide-quote-premium="true"] .main-header-upper {
+	.bp(m, { display: block; });
+}
+
+// ---- Mid ------------------------------------------------------------------------
+
+.main-header-mid {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+
+	height: 46px;
+	box-sizing: border-box;
+
+	background-color: @header-mid-bgd-color;
+	border-bottom: 1px solid rgba(255,255,255,0.3);
+
+
+	.bp(m, {
+		padding-top: 10px;
+		height: 68px;
+	});
+
+	.main-quote {
+		.bp(m, {
+			right: 10px;
+			position: absolute;
+			top: 0;
+			right: 0;
+		});
+
+		.bp(l, {
+			right: 40px;
+			top: -10px;
+		});
+	}
+}
+
+.main-header-mid-inner {
+	position: relative;
+}
+
+.main-header-logo {
+	width: 80px;
+	float: left;
+	display: inline-block;
+
+}
+
+.main-header-logo-link {
+	display: block;
+	width: 60px;
+	height: 40px;
+	.abs-link-block;
+	border:none;
+	.mxn-icon-pe(
+		@icon: tal-logo,
+		@color-base: @tal-green,
+		@color-hover: @tal-green-hover,
+		@color-active: @tal-green-dark,
+		@size: 60px,
+		@position: center
+	);
+}
+
+.main-header-contact {
+	color: @white;
+	&:extend(.abs-font--size-xs);
+
+	a {
+		margin: 0 10px;
+	}
+
+	.bp(0, s, {
+		float: right;
+		margin-top: 14px;
+	});
+
+	.bp(m, m, {
+		display: inline-block;
+		padding-top: 7px;
+		margin-left: 50px;
+		line-height: 2.4;
+	});
+
+	.bp(l, {
+		padding-top: 12px;
+		margin-left: 140px;
+		margin-right: 260px;
+		width: auto;
+	});
+}
+
+.main-header-contact-1 {
+	.bp(0, m, {
+		float: left;
+	});
+}
+
+.main-header-contact-2 {
+	.bp(0, m, {
+		float: left;
+	});
+}
+
+.main-header-contact-3 {
+	.bp(0, l, {
+		display: none;
+	});
+
+	.bp(0, l, {
+		float: left;
+		clear: left;
+	});
+}
+
+// ---- Lower ------------------------------------------------------------------------
+
+.main-header-lower {
+	position: relative;
+	top: 46px;
+	padding-top: 5px;
+
+	background-color: @header-lower-bgd-color;
+	height: 40px;
+	position: relative;
+
+	.bp(m, { 
+		top: 67px;
+		padding-right: 290px;
+	});
+
+	.bp(l, { display: none; });
+}
+
+// If the quote premium is hidden
+.main-header[hide-quote-premium="true"] .main-header-lower {
+	.bp(m, { display: none; });
+}

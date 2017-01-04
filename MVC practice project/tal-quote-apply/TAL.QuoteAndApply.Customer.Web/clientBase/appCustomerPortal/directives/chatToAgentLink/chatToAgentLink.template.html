@@ -1,0 +1,10 @@
+<span class="chat-to-agent-link" ng-if="ctrl.chatAvailability.webChatIsAvailable">
+    <span class="chat-help-text" ng-if="!!ctrl.prefix">&nbsp;{{ctrl.prefix}}&nbsp;</span>
+    <a ng-click="ctrl.onChat()"
+    	href=""
+       	target="_blank"
+       	class="tal-link--strong chat-link">
+        <span ng-transclude></span>
+    </a>
+    <span class="chat-help-text" ng-if="!!ctrl.suffix">&nbsp;{{ctrl.suffix}}&nbsp;</span>
+</span>

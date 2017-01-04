@@ -1,0 +1,47 @@
+.tal-search-container {
+  position: relative;
+  .results {
+    padding: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    border-top: 0;
+    box-shadow: 0px 4px 8px #999;
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    z-index: 3;
+    max-height: 300px;
+    overflow: auto;
+
+    ul {
+      padding: 0;
+      margin: 0;
+
+      li {
+        list-style: none;
+        padding: 5px 10px;
+        cursor: default;
+
+        span {
+          &.industry {
+            color: #666;
+            font-style: italic;
+            font-size: 12px;
+          }
+        }
+
+        &:hover, &:focus {
+          background: #4781FF;
+          color: #fff;
+
+          span {
+            &.industry {
+              color: #ccc;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

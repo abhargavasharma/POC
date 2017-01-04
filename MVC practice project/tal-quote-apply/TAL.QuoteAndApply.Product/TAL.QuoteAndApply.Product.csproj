@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E24B866B-076C-491A-8074-FFB0432B6B40}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TAL.QuoteAndApply.Product</RootNamespace>
+    <AssemblyName>TAL.QuoteAndApply.Product</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Monads, Version=1.1.5.0, Culture=neutral, PublicKeyToken=c45ad03d718dd7fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\Monads.1.1.5.0\lib\net40\Monads.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contracts\IProductBrandSettingsProvider.cs" />
+    <Compile Include="Definition\Brands\BaseBrandSpecificBuilder.cs" />
+    <Compile Include="Definition\Brands\IBrandSpecificBuilder.cs" />
+    <Compile Include="Definition\Brands\YellowBrandProductDefinitionBuilder.cs" />
+    <Compile Include="Definition\Brands\MidMarketProductDefinitionBuilder.cs" />
+    <Compile Include="Definition\Brands\ProductBrandSettingConstants.cs" />
+    <Compile Include="Definition\CoverDefinitionProvider.cs" />
+    <Compile Include="Definition\PlanDefaults.cs" />
+    <Compile Include="Definition\PlanDefaultsBuilder.cs" />
+    <Compile Include="Definition\PlanDefaultsProvider.cs" />
+    <Compile Include="Definition\PlanDefinitionProvider.cs" />
+    <Compile Include="Definition\PolicyDefaults.cs" />
+    <Compile Include="Definition\PolicyDefaultsProvider.cs" />
+    <Compile Include="Definition\ProductDefinitionBuilder.cs" />
+    <Compile Include="Definition\ProductPlanConstants.cs" />
+    <Compile Include="Ioc\RegistrationModule.cs" />
+    <Compile Include="Models\Definition\AgeRangeCoverAmountDefinition.cs" />
+    <Compile Include="Models\Definition\AgeRangeDefinition.cs" />
+    <Compile Include="Models\Definition\CoverDefinition.cs" />
+    <Compile Include="Models\Definition\ExternalCustomerRefConfigSettings.cs" />
+    <Compile Include="Models\Definition\FeatureRule.cs" />
+    <Compile Include="Models\Definition\IAvailability.cs" />
+    <Compile Include="Models\Definition\MaximumAgeDefinition.cs" />
+    <Compile Include="Models\Definition\OptionDefinition.cs" />
+    <Compile Include="Models\Definition\PaymentDefinition.cs" />
+    <Compile Include="Models\Definition\PlanDefinition.cs" />
+    <Compile Include="Models\Definition\PlanVariablesDefinition.cs" />
+    <Compile Include="Models\Definition\PremiumTypeDefinition.cs" />
+    <Compile Include="Models\Definition\ProductConfigRule.cs" />
+    <Compile Include="Models\Definition\ProductDefinition.cs" />
+    <Compile Include="Models\MaxCoverAmountParam.cs" />
+    <Compile Include="Models\MinAnnualIncomeParam.cs" />
+    <Compile Include="Models\SaveGatePosition.cs" />
+    <Compile Include="Models\Types\SelectedCovers.cs" />
+    <Compile Include="Models\Types\SelectedPlans.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rules\Common\AvailabilityRule.cs" />
+    <Compile Include="Rules\Common\EligibleForPremiumTypeRule.cs" />
+    <Compile Include="Rules\Common\MaxCoverAmountMustBeOverMinCoverAmount.cs" />
+    <Compile Include="Rules\Common\MustBeOverMinumumCoverAmountRule.cs" />
+    <Compile Include="Rules\Common\MustBeUnderMaxCoverAmountRule.cs" />
+    <Compile Include="Models\SelectedProductPlanOptions.cs" />
+    <Compile Include="Rules\Common\MustHaveCoverAmountRule.cs" />
+    <Compile Include="Rules\Common\MustHaveFieldSelected.cs" />
+    <Compile Include="Rules\Common\SelectedPlanMustHaveAtLeastCoverSelected.cs" />
+    <Compile Include="Rules\Common\PremiumTypeIsNotUnkownRule.cs" />
+    <Compile Include="Rules\Common\SelectedVariableOptionMustBeValidOptionRule.cs" />
+    <Compile Include="Rules\RuleFactory.cs" />
+    <Compile Include="Service\CoverAmountService.cs" />
+    <Compile Include="Service\MaxCoverAmountForAgeProvider.cs" />
+    <Compile Include="Service\MaxCoverAmountPercentageOfIncomeProvider.cs" />
+    <Compile Include="Service\NameLookupService.cs" />
+    <Compile Include="Service\PlanMaxEntryAgeNextBirthdayProvider.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TAL.QuoteAndApply.Configuration\TAL.QuoteAndApply.Configuration.csproj">
+      <Project>{4b74fb69-495d-469c-b677-7b9d3ae856b5}</Project>
+      <Name>TAL.QuoteAndApply.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TAL.QuoteAndApply.DataModel\TAL.QuoteAndApply.DataModel.csproj">
+      <Project>{6E7E043C-A5B7-4DE6-9126-BC786543349C}</Project>
+      <Name>TAL.QuoteAndApply.DataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TAL.QuoteAndApply.Infrastructure\TAL.QuoteAndApply.Infrastructure.csproj">
+      <Project>{af6718f8-8028-462f-ba2c-9ee5937c49b8}</Project>
+      <Name>TAL.QuoteAndApply.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TAL.QuoteAndApply.Rules\TAL.QuoteAndApply.Rules.csproj">
+      <Project>{3720CF5D-81E0-48DC-B4E5-69BF1D58FF52}</Project>
+      <Name>TAL.QuoteAndApply.Rules</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

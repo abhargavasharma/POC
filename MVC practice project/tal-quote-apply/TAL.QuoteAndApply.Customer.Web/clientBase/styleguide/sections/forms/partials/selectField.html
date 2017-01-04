@@ -1,0 +1,12 @@
+<div class="row form_container">
+	<div class="col-xs-6">
+		<label for="selectField">Static data</label>
+		<form-select 
+    		tal-name="selectField"
+    		tal-id="selectField"
+			placeholder="Select an option..."
+			ng-model="data.value"
+			form-select-items="data.selectItems">
+		</form-select>
+	</div>
+</div>

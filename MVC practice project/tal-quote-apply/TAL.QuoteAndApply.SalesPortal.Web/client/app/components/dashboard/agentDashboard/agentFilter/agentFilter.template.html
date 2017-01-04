@@ -1,0 +1,116 @@
+<div class="tal-agent-filter" cg-busy="loadingPromise">
+  <div class="container-fluid">
+    <uib-accordion close-others="false" class="form-panel">
+      <uib-accordion-group class="accordion-group-padding" is-open="filterOpen">
+        <uib-accordion-heading class="panel-heading" id="referralFilterAccordion">
+          <div class="col-md-1"><i class="fa fa-lg minimise" ng-class="{'fa-minus-square': filterOpen, 'fa-plus-square': !filterOpen}"></i></div>
+          <div class="col-md-11">Filter results</div>
+        </uib-accordion-heading>
+        <div class="row" ng-show="filterOpen">
+          <div class="col-md-6">
+            <h3>Date Range:</h3>
+            <div class="date-range">
+              <div class="row">
+                <div class="col-md-6">
+                  <p class="input-group">
+                    Start Date
+                    <input type="tel" class="form-control" uib-datepicker-popup="dd/MM/yyyy" ng-model="submitModel.startDate" disabled is-open="openStartModel.flag" id="startDateInput"
+                           min-date="'2010-01-02'" max-date="dt" ng-required="true" close-text="Close" show-weeks="false" show-button-bar="false" ng-change="updateAgentQuotes()" />
+                      <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="openStartDate($event, 'flag')"><i class="fa fa-calendar"></i></button>
+                      </span>
+                  </p>
+                </div>
+                <div class="col-md-6">
+                  <p class="input-group">
+                    End Date
+                      <input type="tel" class="form-control" uib-datepicker-popup="dd/MM/yyyy" ng-model="submitModel.endDate" disabled is-open="openEndModel.flag" id="endDateCheckbox"
+                             min-date="'2010-01-02'" max-date="dt" ng-required="true" close-text="Close" show-weeks="false" show-button-bar="false" ng-change="updateAgentQuotes()"
+                             ng-blur="update()" />
+                        <span class="input-group-btn">
+                          <button type="button" class="btn btn-default" ng-click="openEndDate($event, 'flag')"><i class="fa fa-calendar"></i></button>
+                        </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h3>My Pipeline Status:</h3>
+            <div class="row">
+              <div class="col-md-6">
+                <div ng-repeat="progressType in filterModel.inProgressTypes">
+                  <label class="control-label">
+                    <input type="checkbox"
+                           id="{{progressType.code + 'FilterCheckbox'}}"
+                           name="progressType.code" ng-change="updateAgentQuotes()"
+                           ng-model="submitModel[progressType.code]"/>
+                    <span for="progressType.code" ng-bind="progressType.name"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div ng-repeat="closedType in filterModel.closedTypes">
+                  <label class="control-label">
+                    <input type="checkbox"
+                           id="{{closedType.code + 'FilterCheckbox'}}"
+                           name="closedType.code" ng-change="updateAgentQuotes()"
+                           ng-model="submitModel[closedType.code]"/>
+                    <span for="closedType.code" ng-bind="closedType.name"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </uib-accordion-group>
+    </uib-accordion>
+    <hr/>
+    <div ng-show="searchPerformed">
+      <div class="referrals-results">
+        <table class="table table-striped referrals-results-table" ng-show="hasResults()">
+          <tr>
+            <th>Quote ID</th>
+            <th>Brand</th>
+            <th>Name</th>
+            <th ng-show="externalRefRequired">{{ externalRefLabel || "External Customer Reference"}}</th>
+            <th>Cover</th>
+            <th>Premium</th>
+            <th>Last Accessed Date</th>
+            <th>Pipeline Status</th>
+            <th>Pipeline Status Last Updated</th>
+             
+            <th></th>
+          </tr>
+          <tr ng-repeat="quote in searchResults | orderBy:'lastTouchedByTS':true"
+              id="{{quote.quoteReference + 'QuoteBtn'}}">
+            <td ng-bind="quote.quoteReference"></td>
+            <td ng-bind="quote.brand"></td>
+            <td class="fullName" ng-bind="quote.fullName"></td>
+            <td ng-show="externalRefRequired" ng-bind="quote.externalCustomerReference"></td>
+            <td ng-bind="quote.plans"></td>
+            <td ng-bind="quote.premium | currency"></td>
+            <td ng-bind="quote.lastTouchedByTS | date:'dd/MM/yyyy HH:mm:ss'"></td>
+            <td ng-bind="getProgress(quote.progress)"></td>
+            <td ng-bind="quote.progressUpdateTs | date:'dd/MM/yyyy HH:mm:ss'"></td>
+            
+            <td>
+              <button class="btn btn-open-action" ng-click="goToQuote(quote.quoteReference)">Open</button>
+            </td>
+          </tr>
+        </table>
+        <div class="no-results" ng-show="hasResults()">
+          <tal-paging
+                  total-records="paging.totalRecords"
+                  current-page="paging.currentPage"
+                  page-count="paging.pageCount"
+                  on-previous-page="onPreviousPage()"
+                  on-next-page="onNextPage()"></tal-paging>
+        </div>
+        <div class="no-results" ng-show="!hasResults()">
+          0 Results found
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

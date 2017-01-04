@@ -1,0 +1,28 @@
+<div class="tal-multi-select-question">
+
+    <div class="answers-container">
+        <div ng-repeat="row in ctrl.answersAsRows" class="row">
+            <form-checkbox ng-repeat="answer in row"
+                           tal-name="checkbox_{{ctrl.question.id}}_{{answer.id}}"
+                           class="col-sm-4 tal-form-checkbox tal-form-checkbox-button"
+                           ng-model="answer.isSelected"
+                           state-change="ctrl.onAnswerStateChanged(answer)"
+                           tal-id="checkbox_{{ctrl.question.id}}_{{answer.id}}"
+                           tal-tooltip="{{answer.helpText}}">
+                <span class="answer-inner" ng-class="{'has-icon': answer.tags.length}">
+                    <span ng-if="answer.tags.length" class="icon" ng-class="[answer.tags.join(' ')]"></span>
+                    <span class="answer-text">{{answer.text}}</span>
+                </span>
+            </form-checkbox>
+        </div>
+    </div>
+
+    <div class="text-center underwriting-toolbar row text-center">
+        <button type="button" class="tal-btn--primary"
+                ng-disabled="!ctrl.isContinueEnabled()"
+                ng-click="ctrl.onContinueClick()">
+            Continue
+        </button>
+    </div>
+
+</div>

@@ -1,0 +1,32 @@
+<article>
+	<header>
+		<h1>Icons</h1>
+	</header>
+
+	<section class="sg__card">
+		<header class="sg__card__header">
+			<h2 class="h3">Static icons</h2>
+		</header>
+
+		<div class="sg__icons-grid sg__card__example">
+			<div class='sg__icons-grid__item--pe icon-{{icon}}' ng-repeat="icon in talPEIcons"></div>
+		</div>
+		<div class="sg__icons-grid inverse-colors sg__card__example-inverse">
+			<div class='sg__icons-grid__item--pe icon-{{icon}}' ng-repeat="icon in talPEIcons"></div>
+		</div>
+	</section>
+
+	<section class="sg__card">
+		<header class="sg__card__header">
+			<h2 class="h3">Dual-state icons</h2>
+		</header>
+
+		<div class="sg__icons-grid sg__card__example">
+			<div class='sg__icons-grid__item--pe icon-{{icon}}-dual' ng-repeat="icon in talPEIcons"></div>
+		</div>
+		<div class="sg__icons-grid inverse-colors sg__card__example-inverse">
+			<div class='sg__icons-grid__item--pe icon-{{icon}}-dual' ng-repeat="icon in talPEIcons"></div>
+		</div>
+
+	</section>
+</article>

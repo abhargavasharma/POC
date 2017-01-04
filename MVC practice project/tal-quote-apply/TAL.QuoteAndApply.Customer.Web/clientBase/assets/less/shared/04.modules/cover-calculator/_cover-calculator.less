@@ -1,0 +1,149 @@
+.cc-back-link {
+	position: relative;
+	margin-top: 10px;
+	padding-left: 20px;
+
+	// TODO Needs icon
+}
+
+.cc-steps {
+	margin: 40px 0;
+}
+
+.cc-wizard-step {
+	
+}
+
+.cc-wizard-step {
+
+	.bp(s, {
+
+		.cc-question {
+			padding-left: 50px;
+
+			.cc-question__label {
+				padding-left: 0;
+
+				.label__number {
+					
+				}
+
+				.label__text {
+					
+				}
+			}
+		}
+	});
+}
+
+
+
+/////////////
+// Tooltip
+
+
+.cc-showhide-tooltip {
+	padding: 0;
+	width: 22px;
+	height: 22px;
+	border-radius: 11px;
+	//background: $brand-secondary-light;
+	border: none;
+
+	&:before {
+		color: @white;
+		content: '?';
+		//@include font-size(16);
+	}
+
+	&:hover, &:focus, &:active {
+		//background: lighten($brand-secondary-light, 40%);
+	}
+}
+
+.cc-tooltip {
+	// background: $brand-secondary-light;
+	color: @white;
+	display: block;
+	margin: 10px 0;
+	padding: 10px;
+	// @include font-content();
+	// @include font-size(14);
+	position: relative;
+
+	display: none;
+
+	.bp(s, {
+		max-width: 550px;
+	});
+
+	// &:after {
+	// 	@include triangle-content(bottom, $brand-secondary-light, 20px, 10px, 250ms);
+
+	// 	bottom: -19px;
+	// 	right: 16px;
+
+	// 	@include bp(s) {
+	// 		left: 275px;
+	// 	}
+	// }
+
+	&.ng-animate {
+		// transition: all 400ms ease;
+
+		&.ng-hide-remove {
+			transition: all 400ms ease;
+			opacity: 0;
+		}
+
+		&.ng-hide-remove-active {
+			opacity: 1;
+		}
+
+		&.ng-hide-add {
+			transition: all 0ms ease;
+			opacity: 1;
+		}
+
+		&.ng-hide-add-active {
+			opacity: 0;
+		}
+	}
+
+	a {
+		color: @white;
+	}
+}
+
+.cc-question-input-wrapper {
+	position: relative;
+
+	.cc-showhide-tooltip {
+		position: absolute;
+		right: 0;
+		top: 10px;
+		right: 15px;
+
+		.bp(s, {
+			left: 275px;
+		});
+
+	}
+}
+
+
+/////////////
+// Wizard Nav
+
+.cc-wizard-nav {
+	.tal-link-arrow-left {
+		display: inline-block;
+		margin-top: 10px;
+	}
+}
+
+
+cc-question,
+cc-questions {
+	display: block;
+}

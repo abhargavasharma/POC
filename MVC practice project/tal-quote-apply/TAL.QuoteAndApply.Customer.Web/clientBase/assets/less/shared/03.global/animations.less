@@ -1,0 +1,41 @@
+// ============================================================
+// GLOBAL -- ANIMATIONS
+// ============================================================
+
+
+// Global fix to prevent flickering of toggling input versions
+input.ng-leave,
+input.ng-hide-add {
+  display: none !important;
+}
+
+
+
+.tal-animation-context {
+	position: relative;
+}
+
+.animate--fadeinout {
+	opacity: 1;
+	transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 500ms;
+
+	&.ng-hide {
+		opacity: 0;
+	}
+
+	&.ng-leave {
+		opacity: 1;
+	}
+
+	&.ng-leave.ng-leave-active {
+		opacity: 0;
+	}
+
+	&.ng-enter {
+		opacity: 0;
+	}
+
+	&.ng-enter.ng-enter-active {
+		opacity: 1;
+	}
+}

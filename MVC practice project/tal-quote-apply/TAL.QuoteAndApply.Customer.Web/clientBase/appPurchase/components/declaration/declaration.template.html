@@ -1,0 +1,42 @@
+<div class="tal-declaration">
+    <div class="row intro" ng-form="purchaseDeclarationRequest">
+        <div class="col-md-12">
+            <h2>Declarations</h2>
+
+            <p><a ng-click="ctrl.onUnderwritingSummary()" target="_blank">Review and print your responses here.</a></p>
+
+            <p>I declare that I have read the following statements, and I agree and acknowledge that:</p>
+
+            <ul>
+                <li>I have reviewed my application answers and believe them to be true and correct</li>
+                <li>I have viewed the Product Disclosure Statement (PDS) located on this website</li>
+                <li>I have read and understand the Duty of Disclosure as set out in the PDS and on this website and understand the Duty of Disclosure continues to apply until TAL accepts this application and issues a Policy Schedule</li>
+                <li>I have provided TAL with true, accurate and complete answers in my application</li>
+                <li>I will cooperate with TAL if modifications to the TAL Lifetime Protection Policy terms and conditions are required because of any changes to the answers notified to TAL</li>
+                <li>I consent to receive electronic communications from TAL, including but not limited to communications about my TAL Lifetime Protection Policy application and any TAL Lifetime Protection Policy that is issued to me, the relevant Product Disclosure Statement (PDS) and Financial Services Guide (FSG) and any other disclosure or insurance contract materials</li>
+                <li>I agree to regularly check my nominated email address and electronic communication devices to ensure they are able to receive electronic communications from TAL</li>
+                <li>I understand that by submitting this application, I consent to TAL's collection, use and disclosure of my personal information in accordance with the section in the PDS headed 'Your Privacy'</li>
+                <li>I agree that I have completed this application and all related questions about myself and not on behalf of someone else.</li>
+            </ul>
+
+           
+            <p>I have authorised TAL to debit my premiums from the credit card or bank account details that have been provided with my application.</p>
+
+            <div class="tal-form-checkbox-list">
+                <form-checkbox 
+                    tal-required="true"
+                    tal-id="declarationAgree"
+                    tal-set-checkbox-touched="purchaseDeclarationRequest.declarationAgree"  
+                    tal-server-validate="purchaseDeclarationRequest.declarationAgree"
+                    tal-name="declarationAgree"  tal-id="purchaseDeclarationAgree" class="tal-form-checkbox" ng-model="ctrl.declarationAgree">{{ctrl.termsAgreeText}}</form-checkbox>
+                <form-checkbox
+                        tal-required="false"
+                        tal-id="dncSelection"
+                        tal-set-checkbox-touched="purchaseDeclarationRequest.dncSelection"
+                        tal-server-validate="purchaseDeclarationRequest.dncSelection"
+                        tal-name="dncSelection" tal-id="purchaseDncSelection" class="tal-form-checkbox" ng-model="ctrl.dncSelection">{{ctrl.dncSelectionText}}</form-checkbox>
+            </div>
+            <tal-form-input-error show-error-for="purchaseDeclarationRequest.declarationAgree" show-error-when="required">You need to declare you have read and agree with the terms above.</tal-form-input-error>
+        </div>
+    </div>
+</div>

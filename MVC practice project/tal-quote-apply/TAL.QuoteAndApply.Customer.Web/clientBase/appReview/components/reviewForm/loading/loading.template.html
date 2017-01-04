@@ -1,0 +1,8 @@
+<span ng-if="!ctrl.loading.zeroLoadingCalcuation">
+  Your cover includes your <strong ng-bind="ctrl.loading.name"></strong> at a
+  <span ng-bind="ctrl.paymentFrequency.toLowerCase()"></span> cost to your total premium of
+  <strong ng-bind="ctrl.loading.premiumDiff | currency"></strong>.
+</span>
+<span ng-if="ctrl.loading.zeroLoadingCalcuation">
+  Your cover includes your <strong ng-bind="ctrl.loading.name"></strong> at an increase to your total premium.
+</span>

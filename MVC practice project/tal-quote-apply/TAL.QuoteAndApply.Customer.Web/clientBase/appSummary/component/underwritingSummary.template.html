@@ -1,0 +1,12 @@
+
+<div class="col-md-12 tal-underwriting-summary" cg-busy="ctrl.loadingPromise">
+    <div class="summary-questions" ng-repeat="question in ctrl.questions">
+        <dl class="summary-question">
+            <dt class="summary-question-text"><strong ng-bind-html="question.context" ng-if="question.context"></strong><span ng-bind-html="question.text"></span></dt>
+            <dd class="summary-answer-text" ng-repeat="answer in question.answers">
+                <p ng-show="answer.isSelected"><b ng-bind-html="answer.text"></b></p>
+            </dd>
+            <hr/>
+        </dl>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+<article>
+	<header>
+		<h1>Navigation</h1>
+	</header>
+
+	<section class="sg__card">
+		<header class="sg__card__header">
+			<h2 class="h3">Footer cover summary</h2>
+		</header>
+		<p><span class="sg-unused">Unused</span></p>
+		<tal-documentation
+			index="data.index"
+			data="breakdown"
+			tal-documentation-path="'/client/styleguide/sections/navigation/partials/coverBreakdown.html'">
+		</tal-documentation>
+	</section>
+
+	<section class="sg__card">
+		<header class="sg__card__header">
+			<h2 class="h3">Main quote summary</h2>
+		</header>
+
+		<div class="sg__api">
+			<h3 class="h6">Component API</h3>
+			<div class="sg__api__item"><label for="quoteNumber">Quote Number</label><input id="quoteNumber" type="text" ng-init="mainQuote.quoteNo = 'M1234567'" ng-model="mainQuote.quoteNo" /></div>
+			<div class="sg__api__item"><label for="discount">Discount</label><input id="discount" type="text" ng-init="mainQuote.discount = 10" ng-model="mainQuote.discount" /></div>
+			<div class="sg__api__item"><label for="premium">Premium</label><input id="premium" type="text" ng-init="mainQuote.premium = 90.34" ng-model="mainQuote.premium" /></div>
+			<div class="sg__api__item"><label for="period">Period</label><input id="period" type="text" ng-init="mainQuote.period = 'monthly'" ng-model="mainQuote.period" /></div>
+		</div>
+
+		<tal-documentation
+			index="data.index"
+			data="mainQuote"
+			tal-documentation-path="'/client/styleguide/sections/navigation/partials/mainQuote.html'">
+		</tal-documentation>
+	</section>
+</article>

@@ -1,0 +1,69 @@
+single-select-option-buttons {
+  display: inline-block;
+}
+
+.single-select-option-buttons {
+  .button-container {
+    display:inline-block;
+    padding:2px;
+
+    .btn {
+      width:100%;
+    }
+  }
+
+  .column-button-container {
+    margin-bottom: 5px;
+  }
+
+
+  &.column-layout{
+
+    /*for anything smaller than breakpoint, make form-radio button 100% */
+    form-radio{
+      width: 100%;
+      label{
+        width: 100%;
+      }
+    }
+
+    /*for anything bigger than breakpoint apply flex */
+    .bp(m, {
+      .row {
+        display: flex;
+      }
+
+      form-radio{
+        margin-right: 0;
+        margin-bottom: 12px;
+
+        display: flex;
+        flex: 1;
+
+        .tal-form-radio-inner{
+          display: flex;
+          flex-grow: 1;
+        }
+
+        .tal-form-radio-label{
+          width: 100%;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    });
+
+  }
+}
+
+html.is-ie10{
+  form-radio{
+    flex-direction: column;
+
+    .tal-form-radio-label{
+      display: inline-block !important;
+    }
+  }
+}

@@ -1,0 +1,75 @@
+.tal-section-basic-info {
+    .feature-text-container {
+        .keyline {
+            border-top: 1px solid #DADADA;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            width: 100%;
+            display: block;
+        }
+    }
+
+    .tal-card {
+        overflow: visible;
+    }
+
+    // Remove odd space when cols collapse
+    // Necessary because of how labels have positioned using columns.
+    .tal-col.tal-col.tal-col:first-of-type { // specificity
+        margin-bottom: 0;
+    }
+}
+
+.tal-basic-card {
+    .bp(0, s, {
+        max-width: 380px;
+        margin-left: auto;
+        margin-right: auto;
+    });
+
+    tal-card-header {
+        padding: 30px 10px 5px;
+        .bp(xs, { padding: 30px 20px 10px; });
+        .bp(m, { padding: 40px 35px 10px; });
+        .bp(xl, { padding: 40px 50px 10px; });
+    }
+
+    tal-card-body {
+        padding: 25px 10px 30px;
+        .bp(xs, { padding: 30px 20px 30px; });
+        .bp(m, { padding: 40px 35px 30px; });
+        .bp(xl, { padding: 50px 50px 35px; });
+    }
+}
+
+.tal-basic-card.tal-basic-card {
+    .bp(0,s, {
+        max-width: 340px;
+    });
+}
+
+.basic-info-submit-wrapper {
+    
+}
+
+.basic-info-recaptcha {
+    .g-recaptcha {
+        margin: 20px auto 0;
+
+        .bp(m, {
+            margin: 20px 0 0;
+        });
+    }
+}
+
+.basic-info-submit {
+    margin-top: 20px;
+}
+
+.basic-info-submit,
+.basic-info-recaptcha {
+    .tal-col.tal-col.tal-col { //specificity
+        padding: 0 8px;
+        box-sizing: border-box;
+    }
+}

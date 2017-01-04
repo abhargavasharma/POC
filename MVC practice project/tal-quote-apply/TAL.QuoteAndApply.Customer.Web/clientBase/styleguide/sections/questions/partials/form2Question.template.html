@@ -1,0 +1,31 @@
+<div class="question-container tal-card">
+  <div class="tal-question">
+    
+    <tal-progress-bar progress="33">
+     Your progress
+    </tal-progress-bar>
+    <div class="tal-question-label form-grid">
+      <p>Specify type of insurance you currently hold in addition to this application and the amount covered for.</p>
+      <div class="form-group row">
+        <div class="col-sm-6 tal-col">
+          <span class="tal-form-compact">
+            <label class="tal-form-compact-label" for="input1">Type</label>
+            <input id="input1" type="text" ng-model="data.test">
+          </span>
+        </div>
+        <div class="col-sm-6 tal-col" tal-cq="true">
+          <span class="tal-form-compact">
+            <label class="tal-form-compact-label" for="input2">Amount</label>
+            <input id="input2" type="text" ng-model="data.test">
+          </span>
+        </div>
+      </div>
+     
+    </div>  
+    <div class="tal-btn-set">
+      <button type="submit" class="tal-btn--secondary" angular-ripple>
+      Next
+      </button>
+    </div>
+  </div>
+</div>

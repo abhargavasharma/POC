@@ -1,0 +1,75 @@
+<div class="tal-question" ng-class="{'icon-question': ctrl.question.questionType === 'SportIcons'}">
+    <div>
+        <div class="question-context" ng-if="ctrl.question.context">{{ctrl.question.context}}</div>
+        <div class="question-text" ng-bind-html="ctrl.question.text" ng-class="{ 'boldQuestion': ctrl.isShowingHelp() }"></div>
+        <div class="answer-control-container" ng-switch="ctrl.question.questionType" ng-hide="ctrl.isShowingHelp()">
+            <!-- TODO: refactor on-question-answered attribute so don't have to keep passing into component (chuck into service) -->
+
+            <tal-date-of-birth-question question="ctrl.question"
+                                        ng-switch-when="DateOfBirth"
+                                        on-question-answered="ctrl.onQuestionAnswered()"></tal-date-of-birth-question>
+
+            <tal-currency-question question="ctrl.question"
+                                   ng-switch-when="Currency"
+                                   on-question-answered="ctrl.onQuestionAnswered()"></tal-currency-question>
+
+            <tal-single-select-question question="ctrl.question"
+                                        ng-switch-when="SingleSelect"
+                                        on-question-answered="ctrl.onQuestionAnswered()"></tal-single-select-question>
+
+            <tal-single-select-list-question question="ctrl.question"
+                                             ng-switch-when="SingleSelectList"
+                                             on-question-answered="ctrl.onQuestionAnswered()"></tal-single-select-list-question>
+
+            <tal-single-select-auto-complete-question question="ctrl.question"
+                                                      ng-switch-when="SingleSelectAutoComplete"
+                                                      on-question-answered="ctrl.onQuestionAnswered()"></tal-single-select-auto-complete-question>
+
+            <tal-single-select-icons-question question="ctrl.question"
+                                              ng-switch-when="SingleSelectIcons"
+                                              on-question-answered="ctrl.onQuestionAnswered()"></tal-single-select-icons-question>
+
+            <tal-multi-select-question question="ctrl.question"
+                                       ng-switch-when="MultiSelect"
+                                       on-question-answered="ctrl.onQuestionAnswered()"></tal-multi-select-question>
+
+            <tal-multi-select-auto-complete-icons-question question="ctrl.question"
+                                                           ng-switch-when="SportIcons"
+                                                           on-question-answered="ctrl.onQuestionAnswered()">
+            </tal-multi-select-auto-complete-icons-question>
+
+            <tal-multi-select-auto-complete-question question="ctrl.question"
+                                                     ng-switch-when="MultiSelectAutoComplete"
+                                                     on-question-answered="ctrl.onQuestionAnswered()"></tal-multi-select-auto-complete-question>
+
+            <tal-multi-select-checkboxes-question question="ctrl.question"
+                                                  ng-switch-when="MultiSelectCheckBoxes"
+                                                  on-question-answered="ctrl.onQuestionAnswered()"></tal-multi-select-checkboxes-question>
+
+            <tal-unsupported-question question="ctrl.question"
+                                      ng-switch-when="Unsupported"
+                                      on-question-answered="ctrl.onQuestionAnswered()"></tal-unsupported-question>
+
+            <tal-unsupported-question question="ctrl.question"
+                                      ng-switch-default
+                                      on-question-answered="ctrl.onQuestionAnswered()"></tal-unsupported-question>
+        </div>
+    </div>
+    <div ng-show="ctrl.isShowingHelp()" class="question-help-text">
+
+        <p>
+            <span ng-bind-html="ctrl.question.helpText"></span>
+        </p>
+
+        <p>
+            <span>{{ctrl.callHelpPrefix()}}</span>
+            <tal-phone-number-link></tal-phone-number-link>.
+        </p>
+
+        <div class="text-center help-text-actions">
+            <button type="button" class="tal-btn--secondary" ng-click="ctrl.closeHelp()">
+                OK
+            </button>
+        </div>
+    </div>
+</div>

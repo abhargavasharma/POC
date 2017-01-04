@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>TAL.QuoteAndApply.Customer.Web.YellowBrand</id>
+    <version>1.0.0</version>
+    <authors>TAL Innovation Team</authors>
+    <description>Fancy solution for this mid-market project</description>
+    <language>en-US</language>
+    <projectUrl>https://tdgitlab/tal/tal-quote-apply</projectUrl>
+    <licenseUrl>https://tdgitlab/tal/tal-quote-apply</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+  </metadata>
+  <files>
+    <file src="dist\yellowBrand\**\*.*" target="./" />
+	  <file src="F5\**\*.*" target="F5" />
+    <file src="BrandConfig\*.config" target="BrandConfig" />
+  </files>
+</package>

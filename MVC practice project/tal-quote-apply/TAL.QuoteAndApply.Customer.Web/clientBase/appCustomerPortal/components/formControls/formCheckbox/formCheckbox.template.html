@@ -1,0 +1,31 @@
+<div
+	accesskey="" 
+	class="tal-form-checkbox-inner" 
+	angular-ripple
+	role="checkbox" 
+	aria-checked="{{ctrl.ngModel}}" 
+	ng-checked="ctrl.ngModel"
+    ng-click="toggleCheck($event)"
+	>
+	<input 
+		class="hidden" 
+		id="{{ctrl.id}}" 
+		ng-disabled="ctrl.isDisabled" 
+		aria-checked="{{ctrl.ngModel}}" 
+		name="{{ctrl.name}}" 
+		ng-model="ctrl.ngModel" 
+		type="checkbox" 
+		ng-required="ctrl.required"
+        >
+	<label 
+		for="{{ctrl.id}}" 
+		class="tal-form-checkbox-label"
+        ng-transclude>
+	</label>
+</div>
+
+<tal-tooltip 
+	ng-if="ctrl.tooltip" 
+	label="{{ctrl.tooltip}}">
+	{{ctrl.tooltip}}
+</tal-tooltip>

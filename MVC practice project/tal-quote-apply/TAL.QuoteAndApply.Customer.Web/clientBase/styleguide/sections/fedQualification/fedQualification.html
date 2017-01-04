@@ -1,0 +1,102 @@
+<section class="tal-section-qualification">
+
+
+	<header class="tal-layout-header">
+		<div class="tal-layout-header-inner">
+			<h2 class="visuallyhidden">
+				Qualification questions
+			</h2>
+		</div>
+		<div class="tal-layout-header-bgd" style="background-image: url('./client/images/image_bgd02.png');"></div>
+	</header>
+
+	<main class="tal-layout-main row">
+		<div ng-include="'client/styleguide/sections/questions/partials/genericQuestion.template.html'"></div>
+
+		<div class="tal-pagination-bar">
+			<a href="#" class="tal-link-arrow-left">
+					Previous question
+			</a>
+			<a href="#" class="tal-link-icon-before">
+					Need help with this question?
+			</a>
+		</div>
+	</main>
+
+	<main class="tal-layout-main row">
+		<h3 class="h2">Animations</h3>
+
+		<div class="question-container tal-card" ng-switch on="questionIndex">
+
+			<div class="tal-question">
+				<tal-progress-bar progress="33">
+					<span class="h-minor-heading">Your progress</span>
+				</tal-progress-bar>
+
+				<div 
+					ng-switch="questionIndex" 
+					class="tal-animation-context"
+				>
+					<div ng-switch-when="0">
+						<div class="tal-question-label">
+							<p>
+								Question 0 content.						
+							</p>
+							<div>
+								<input type="text" ng-model="data.value">
+							</div>
+						</div>
+					
+						<div class="tal-btn-set">
+							<button 
+								type="submit" 
+								class="tal-btn--secondary" 
+								ng-click="nextQuestion()" 
+								angular-ripple>
+								Next
+							</button>
+						</div>
+					</div>
+
+					<div ng-switch-when="1">
+						<div class="tal-question-label">
+							<p>
+								Question 1 content.
+							</p>
+							<div>
+								<input type="text" ng-model="data.value">
+							</div>
+						</div>
+					
+						<div class="tal-btn-set">
+							<button 
+								type="submit" 
+								class="tal-btn--secondary" 
+								ng-click="nextQuestion()" 
+								angular-ripple>
+								Next
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="tal-pagination-bar">
+			<a href="" class="tal-link-arrow-left" ng-click="prevQuestion()">
+					Previous question
+			</a>
+			<a href="" class="tal-link-icon-before">
+					Need help with this question?
+			</a>
+		</div>
+	</main>
+
+
+	<aside>
+			<h2>Overall view layput</h2>
+			<p>This layout structure controls the overall responsive behavior, as well as details such as header height and content/header overlap. For details of specific content regions, refer to the markup.</p>
+			<div hljs hljs-language="html" hljs-include="'/client/styleguide/sections/fedQualification/fedQualificationScaffold.html'"></div>
+	</aside>
+
+</section>

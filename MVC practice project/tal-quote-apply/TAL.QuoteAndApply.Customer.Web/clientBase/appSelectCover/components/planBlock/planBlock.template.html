@@ -1,0 +1,39 @@
+<tal-card class="" cg-busy="ctrl.loadingPromise" ng-class="{'is-off':!ctrl.vm.isSelected}">
+    <tal-cover-product ng-class="{'tal-cover-product-off':!ctrl.vm.isSelected}">
+
+        <div class="tal-cover-product tal-cover-product-blue">
+            <tal-card-header tal-cover-product-header product-is-on="ctrl.vm.isSelected" product-value="ctrl.vm.premium" state-change="ctrl.stateChange()">
+                <h3 ng-bind-html="ctrl.vm.planTitle">Cover</h3>
+                <p class="tal-cover-product-link">
+                    <a class="tal-link-minor" href="#">Learn more about (CI) Cover</a>
+                </p>
+            </tal-card-header>
+            <div class="tal-cover-product-content" ng-show="ctrl.vm.isSelected">
+                <div>
+                    <label>Cover amount</label>
+                </div>
+                <div>
+                    <form-select-textfield tal-name="coveramount-{{ctrl.vm.planCode}}" tal-id="coveramount-{{ctrl.vm.planCode}}" placeholder="select a value" ng-model="ctrl.vm.selectedCoverAmount" form-select-items="ctrl.vm.defaultCoverAmounts" state-change="ctrl.stateChange()">
+                    </form-select-textfield>
+                </div>
+                <div class="tal-btn-set">
+                    <a tal-name="coveroptions-{{ctrl.vm.planCode}}" tal-id="coveroptions-{{ctrl.vm.planCode}}" href="#" class="tal-link-block tal-btn--secondary" ng-disabled="!ctrl.vm.isSelected"><span ng-bind-html="ctrl.vm.coversSelectionText"></span></a>
+                </div>
+                <div class="clearfix rider rider-{{rider.planCode}}" ng-repeat="rider in ctrl.vm.riders" ng-if="rider.isSelected">
+                    <div class="col-md-8">
+                        <form-checkbox tal-name="detach-{{rider.planCode}}" tal-id="detach-{{rider.planCode}}" state-change="ctrl.stateChange()" class="tal-form-checkbox" ng-model="rider.isSelected">Bundled {{rider.coverTitle}}:</form-checkbox>
+                        <form-select-textfield tal-name="coveramount-{{rider.planCode}}" tal-id="coveramount-{{rider.planCode}}" placeholder="select a value" ng-model="rider.selectedCoverAmount" form-select-items="ctrl.vm.defaultCoverAmounts" state-change="ctrl.stateChange()">
+                        </form-select-textfield>
+                    </div>
+                    <div class="col-md-4"><tal-figure value="rider.premium" type="review"></tal-figure></div>
+                </div>
+                <div class="tal-form-checkbox-list" ng-if="ctrl.vm.attachesTo">
+                    <form-checkbox tal-name="attach-{{ctrl.vm.planCode}}" tal-id="attach-{{ctrl.vm.planCode}}" state-change="ctrl.attachPlan()" class="tal-form-checkbox" ng-model="ctrl.vm.attached">
+                        Bundle with Life Insurance
+                    </form-checkbox>
+                </div>
+            </div>
+        </div>
+    </tal-cover-product>
+    <div class="tal-cover-product-content" ng-show="!ctrl.vm.isSelected"></div>
+</tal-card>

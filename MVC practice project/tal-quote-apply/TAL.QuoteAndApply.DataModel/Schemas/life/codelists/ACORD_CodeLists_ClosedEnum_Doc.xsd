@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+         ====================================================================== 
+         =====  ACORD Closed Enum Code Lists Schema Module                          
+         ===== 	NON NORMATIVE EXAMPLE PROVIDED FOR ACORD NDR ILLUSTRATION 
+         ====================================================================== 
+         
+         Standard Organization: ACORD
+          Version: M210AULI - AllMsgs 
+      Generated on: 11/14/2014
+         
+         COPYRIGHT NOTICE:
+         (c) 2014 ACORD. All Rights Reserved.
+         
+         Use of this Schema and its documentation are covered by the terms and conditions file that was included in the distribution file that you found this Schema.http://www.ACORD.org
+         
+      -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:acord-doc="http://www.acord.org/schema/documentation/draft/Annotations/1" xmlns="http://www.acord.org/schema/data/draft/ReusableDataComponents/M" targetNamespace="http://www.acord.org/schema/data/draft/ReusableDataComponents/M" elementFormDefault="qualified" attributeFormDefault="unqualified">
+   <xsd:simpleType name="ACORDStandardVersionCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ActionCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="AnswerCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="AntiTheftDeviceProductCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="AntiTheftDeviceTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ApplicationTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="AssigningEntityCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="AttachmentTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="BenefitPeriodCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="BroadLineOfBusinessCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="BusinessActivityFinancialAmountItemTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="BusinessActivityTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="BusinessRelationshipRoleCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="CalculationMethodCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="CancellationEvidenceObtainedCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="CancellationPremiumCalculationCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="CancellationReasonCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="CancellationTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="CauseCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ChassisExternalIdentifierTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ClaimAmountItemTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ClaimEventLogStatusCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ClaimLodgementTransactionFunctionCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ClaimLodgementTransactionSubFunctionCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ClaimReasonCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ClaimStatusCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ClaimTransactionAmountItemTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="CodeListOwnerCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="CommunicationChannelCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="CommunicationProcessCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ContactRoleCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ContinuingEducationStatusCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ContracStatusCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ContractAmountItemTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ControlCountTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="CoreRoleCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="CoverageStatusCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="CoverageTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="CoverTransactionFunctionCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="DamageDescriptionCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="DamageExtentCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="DeductibleAmountItemTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="DeductibleAppliesCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="DisabilitySectionTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="DomesticForeignCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="DriverExternalIdentifierTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="DriversLicenseTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="EmailTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="EmployeeInformationFinancialAmountItemTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="EmployeeInformationStatusCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="EmployerCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="EmploymentStatusCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="EndPointActorContactRoleCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="EngineExternalIdentifierTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="EventCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ExclusionCategoryCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ExtendedStatusCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ExternalIdentifierTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="FinancialAmountItemTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="FinancialPeriodCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="FinancialReviewFinancialAmountItemTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="FinancialReviewTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="FinancialTransactionCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="FrequencyCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="FuelTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="FundExternalIdentifierTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="GenderCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="GeocodeMatchLevelCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="HazardZoneSchemeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="HealthSectionCoverageTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="HealthSectionTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="HumanResourcesTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="InsuranceAmountItemTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="InsuredBusinessRelationshipRoleCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="InsurerContactRoleCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="InterestedPartyBusinessRelationshipRoleCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="InterestedPartyContactRoleCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="IntervieweeBusinessRelationshipRoleCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="InterviewTerminationReasonCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="InterviewTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ItemSectionTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ItemValueTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="JobCategoryCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="LegalEntityCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="LicenseStatusCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="LifeCoverageOptionCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="LifeItemSectionCoverageTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="LifeItemSectionOptionCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="LifeItemSectionTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="LifePrimaryCoverageCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="LifeSectionCoverageTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="LifeSectionTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="LimitAppliesCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="LineOfBusinessCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="LodgementTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="MaritalStatusCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="MembershipTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="MemberStatusCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="MessageDocumentResultStatusCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="MessageResultStatusCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ModificationCategoryCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="NameTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="OccupationalRatingCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="OccupationClassCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="OccupationExternalIdentifierTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="OperationsFinancialAmountItemTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="OperationsHumanResourcesTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="OperationsTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="OperatorExperienceRestrictionCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="OptionCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="OrganizationExternalIdentifierTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="OrganizationNameTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="PartyRoleTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="PaymentTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="PerilCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="PersonExternalIdentifierTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="PersonNameTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="PersonTitlePrefixCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="PolicyDriverTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="PolicyholderTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="PolicyOrderTransactionFunctionCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="PolicyOrderTransactionSubFunctionCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="PolicyPropertyTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="PolicyQuestionCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="PolicyStatusCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="PrimaryCoverageCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ProducerBusinessRelationshipRoleCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ProducerContactRoleCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ProducerLicenseTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ProductExternalIdentifierTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="QuestionCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RadiusUseCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RegistrationExternalIdentifierTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ReinstatementReasonCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ReinstatementTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RelationshipToInsuredCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RemarkTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequirementEventCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequirementEventLogStatusCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ResultPendedCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ResultRejectCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ResultSuccessCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="SectionTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="TaxFilingStatusCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="TelephoneTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ThirdPartyDriverRoleCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="TitleRelationshipCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="TransactionFunctionCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="TransactionSubFunctionCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="TransmissionExternalIdentifierTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="TransmissionTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="UnrepairedDamageTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ValuationTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="VehicleArticulatedCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="VehicleBodyTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="VehicleClassCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="VehicleExternalIdentifierTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="VehicleGaragingCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="VehicleInspectionStatusCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="VehicleModificationTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="VehicleOptionCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="VehicleOvernightLocationCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="VehiclePerformanceCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="VehicleSpecialUseCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="VehicleTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="VehicleUseTypeCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="WaitingPeriodCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="WorkPerformedCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+</xsd:schema>

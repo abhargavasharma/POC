@@ -1,0 +1,16 @@
+<div class="tal-tooltip" ng-class="{'is-active': isDisplayed}">
+	<span
+		role="button"
+		class="tal-tooltip-trigger"
+		tabindex="0"
+		aria-describedby="tooltip-{{::id}}">
+		Trigger
+	</span>
+	<div
+		id="tooltip-{{::id}}"
+		class="tal-tooltip-content"
+		role="tooltip"
+		aria-hidden="{{!isDisplayed}}"
+		ng-transclude>
+	</div>
+</div>

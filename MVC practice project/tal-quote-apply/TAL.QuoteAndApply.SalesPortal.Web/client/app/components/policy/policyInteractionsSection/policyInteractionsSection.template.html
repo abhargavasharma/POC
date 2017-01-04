@@ -1,0 +1,25 @@
+<div class="form-section policy-interactions-details-section" cg-busy="loadingPromise" novalidate>
+    <fieldset ng-disabled="readOnly">
+        <div class="container-fluid">
+            <div class="interactions-results">
+                <div class="interactions-results">
+                    <table class="table table-striped interactions-results-table" ng-show="interactionsResults.policyInteractionDetailsList">
+                        <tr>
+                            <th>Date Created</th>
+                            <th>Interaction Type</th>
+                            <th>Created By</th>
+                        </tr>
+                        <tr ng-repeat="interaction in interactionsResults.policyInteractionDetailsList">
+                            <td ng-bind="interaction.dateCreated"></td>
+                            <td ng-bind="interaction.interactionType"></td>
+                            <td ng-bind="interaction.createdBy"></td>
+                        </tr>
+                    </table>
+                    <div class="no-results" ng-show="!interactionsResults.policyInteractionDetailsList">
+                        No interactions found
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+  </div>

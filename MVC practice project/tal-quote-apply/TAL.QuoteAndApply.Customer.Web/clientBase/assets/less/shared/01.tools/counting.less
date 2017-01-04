@@ -1,0 +1,28 @@
+// ==============================================================
+// MIXINS - For counting children
+// 
+// @NOTE: These don't always work due to the way less handles '&'
+// ==============================================================
+
+.mxn-first-of-n-children(@n, @rules) {
+	&:nth-last-child(@{n}):first-child {
+		@rules();
+	}
+}
+
+.mxn-comes-after-m-in-n-children(@m, @n, @rules) {
+	@calced: @n - @m + 1;
+	&:nth-last-child(@{calced}):nth-child(@{m}) ~ & {
+		@rules();
+	}
+}
+
+// @selector = the items the styles are to be applied (li's in a ul)
+// @n; if 2, styles only apply when two items
+//	   if 3, styles only apply when three items, etc.
+.mxn-one-of-n-children(@n, @rules) {
+	&:nth-last-child(@{n}):first-child,
+	&:nth-last-child(@{n}):first-child ~ & {
+		@rules();
+	}
+}

@@ -1,0 +1,4 @@
+<div class="main-quote-save">
+    <button type="button" id="saveQuoteEnabled" class="tal-btn--secondary tal-btn-small mobile-save-quote-btn" ng-click="ctrl.showSaveGateModal()" angular-ripple ng-if="ctrl.savedStatus !== 'passwordCreated'">Save Quote</button>
+    <button type="button" id="saveQuoteDisabled" class="tal-btn--secondary tal-btn-small" disabled="disabled" ng-if="ctrl.savedStatus === 'passwordCreated'">Saved</button>
+</div>

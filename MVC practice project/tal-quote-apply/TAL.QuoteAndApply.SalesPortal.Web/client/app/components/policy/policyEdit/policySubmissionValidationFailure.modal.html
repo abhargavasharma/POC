@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <div class="row heading">
+        <div class="col-xs-12">
+            <h3>Sections not completed</h3>
+        </div>
+    </div>
+    <div class="row body-content">
+        <div class="col-xs-12">
+            <div class="row">
+                <div class="col-xs-12">
+
+                    <p>Please complete the following sections before setting the policy to 'in-force'</p>
+                    <div ng-repeat="risk in validationErrors.risksWithIssues">
+                        <strong ng-hide="validateClientName(risk.firstName, risk.surname)">
+                            New Customer
+                        </strong>
+                        <strongv ng-hide="!validateClientName(risk.firstName, risk.surname)">
+                            {{risk.firstName}} {{risk.surname}}
+                        </strongv>
+                        
+                        <ul ng-repeat="section in risk.sectionsWithIssues">
+                            <li ng-bind="friendlySectionName(section)"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            </br>
+            <div class="row">
+                <div class="text-center col-xs-12">
+                    <button type="button" class="btn btn-tertiary" ng-click="cancel()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

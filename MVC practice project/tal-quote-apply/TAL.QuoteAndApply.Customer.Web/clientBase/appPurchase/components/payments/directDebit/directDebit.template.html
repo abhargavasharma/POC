@@ -1,0 +1,98 @@
+﻿<div class="tal-direct-debit">
+    <div id="payment-form" class="form-section form-horizontal" ng-form="directDebitPayment">
+        <div class="row">
+            <div class="col-xs-12">
+                <p>Customers may elect to pay for their premiums via direct debit. All Benefits are applicable.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <fieldset>
+                    <legend class="vh">Direct debit information</legend>
+
+                    <div class="row form_container">
+                        <div class="col-xs-4">
+                            <label class="control-label" for="AccountNameDDInput">Account name</label>
+                        </div>
+                        <div class="col-xs-8">
+                            <div class="form-group">
+                                <input id="AccountNameDDInput"
+                                       type="text"
+                                       class="form-control"
+                                       name="accountName"
+                                       placeholder="Account Name"
+                                       maxlength="32"
+                                       autocomplete="off"
+                                       ng-required="ctrl.required()"
+                                       ng-model="ctrl.directDebitPayment.accountName"
+                                       ng-change="ctrl.directDebitChanged()"
+                                       tal-server-validate="purchaseRequest.paymentOptions.directDebitPayment.accountName">
+
+                                <tal-form-input-error
+                                        show-server-error-for="directDebitPayment.accountName"></tal-form-input-error>
+                                <tal-form-input-error show-error-for="directDebitPayment.accountName"
+                                                      show-error-when="required">
+                                    Account name is required
+                                </tal-form-input-error>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form_container">
+                        <div class="col-xs-4">
+                            <label class="control-label" for="BsbNumberDDInput">BSB number</label>
+                        </div>
+                        <div class="col-xs-8">
+                            <div class="form-group">
+                                <input id="BsbNumberDDInput"
+                                       type="text"
+                                       class="form-control"
+                                       name="bsbNumber"
+                                       placeholder="BSB Number"
+                                       maxlength="6"
+                                       autocomplete="off"
+                                       ng-required="ctrl.required()"
+                                       ng-model="ctrl.directDebitPayment.bsbNumber"
+                                       ng-change="ctrl.directDebitChanged()"
+                                       tal-server-validate="purchaseRequest.paymentOptions.directDebitPayment.bSBNumber">
+
+                                <tal-form-input-error
+                                        show-server-error-for="directDebitPayment.bsbNumber"></tal-form-input-error>
+                                <tal-form-input-error show-error-for="directDebitPayment.bsbNumber"
+                                                      show-error-when="required">
+                                    BSB number is required
+                                </tal-form-input-error>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <label class="control-label" for="AccountNumberDDInput">Account number</label>
+                        </div>
+                        <div class="col-xs-8">
+                            <div class="form-group">
+                                <input id="AccountNumberDDInput"
+                                       type="text"
+                                       class="form-control"
+                                       name="accountNumber"
+                                       placeholder="Account number"
+                                       maxlength="9"
+                                       autocomplete="off"
+                                       ng-required="ctrl.required()"
+                                       ng-change="ctrl.directDebitChanged()"
+                                       ng-model="ctrl.directDebitPayment.accountNumber"
+                                       tal-server-validate="purchaseRequest.paymentOptions.directDebitPayment.accountNumber">
+
+                                <tal-form-input-error
+                                        show-server-error-for="directDebitPayment.accountNumber"></tal-form-input-error>
+                                <tal-form-input-error show-error-for="directDebitPayment.accountNumber"
+                                                      show-error-when="required">
+                                    Account number is required
+                                </tal-form-input-error>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+</div>

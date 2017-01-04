@@ -1,0 +1,27 @@
+<div class="tal-chips" ng-cloak>
+	<div class="tal-chips-input-field">
+		<div tal-cq class="tal-chips-input-elements">
+			<div ng-repeat="chips in ngModel track by $index" class="tal-chips-mini-item">
+				<div class="tal-chips-mini">
+					<div class="tal-chips-boxclose" ng-if="!disabled" ng-click=deleteChips($index)>
+						<span class="tal-chips-boxclose-icon"></span>
+						<span class="visuallyhidden">Remove</span>
+					</div>
+					<div class="tal-chips-mini-title">{{chips[talTitle]}}</div>
+				</div>
+			</div>
+			<div class="tal-chips-active" ng-style="{top: ytop}" ng-model="ytop" ng-click="closeActive($event)"></div>
+			<input
+				name="textInput"
+				type="{{inputType}}"
+				ng-attr-placeholder="{{placeholder || 'Please select...'}}"
+				ng-model="chipsText[talTitle]"
+				ng-hide="isSingleOnlySelected()"
+				ng-focus="clearActive()"
+				ng-keydown="clearPrev($event)"
+				ng-click="checkDisabled($event)"
+				class="tal-chips-input"
+			/>
+		</div>
+	</div>
+</div>

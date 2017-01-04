@@ -1,0 +1,175 @@
+<section class="tal-section-select select-cover">
+
+
+	<header class="tal-layout-header">
+		<div class="tal-layout-header-inner">
+			<h2 class="h1">
+				Select your cover
+			</h2>
+		</div>
+		<div class="tal-layout-header-bgd" style="background-image: url('./client/images/image_bgd02.png');"></div>
+
+		<section class="use-calc-results-confirm">
+			<tal-major-notification
+				cta-text="Yes, use my results"
+				on-cta-action="ctrl.onConfirmUseCalcResults"
+				on-dismiss="ctrl.onDismissUseCalcResults">
+				<h4 class="hi">Hi there</h4>
+				<p class="text">We notice you previously used the cover calculator tool. Would you like to use the results from that calculation?</p>
+			</tal-major-notification>
+		</section>
+	</header>
+
+	<main class="tal-layout-main row">
+
+		<div class="tal-select-product-wrapper">
+			<tal-card ng-repeat="item in items1" class="{{item.classCols}}" ng-class="{'is-off':!item.isOn}">
+				<tal-cover-product ng-class="{'tal-cover-product-off':!item.isOn}" >
+					<div class="tal-cover-product tal-cover-product-blue">
+						<tal-card-header 
+							tal-cover-product-header 
+							product-is-on="item.isOn" 
+							product-value="item.premium"
+						>
+							<h3 ng-bind="item.title"></h3>
+							<p class="tal-cover-product-link">
+								<a class="tal-link" href="#">Learn more about (CI) Cover</a>
+							</p>
+						</tal-card-header>
+						<div class="tal-cover-product-content" ng-show="item.isOn">
+							<div>
+								<label for="id1">Cover amount</label>
+							</div>
+							<div>
+
+
+							<form-select-textfield  tal-id="id1" tal-name="name1"
+							placeholder="select a value" ng-model="item.value" form-select-items="[200000, 500000]">
+							</form-select-textfield>
+							</div>
+							<div class="tal-btn-set">
+								<a href="#" class="tal-btn--secondary" ng-disabled="!item.isOn">Critical illness options</a>
+							</div>
+						</div>
+					</div>
+				</tal-cover-product>
+				<div class="tal-cover-product-content" ng-show="!item.isOn"></div>
+			</tal-card>
+		</div>
+
+		<div class="tal-select-product-wrapper" >
+			<tal-card ng-repeat="item in items2"  class="{{item.classCols}}" ng-class="{'is-off': !item.isOn}">
+				<tal-cover-product ng-class="{'tal-cover-product-off':!item.isOn}" >
+					<div class="tal-cover-product tal-cover-product-blue">
+						<tal-card-header 
+							tal-cover-product-header 
+							product-is-on="item.isOn" 
+							product-value="item.premium"
+						>
+							<h3 ng-bind="item.title"></h3>
+							<p class="tal-cover-product-link">
+								<a class="tal-link" href="#">Learn more about (CI) Cover</a>
+							</p>
+						</tal-card-header>
+						<div class="tal-cover-product-content" ng-show="item.isOn">
+							<div>
+								<label for="id2">Cover amount</label>
+							</div>
+							<div>
+
+
+								<form-select-textfield  tal-id="id2" tal-name="name1"
+									placeholder="select a value" ng-model="item.value" form-select-items="[200000, 500000]">
+								</form-select-textfield>
+							</div>
+							<div class="tal-btn-set">
+								<a href="#" class="tal-btn--secondary" ng-disabled="!item.isOn">Critical illness options</a>
+							</div>
+						</div>
+					</div>
+				</tal-cover-product>
+				<div class="tal-cover-product-content" ng-show="!item.isOn"></div>
+			</tal-card>
+		</div>
+
+		<div class="tal-select-product-wrapper" >
+			<tal-card ng-repeat="item in items3"  class="{{item.classCols}}" ng-class="{'is-off':!item.isOn}">
+				<tal-cover-product ng-class="{'tal-cover-product-off':!item.isOn}" >
+					<div class="tal-cover-product tal-cover-product-blue">
+						<tal-card-header 
+							tal-cover-product-header 
+							product-is-on="item.isOn" 
+							product-value="item.premium"
+						>
+							<h3 ng-bind="item.title"></h3>
+							<p class="tal-cover-product-link">
+								<a class="tal-link" href="#">Learn more about (CI) Cover</a>
+							</p>
+						</tal-card-header>
+						<div class="tal-cover-product-content" ng-show="item.isOn">
+							<div>
+								<label for="id3">Cover amount</label>
+							</div>
+							<div>
+
+
+							<form-select-textfield  tal-id="id3" tal-name="name1"
+							placeholder="select a value" ng-model="item.value" form-select-items="[200000, 500000]">
+							</form-select-textfield>
+							</div>
+							<div class="tal-btn-set">
+								<a href="#" class="tal-btn--secondary" ng-disabled="!item.isOn">Critical illness options</a>
+							</div>
+						</div>
+					</div>
+				</tal-cover-product>
+				<div class="tal-cover-product-content" ng-show="!item.isOn"></div>
+			</tal-card>
+		</div>
+
+		<div class="row tal-select-footer">
+			<div class="col-sm-6 col-lg-9 tal-v-bottom-spacing-lg tal-select-footer-questions">
+				<p>
+					Not sure how how much cover you need? &nbsp;&nbsp; <br class="tal-hide-at-lg"/>
+					<a href="" class="tal-link--strong">Calculate cover amounts</a>
+				</p>
+				<p>
+					Not sure how what types of cover you need? &nbsp;&nbsp; <br class="tal-hide-at-lg"/>
+					<a href="" class="tal-link--strong">Help me choose</a>
+				</p>
+				<p>
+					Reduce your premium by bundling TPD or Critical Illness Cover with your Life policy. &nbsp;&nbsp; <br class="tal-hide-at-lg"/>
+					<a href="" class="tal-link--strong">Find out more</a>
+				</p>
+			</div>
+			<div tal-cq="self" class="col-sm-4 offset-sm-2 col-lg-3 offset-lg-0 tal-centered tal-v-bottom-spacing-lg  tal-select-footer-submit">
+				<button class="tal-btn--primary tal-btn--major" angular-ripple>
+				    Confirm cover
+				</button>
+				<p class="tal-v-bottom-spacing-lg">
+					<a href="" class="tal-link--strong">Get help</a>
+				</p>
+			</div>
+		</div>
+
+	</main>
+
+	<aside>
+		<h2>Overall view layput</h2>
+		<p>This layout structure controls the overall responsive behavior, as well as details such as header height and content/header overlap. For details of specific content regions, refer to the markup.</p>
+	    <div hljs hljs-language="html" hljs-include="'/client/styleguide/sections/fedSelect/fedSelectScaffold.html'"></div>
+	</aside>
+</section>
+
+<tal-cover-breakdown class="tal-cover-breakdown-footer" tal-cover-breakdown-data="data.breakdown">
+	<div class="tal-btn-set">
+		<button type="submit" class="tal-btn--secondary" angular-ripple>
+			Save application
+		</button>
+		<div class="tal-hr"><span>OR</span></div>
+
+		<button type="submit" class="tal-btn--primary" angular-ripple>
+			Save application
+		</button>
+	</div>
+</tal-cover-breakdown>

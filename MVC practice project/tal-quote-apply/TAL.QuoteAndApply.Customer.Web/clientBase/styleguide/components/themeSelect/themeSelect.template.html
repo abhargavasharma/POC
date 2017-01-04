@@ -1,0 +1,8 @@
+<form-select 
+	tal-name="themeSelect"
+	tal-id="themeSelect"
+	placeholder="Select a theme..."
+	ng-model="ctrl.currentTheme"
+	state-change="ctrl.updateTheme()"
+	form-select-items="ctrl.allThemes">
+</form-select>

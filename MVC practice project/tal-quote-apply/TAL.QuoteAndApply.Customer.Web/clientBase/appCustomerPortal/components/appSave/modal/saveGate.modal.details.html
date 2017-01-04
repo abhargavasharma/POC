@@ -1,0 +1,63 @@
+<div class="tal-app-save tal-app-save-details">
+
+    <p class="p--featured">
+        We will send you an email so you can easily come back to your quote at any time.
+    </p>
+
+    <form class="form-grid" name="saveAppForm" novalidate>
+
+        <div class="form-group row">
+            <div class="col-xs-6 tal-input-wrapper">
+                <label for="firstName">First name</label>
+                <input maxlength="22" id="firstName" type="text" ng-model="ngDialogData.model.firstName"
+                       placeholder="First name" name="firstName" required
+                       tal-server-validate="saveCustomerRequest.firstName">
+                <tal-form-input-error show-server-error-for="saveAppForm.firstName"></tal-form-input-error>
+                <tal-form-input-error show-error-for="saveAppForm.firstName" show-error-when="required">First name is required</tal-form-input-error>
+            </div>
+            <div class="col-xs-6 tal-input-wrapper">
+                <label for="lastName">Last name</label>
+                <input maxlength="22" id="lastName" type="text" ng-model="ngDialogData.model.lastName"
+                       placeholder="Last name" name="lastName" required
+                       tal-server-validate="saveCustomerRequest.lastName">
+                <tal-form-input-error show-server-error-for="saveAppForm.lastName"></tal-form-input-error>
+                <tal-form-input-error show-error-for="saveAppForm.lastName" show-error-when="required">Last name is required</tal-form-input-error>
+            </div>
+        </div>
+
+        <div class="form-group row tal-input-wrapper">
+          <label for="emailAddress">Email address</label>
+          <input id="emailAddress" maxlength="80" type="text" ng-model="ngDialogData.model.emailAddress"
+                 placeholder="Email address"
+                 name="emailAddress"
+                 required
+                 tal-server-validate="saveCustomerRequest.emailAddress">
+          <tal-form-input-error show-server-error-for="saveAppForm.emailAddress"></tal-form-input-error>
+          <tal-form-input-error show-error-for="saveAppForm.emailAddress" show-error-when="required">Email address is required</tal-form-input-error>
+        </div>
+
+        <div class="form-group row tal-input-wrapper">
+            <label for="phoneNumber">Phone number</label>
+            <input id="phoneNumber" type="tel" maxlength="10" placeholder="Phone number"
+                   name="phoneNumber"
+                   tal-server-validate="saveCustomerRequest.phoneNumber" ng-model="ngDialogData.model.phoneNumber">
+            <tal-form-input-error show-server-error-for="saveAppForm.phoneNumber"></tal-form-input-error>
+            <tal-form-input-error show-error-for="saveAppForm.phoneNumber" show-error-when="required">Phone number is required</tal-form-input-error>
+        </div>
+
+        <p class="p--smaller">By clicking continue you agree to your personal information being collected, handled, disclosed and secured per <a ng-href="{{ctrl.links.privacyPolicy}}" target="_blank">TAL's Privacy Policy</a></p>
+
+        <div class="tal-modal-footer">
+            <button
+            tal-cq
+            type="submit"
+            id="saveModalCreatePassword"
+            ng-disabled="saveAppForm.$invalid"
+            class="tal-btn--primary"
+            angular-ripple
+            ng-click="ctrl.submitPersonalDetails()">
+            Continue
+        </button>
+       </div>
+    </form>
+</div>

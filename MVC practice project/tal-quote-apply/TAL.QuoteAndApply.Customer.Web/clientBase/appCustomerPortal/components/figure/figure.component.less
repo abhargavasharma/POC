@@ -1,0 +1,140 @@
+.abs-tal-fig {
+	.mxn-responsive-font-size(18, 18);
+
+	transition: width 300ms;
+	color: inherit;
+}
+
+.tal-fig__currency {
+	vertical-align: top;
+	position: relative;
+}
+
+.tal-fig__dollars {
+	vertical-align: top;
+	position: relative;
+}
+
+.tal-fig__dot {
+	vertical-align: top;
+	position: relative;
+}
+
+.tal-fig__cents {
+	vertical-align: top;
+	position: relative;
+}
+
+.tal-fig__per {
+	vertical-align: top;
+	position: relative;
+}
+
+// ---- Version: Inline ----------------------------------------
+
+.tal-fig--inline {
+	&:extend(.abs-tal-fig);
+	&:extend(.abs-font--feature-light);
+	display: inline-block;
+
+	.tal-fig__dot,
+	.tal-fig__cents {
+		font-size: 0.8em;
+		vertical-align: bottom;
+	}
+
+
+}
+
+// ---- Version: Review ----------------------------------------
+
+.tal-fig--review {
+	&:extend(.abs-tal-fig);
+	&:extend(.abs-font--base);
+	.mxn-responsive-font-size(16, 16);
+
+	.tal-fig__currency {
+		font-size: 0.9em;
+		top: 0.125em;
+	}
+
+	.tal-fig__dollars {
+		font-size: 2em;
+	}
+
+	.tal-fig__dot {
+		font-size: 0.8em;
+		top: 0.125em;
+	}
+
+	.tal-fig__cents {
+		font-size: 0.8em;
+		top: 0.125em;
+	}
+
+	.tal-fig__per {
+		font-size: 0.8em;
+		vertical-align: bottom;
+		margin-left: -1.5em;
+		bottom: 0.25em;
+	}
+}
+
+// ---- Version: Total ----------------------------------------
+
+.tal-fig--total {
+	&:extend(.abs-tal-fig);
+	&:extend(.abs-font--base);
+	.mxn-responsive-font-size(30, 30);
+
+	.tal-fig__currency {
+		font-size: 1.1em;
+		top: 0.0667em;
+	}
+
+	.tal-fig__dollars {
+		font-size: 2em;
+	}
+
+	.tal-fig__dot {
+		font-size: 0.8em;
+		top: 0.1667em;
+	}
+
+	.tal-fig__cents {
+		font-size: 0.8em;
+		top: 0.1667em;
+		left: -0.0667em;
+	}
+
+	// Is a link
+	.tal-fig__per-group {
+		display: inline-block;
+		font-size: 0.46em;
+		text-transform: uppercase;
+		width: 5.8em;
+		border-bottom: none;
+
+		&:hover, &:active, &:focus {
+			border-bottom: none;
+		}
+
+		.tal-link-fake {
+			padding-bottom: 0;
+			margin-bottom: 0.0667em;
+		}
+	}
+
+	.tal-fig__per {
+		display: inline-block;
+		float: left;
+		clear: both;
+		left: 0.1667em;
+		top: 0;
+		line-height: 1.3;
+	}
+
+	.tal-fig__select {
+		color: inherit;
+	}
+}

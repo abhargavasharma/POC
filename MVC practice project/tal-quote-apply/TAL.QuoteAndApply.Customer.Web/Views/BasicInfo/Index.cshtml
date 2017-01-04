@@ -1,0 +1,37 @@
+﻿@using TAL.QuoteAndApply.Analytics.Models
+@using TAL.QuoteAndApply.Infrastructure.Extensions
+
+@{
+    ViewBag.Title = "General Information";
+    ViewBag.AppName = "BasicInfo";
+    ViewBag.HideQuotePremium = "true";
+    ViewBag.HideQuoteReference = "true";
+    ViewBag.StepIndex = 0;
+    ViewBag.PageCssClass = "page-basic-info";
+}
+
+@section Analytics
+{
+    @{
+        Html.RenderAction("Header", "Analytics", new { model = new AnalyticsPageModel("BasicInformationPage", ViewBag.Title, "Quote", DateTime.Now, DateTime.Now) });
+    }
+}
+
+<section class="tal-section-basic-info">
+    @{
+        Html.RenderPartial("~/Views/Shared/_PageHeader.cshtml");
+    }
+    <div class="container">
+        <main class="tal-layout-main row ">
+            <tal-basic-info-form></tal-basic-info-form>
+        </main>
+    </div>
+</section>
+
+@section scripts{
+<script src="https://www.google.com/recaptcha/api.js?onload=vcRecaptchaApiLoaded&render=explicit"
+        async defer></script>
+
+    @Html.Partial("~/Views/Shared/_CoverCalculator.cshtml")
+}
+

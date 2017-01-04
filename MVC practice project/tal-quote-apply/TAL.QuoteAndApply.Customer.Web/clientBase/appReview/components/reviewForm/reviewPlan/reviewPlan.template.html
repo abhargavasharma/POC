@@ -1,0 +1,199 @@
+<tal-card class="tal-review-card tal-card--topbar tal-review-card-off" ng-if="!ctrl.plan.availability.isAvailable">
+    <tal-card-header class="tal-review-card-header row card-padding">
+        <div class="col-lg-3">
+            Unavailable
+        </div>
+        <div class="col-lg-9 cf">
+            <h2 class="tal-review-card-title">{{ctrl.plan.coverTitle}}</h2>
+        </div>
+    </tal-card-header>
+    <tal-card-body class="tal-review-card-off-text">
+        <p>
+            <span>Please call us on&nbsp;<tal-phone-number-link></tal-phone-number-link><tal-chat-to-agent-link chat-availability="ctrl.chatAvailability" prefix="or">Click-To-Chat</tal-chat-to-agent-link>&nbsp;</span><span ng-bind-html="ctrl.plan.presentation.inEligibleReason"></span>
+        </p>
+        <p ng-repeat="reason in ctrl.plan.availability.unavailableReasons" ng-bind="reason"></p>
+    </tal-card-body>
+</tal-card>
+<tal-card class="tal-review-card tal-card--topbar" ng-class="{'tal-review-card-off': !ctrl.plan.isSelected}" ng-form="reviewPlanForm" ng-show="!ctrl.plan.isBundled" ng-if="ctrl.plan.availability.isAvailable">
+    <tal-card-header class="tal-review-card-header row card-padding">
+        <div class="col-lg-3">
+            <tal-form-switch class="tal-review-card-switch" ng-model="ctrl.plan.isSelected" state-change="ctrl.onPlanChanged()"></tal-form-switch>
+        </div>
+        <div class="col-lg-9 cf">
+            <h2 class="tal-review-card-title">{{ctrl.plan.coverTitle}} </h2>
+            <tal-figure class="tal-review-card-figure" value="ctrl.plan.totalPremium" period="::ctrl.paymentFrequencyPer" type="review"></tal-figure>
+        </div>
+        <div class="error-message text-right">
+            <input type="hidden" ng-model="ctrl.plan.planCode" tal-server-validate="{{ctrl.plan.planCode.toLowerCase()}}" name="planError"/>
+            <tal-form-input-error show-server-error-for="reviewPlanForm.planError"></tal-form-input-error>
+        </div>
+    </tal-card-header>
+    <tal-card-body ng-show="ctrl.plan.isSelected">
+        <div class="row">
+            <div class="col-sm-5 col-lg-3 card-sidebar">
+
+                <div class="form-box">
+                    <div>
+                        <label ng-bind="ctrl.plan.presentation.coverAmountLabel"></label>:
+                    </div>
+                    <form-select-textfield tal-id="planCoverAmount{{ctrl.plan.planCode}}"
+                                           tal-name="planCoverAmount{{ctrl.plan.planCode}}"
+                                           name="formCoverAmount{{ctrl.plan.planCode}}"
+                                           placeholder="select a value"
+                                           ng-model="ctrl.plan.selectedCoverAmount"
+                                           tal-server-validate="{{ctrl.plan.planCode.toLowerCase()}}CoverAmount"
+                                           inline-help-text="{{ctrl.plan.presentation.paymentFrequencyText}}"
+                                           state-change="ctrl.onPlanChanged()"
+                                           form-select-items="ctrl.plan.presentation.coverAmounts"></form-select-textfield>
+                    <tal-form-input-error show-server-error-for="reviewPlanForm['formCoverAmount' + ctrl.plan.planCode]"></tal-form-input-error>
+                </div>
+
+                <!-- Rider cover amounts -->
+                <div class="form-box" ng-repeat="rider in ::ctrl.plan.riders" ng-show="rider.isSelected">
+                    <label ng-bind="rider.coverTitle"></label>
+                    <form-select-textfield  tal-id="riderCoverAmount{{ctrl.plan.planCode}}"
+                                            tal-name="riderCoverAmount{{ctrl.plan.planCode}}"
+                                            name="formRiderCoverAmount{{rider.planCode}}"
+                                            placeholder="select a value"
+                                            ng-model="rider.selectedCoverAmount"
+                                            state-change="ctrl.onPlanChanged()"
+                                            tal-server-validate="{{rider.planCode.toLowerCase()}}CoverAmount"
+                                            form-select-items="rider.presentation.coverAmounts"></form-select-textfield>
+                    <tal-form-input-error show-server-error-for="reviewPlanForm['formRiderCoverAmount' + rider.planCode]"></tal-form-input-error>
+                </div>
+
+                <!-- Plan variables -->
+                <div class="form-box" ng-repeat="variable in ::ctrl.plan.variables">
+                    <label ng-bind="variable.name"></label>:
+                    <a href ng-click="ctrl.showVariableSelectionDialog($index)" ng-bind="variable.selectedText"></a>
+                </div>
+
+                <!-- Bundle options -->
+                <div class="tal-form-checkbox-list form-box" ng-repeat="bundleOption in ::ctrl.plan.riders">
+                    <form-checkbox tal-name="bundle{::bundleOption.planCode}}"
+                                   tal-id="bundle{{::bundleOption.planCode}}"
+                                   ng-show="bundleOption.isSelected"
+                                   class="tal-form-checkbox"
+                                   disabled="disabled"
+                                   state-change="ctrl.onRiderBundleToggle(bundleOption, ctrl.plan)"
+                                   ng-model="bundleOption.isSelected">Bundle {{::bundleOption.coverTitle}} Cover with Life Cover</form-checkbox>
+                </div>
+
+                <!-- TODO: bundling option was here, see git history if you need to re-implement -->
+
+            </div>
+            <div class="col-sm-7 col-lg-9 card-main">
+                <div>
+                    <p ng-include="::'content.' + ctrl.plan.planCode + '.reviewDescription.html'"></p>
+                    <p>Other benefits are listed below.</p>
+                    <p ng-if="ctrl.plan.presentation.reviewDescriptionExtra" ng-bind-html="ctrl.plan.presentation.reviewDescriptionExtra"></p>
+                    <div ng-show="ctrl.hasInclusionsToShow()">
+                        <h2 class="p--larger">Inclusions</h2>
+                        <ul class="tal-checked-list">
+                            <li ng-repeat="selectedCover in ctrl.plan.covers" ng-show="selectedCover.isSelected">Your quote includes <strong ng-bind="::selectedCover.presentation.fullTitle"></strong>.</li>
+                            <li ng-repeat="loading in ctrl.loadings"><tal-loading loading="loading" payment-frequency="ctrl.paymentFrequency"></tal-loading></li>
+                        </ul>
+                    </div>
+
+                    <div ng-show="ctrl.hasExclusionsToShow()">
+                        <h2 class="p--larger">Exclusions</h2>
+                        <ul class="tal-checked-list">
+                            <li class="tal-checked-list-excluded" ng-repeat="selectedCover in ::ctrl.plan.covers" ng-show="!selectedCover.isSelected">Your quote excludes <strong ng-bind="::selectedCover.presentation.fullTitle"></strong>.</li>
+                            <li class="tal-checked-list-excluded" ng-repeat="exclusion in ctrl.plan.exclusionNames">Your cover excludes <strong ng-bind="exclusion"></strong>.</li>
+                        </ul>
+                    </div>
+
+                    <tal-choice-point-questions question-choices="ctrl.planQuestionChoices"
+                            on-change-question-choice="ctrl.onChangeQuestionChoice"
+                            payment-frequency="ctrl.paymentFrequency"></tal-choice-point-questions>
+
+                    <tal-tabs allow-multi-open="true" class="tal-review-option-tabs">
+                        <tal-tab-pane title="Options" enabled="true">
+                            <!-- Cover Options -->
+                            <!-- TODO: Possibly move into it's own component -->
+                            <div class="tal-review-option" ng-repeat="cover in ::ctrl.plan.covers">
+                                <div ng-if="!cover.availability.isAvailable">
+                                    <div class="tal-form-checkbox-list tal-review-option-header">
+                                        <form-checkbox tal-name="review-opt-{{::cover.code}}"
+                                                       tal-id="review-opt-{{::cover.code}}"
+                                                       disabled="disabled"
+                                                       class="tal-form-checkbox" ng-model="cover.isSelected" />
+                                            <span class="vh">Include/Exclude: </span>
+                                            <span class="plan-option-check-select-title h5" ng-bind="::cover.presentation.fullTitle"></span>
+                                    </div>
+                                    <div class="tal-review-option-copy" ng-repeat="reason in cover.availability.unavailableReasons"
+                                         ng-bind="reason"></div>
+                                </div>
+                                <div ng-if="cover.availability.isAvailable">
+                                    <div class="tal-form-checkbox-list tal-review-option-header">
+                                        <form-checkbox tal-name="review-opt-{{::cover.code}}"
+                                                       tal-id="review-opt-{{::cover.code}}"
+                                                       state-change="ctrl.onPlanChanged()"
+                                                       class="tal-form-checkbox" ng-model="cover.isSelected">
+                                            <span class="vh">Include/Exclude: </span>
+                                            <span class="plan-option-check-select-title h5" ng-bind="::cover.presentation.fullTitle"></span>
+                                        </form-checkbox>
+                                    </div>
+
+                                    <tal-figure class="tal-review-option-figure" period="::ctrl.paymentFrequencyPer" value="cover.premium" type="review"></tal-figure>
+
+                                    <div class="tal-review-option-copy" ng-bind-html="cover.presentation.description"></div>
+
+                                    <div class="tal-review-option-inc-ex" ng-show="cover.exclusionNames.length">
+                                        <h6 class="h5">Exclusions:</h6>
+                                        <ul class="tal-checked-list ng-scope">
+                                            <li class="tal-checked-list-excluded" ng-repeat="exclusion in cover.exclusionNames" ng-bind="exclusion"></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </tal-tab-pane>
+                        <tal-tab-pane title="Standard Exclusions" enabled="true">
+                            <h5><span ng-bind-html="ctrl.plan.presentation.exclusionHeading"></span></h5>
+                            <ul class="tal-checked-list ng-scope">
+                                <li class="tal-checked-list-excluded" ng-repeat="exclusion in ctrl.plan.presentation.exclusions">
+                                    {{ exclusion }}
+                                </li>
+                            </ul>
+                            <p ng-bind-html=" ctrl.plan.presentation.exclusionDeclaration"> </p> 
+                        </tal-tab-pane>
+                        <tal-tab-pane title="Benefits" enabled="true">
+                            <h5>What's included in <span ng-bind-html="ctrl.plan.presentation.benefitHeading"></span>?</h5>
+                            <ul class="tal-checked-list ng-scope">
+                                    <li ng-repeat="benefit in ctrl.plan.presentation.benefits">
+                                        {{ benefit }}
+                                    </li>
+
+                            </ul>
+                            <ul class="tal-checked-list" ng-repeat="rider in ::ctrl.plan.riders" ng-show="rider.isSelected">
+                                <li ng-repeat="benefit in rider.presentation.benefits">
+                                    {{ benefit }}
+                                </li>
+                            </ul>
+                            <ul class="tal-checked-list" ng-repeat="cover in ::ctrl.plan.covers" ng-show="cover.isSelected">
+                                <li ng-repeat="benefit in cover.presentation.coverBenefits">
+                                    {{ benefit }}
+                                </li>
+                            </ul>
+                            <div ng-repeat="rider in ::ctrl.plan.riders" ng-show="rider.isSelected">
+                                <ul class="tal-checked-list" ng-repeat="cover in ::rider.covers" ng-show="cover.isSelected">
+                                    <li ng-repeat="benefit in cover.presentation.coverBenefits"> 
+                                      {{ benefit }}
+                                    </li>
+                                </ul>
+                            
+                            </div>
+               
+                        </tal-tab-pane>
+                    </tal-tabs>
+                </div>
+            </div>
+        </div>
+    </tal-card-body>
+    <tal-card-body class="tal-review-card-off-text" ng-show="!ctrl.plan.isSelected">
+
+        <p ng-include="::'content.' + ctrl.plan.planCode + '.unselectedDescription.html'"></p>
+      
+    </tal-card-body>
+</tal-card>

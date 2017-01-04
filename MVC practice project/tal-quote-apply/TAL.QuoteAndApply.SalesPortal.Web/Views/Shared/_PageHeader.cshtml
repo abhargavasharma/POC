@@ -1,0 +1,15 @@
+﻿@using TAL.QuoteAndApply.DataModel.User
+@{
+    var applicationCurrentUserProvider = DependencyResolver.Current.GetService<ICurrentUserProvider>();
+    var userGivenName = applicationCurrentUserProvider.GetForApplication().GivenName;
+}
+
+
+<div class="page-header">
+    <div class="logo col-xs-6">
+        <span class="logo-image"></span> <span class="sitename">Sales Portal</span>
+    </div>
+    <div class="username col-xs-6 text-right">
+        @userGivenName (<a href="@Url.Action("Logout", "Home")">Logout</a>)
+    </div>    
+</div>

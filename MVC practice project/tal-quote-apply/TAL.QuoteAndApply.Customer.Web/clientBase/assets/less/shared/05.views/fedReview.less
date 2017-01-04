@@ -1,0 +1,40 @@
+// ============================================================
+// VIEWS -- Review Cover
+// ============================================================
+
+.tal-submit-row {
+	.cf;
+	padding: 10px 20px 20px;
+
+	button {
+		margin-bottom: 20px;
+	}
+
+	.bp(xxs, s, {
+		button {
+			width: calc(~"50% - 15px");
+			margin-left: 5px;
+			margin-right: 5px;
+			margin-bottom: 0;
+		}
+
+		.tal-submit-row-inner {
+			text-align: center;
+		}
+	});
+
+	.bp(m, {
+		padding: 10px 55px 20px;
+
+		.tal-submit-row-inner {
+			float: right;
+		}
+
+		button {
+			width: 260px;
+			margin-bottom: 0;
+			margin-left: 20px;
+			margin-right: 0;
+		}
+	});
+}

@@ -1,0 +1,36 @@
+{
+  "name": "TAL.NewBusiness.SalesPortal.Web",
+  "main": "GruntFile.js",
+  "dependencies": {
+    "angular": "^1.4.8",
+    "angular-ui-bootstrap": "^0.14.3",
+    "lodash": "~2.4.1"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-angular-templates": "^0.5.9",
+    "grunt-bower-install": "^1.6.0",
+    "grunt-contrib-clean": "^0.7.0",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-copy": "^0.8.2",
+    "grunt-contrib-cssmin": "^0.14.0",
+    "grunt-contrib-jshint": "^0.11.3",
+    "grunt-contrib-less": "^1.1.0",
+    "grunt-contrib-uglify": "^0.11.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-eol": "^0.2.0",
+    "grunt-filerev": "^2.3.1",
+    "grunt-injector": "^0.6.1",
+    "grunt-karma": "~0.8.2",
+    "grunt-ng-annotate": "^1.0.1",
+    "grunt-usemin": "^3.1.1",
+    "jasmine-core": "^2.4.1",
+    "jshint-teamcity": "^1.0.6",
+    "karma": "~0.12.9",
+    "karma-html2js-preprocessor": "~0.1.0",
+    "karma-jasmine": "~0.1.5",
+    "karma-phantomjs-launcher": "~0.1.4",
+    "karma-teamcity-reporter": "~0.1.2",
+    "load-grunt-tasks": "^3.3.0"
+  }
+}
