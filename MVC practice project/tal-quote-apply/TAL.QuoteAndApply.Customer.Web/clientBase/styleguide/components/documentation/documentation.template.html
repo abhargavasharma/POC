@@ -1,8 +1,0 @@
-<div class="sg__doc">
-	<div id="documentation-{{id}}" class="sg__card__example" ng-include="path"></div>
-	<div id="documentation-{{id}}" class="sg__card__example-inverse inverse-colors" ng-if="includeInverse" ng-include="path"></div>
-
-	<a class="sg__doc__show-code" href="" ng-click="toggleCode()">Toggle code</a>
-  	<a class="sg__doc__show-code" href="" ngclipboard data-clipboard-target="#copy-{{::id}}" ng-show="isCodeVisible">Copy</a>
-	<div id="copy-{{::id}}" hljs hljs-language="html" hljs-include="path" ng-show="isCodeVisible"></div>
-</div>

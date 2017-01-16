@@ -1,8 +1,0 @@
-﻿@using MongoDB.Bson
-@model TAL.QuoteAndApply.SalesPortal.Web.Models.View.LoginViewModel
-@{
-    ViewBag.Title = "Login";
-    Layout = "../Shared/_LoginLayout.cshtml";
-}
-
-<tal-login-form session-timeout="@Html.Raw(Model.SessionTimeout.ToJson())"></tal-login-form>

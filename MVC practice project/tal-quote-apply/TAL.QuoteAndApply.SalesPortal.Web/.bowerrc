@@ -1,4 +1,0 @@
-{
-  "proxy" : "http://dc1prd232.tower.lan:8080/",
-  "https-proxy" : "http://dc1prd232.tower.lan:8080/"
-}

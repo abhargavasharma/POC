@@ -1,8 +1,0 @@
-﻿@using TAL.QuoteAndApply.DataModel.User
-@{
-    var applicationCurrentUserProvider = DependencyResolver.Current.GetService<ICurrentUserProvider>();
-    var userName = applicationCurrentUserProvider.GetForApplication().UserName;
-}
-
-<h2>Hello @userName</h2>
-

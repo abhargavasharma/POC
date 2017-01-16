@@ -1,1 +1,0 @@
-insert into PaymentType (id, Description) values (4, 'SelfManagedSuperFund')

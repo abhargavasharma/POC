@@ -1,9 +1,0 @@
-﻿@using TAL.QuoteAndApply.Infrastructure.Extensions
-@model TAL.QuoteAndApply.SalesPortal.Web.Models.View.ClientSearchViewModel
-
-@{
-    ViewBag.Title = "Search Existing Customers";
-}
-
-<tal-client-search role="@Model.UserRole" external-ref-required="@(((bool)(Model.BrandSettingsViewModel.ExternalCustomerRefRequired)).ToJson())"
-                  external-ref-label ="@Model.BrandSettingsViewModel.ExternalCustomerRefLabel" ></tal-client-search>    
