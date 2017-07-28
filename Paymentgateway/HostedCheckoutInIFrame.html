@@ -1,0 +1,36 @@
+<html >
+	<head >
+		IFrame......<br />
+
+		<script src="Js/PaymentGatewayScripts.js"></script>
+		<script src="https://paymentgateway.commbank.com.au/checkout/version/43/checkout.js"
+		        data-error="errorCallback"
+		        data-cancel="cancelCallback">
+		</script>
+
+		<script type="text/javascript" language="JavaScript">
+			//before Obfuscator
+			//Checkout.configure({ merchant: merchantName, order: { amount: function () { return 90 + 10 }, currency: currency, description: description, id: id }, interaction: { merchant: { name: interactionMerchantName, address: { line1: addressLine1, line2: addressLine2 } } } })
+
+			//after  Obfuscator
+			var _0x935f = ["\x63\x6F\x6E\x66\x69\x67\x75\x72\x65"]; Checkout[_0x935f[0]]({
+				merchant: merchantName, order: {
+					amount: function () { return 90 + 10 },
+					currency: currency, description: description, id: id
+				}, interaction: { merchant: { name: interactionMerchantName, address: { line1: addressLine1, line2: addressLine2 } } }
+			})
+		</script>
+		<noscript>Your browser does not support JavaScript!</noscript>
+	</head>
+	<body style="background:White">
+	
+	<iframe id="Example2"
+	        title="Example2"
+	        width="400"
+	        height="300"
+	        scrolling="yes"
+	        src="HostedCheckout.html">
+	         
+	</iframe>
+	</body>
+</html>
