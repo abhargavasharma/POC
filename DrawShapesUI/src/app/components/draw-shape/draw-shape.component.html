@@ -1,0 +1,38 @@
+
+<!-- https://www.w3schools.com/howto/howto_css_shapes.asp -->
+<form name="form"  autocomplete="off" novalidate="" class="form-horizontal"> 
+    <div class="form-group">
+        <h2 class="title center" style="padding-bottom: 50px">Draw a shape</h2>
+        <div class="col-sm-12 center">
+            <input type="text" class="form-control col-sm-6 center" name="freeText" id="freeText" style="margin-left: 400px"
+             required reverse="true"  placeholder="Please enter text" [(ngModel)]="freeTextvalue" />
+             <label class="control-label col-sm-12" >ex: Draw a rectangle with a width of 250 and a height of 400, <br/>Draw a circle with a radius of 100, <br/>
+                    Draw a square with a side length of 200,  <br/>Draw an equilateral triangle with a height of 100 and a width of 190, <br/>Draw a oval with a width of 250 and a length of 400</label>
+        </div>
+
+        <div  style="padding-bottom: 50px" class="center">
+            <button class="navbar-toggle collapsed" (click)="Clear()">Clear</button>
+            <button class="navbar-toggle collapsed" style="margin-left: 15px" (click)="generateImage()">Generate Image</button>
+        </div>
+
+        <div style="border: 0.2em black solid; padding:20px 20px 20px 20px; margin-left:5%; margin-right:5%" class="center">
+                
+            <h4 class="title center" style="margin:10px 0px 10px 0px" *ngIf="name != ''">You have requested to draw a {{name}}</h4>
+                 
+             <div  class="{{shapesClass}}" *ngIf="shapesClass != ''"></div> <!-- dynamic style model -->
+
+            <ngvas [width]="800" [height]="800" #myCanvas *ngIf="shapesClass == ''">
+
+                    <ngvas-rectangle class="right" [fill]="'#666666'" [x]="250" [y]="250" [translate]="10" [(width)]="width" [(height)]="height" origin="center" 
+                    *ngIf="name == 'Rectangle' || name == 'Square'"></ngvas-rectangle>
+
+                    <ngvas-circle class="right" [fill]="'#0000ff'" [x]="250" [y]="250" [(radius)]="radius" origin="center"  *ngIf="name == 'Circle'"></ngvas-circle>
+                    
+                    <ngvas-line [stroke]="{ width: 8 }" [(lines)]="lines" *ngIf="name == 'Isosceles' || name == 'Scalene' || name == 'Equilateral'"></ngvas-line>
+                    
+            </ngvas>
+        </div>
+       
+  </div>
+
+</form>
