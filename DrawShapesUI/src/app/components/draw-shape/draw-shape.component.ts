@@ -10,8 +10,8 @@ import { map } from "rxjs/operators";
   styleUrls: ['./draw-shape.component.css']
 })
 export class DrawShapeComponent{
-  freeTextvalue="Draw a rectangle with a width of 250 and a height of 400";
-  showErrors: boolean;
+  freeTextvalue="Draw a oval with a width of 250 and a length of 400";
+  errorMessage: string;
 
   name:string = '';
   width: number = 0;
@@ -19,7 +19,7 @@ export class DrawShapeComponent{
   radius: number = 0;
   side: number = 0;
   lines: any = [ [[100, 0], [0, 100]], [[100, 200], [100, 100]], [[100,200], [200,100]], [[100,100], [100,0]] ];
-  shapesClass: string = '';
+  shapesClass: any;
 
   constructor(public shapesApi : ShapesApi) { }
 
@@ -31,12 +31,16 @@ export class DrawShapeComponent{
 
   public Clear = () => {
     this.freeTextvalue = "";
+    this.clearDetails();
+  }
+
+  clearDetails(){
     this.name = "";
+    this. errorMessage = "";
   }
 
   public generateImage = () => { 
-    this.name = "";
-
+    this.clearDetails();
     try {
         if (this.freeTextvalue) { 
           var results = null;
@@ -69,21 +73,30 @@ export class DrawShapeComponent{
 
                 if(results.name == "Oval")
                 {
-                  this.shapesClass = "oval center";
+                  this.shapesClass = { 'height': results.length + 'px',
+                    'width': results.width + 'px',
+                    'background-color': '#555',
+                    'border-radius': '50%'
+                  }
                 }
 
                 if(results.name == "Parallelogram")
                 {
-                  this.shapesClass = "parallelogram center";
+                  this.shapesClass = { 	'width': results.width + 'px',
+                    'height': results.height + 'px',
+                    'transform': 'skew(20deg)',
+                    'background': '#555'
+                }
                 }
 
               })
               .catch((resp) => {
+                this.errorMessage = "Provided input is invalid, corret format is: Draw a(n) <shape> with a(n) <measurement> of <amount> (and a(n)< measurement > of<amount>)";
                 console.log(resp);
               });
           
         } else {
-          this.showErrors = true;
+          this.errorMessage = "Provided input is invalid, corret format is: Draw a(n) <shape> with a(n) <measurement> of <amount> (and a(n)< measurement > of<amount>)";
           return null;
         }
     } 

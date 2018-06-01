@@ -6,6 +6,9 @@
         <div class="col-sm-12 center">
             <input type="text" class="form-control col-sm-6 center" name="freeText" id="freeText" style="margin-left: 400px"
              required reverse="true"  placeholder="Please enter text" [(ngModel)]="freeTextvalue" />
+             <div class="col-md-12 text-danger error_message tst_barcode_error" *ngIf="errorMessage != ''">
+                <label for="name">{{errorMessage}}</label>
+            </div>
              <label class="control-label col-sm-12" >ex: Draw a rectangle with a width of 250 and a height of 400, <br/>Draw a circle with a radius of 100, <br/>
                     Draw a square with a side length of 200,  <br/>Draw an equilateral triangle with a height of 100 and a width of 190, <br/>Draw a oval with a width of 250 and a length of 400</label>
         </div>
@@ -19,7 +22,7 @@
                 
             <h4 class="title center" style="margin:10px 0px 10px 0px" *ngIf="name != ''">You have requested to draw a {{name}}</h4>
                  
-             <div  class="{{shapesClass}}" *ngIf="shapesClass != ''"></div> <!-- dynamic style model -->
+             <div  class="center" [ngStyle]="shapesClass" *ngIf="shapesClass != ''"></div> <!-- dynamic style model"-->
 
             <ngvas [width]="800" [height]="800" #myCanvas *ngIf="shapesClass == ''">
 
