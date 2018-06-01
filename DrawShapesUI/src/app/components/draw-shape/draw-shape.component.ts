@@ -62,6 +62,7 @@ export class DrawShapeComponent{
             this.shapesApi.getImageDetails(this.freeTextvalue)
             .subscribe(resp => 
               { 
+                console.log(resp.json());
                 this.responseProcessing(resp);
                 this.loader.hide();
               },
@@ -111,7 +112,9 @@ export class DrawShapeComponent{
           this.shapesClass = { 'height': results.length + 'px',
             'width': results.width + 'px',
             'background-color': '#555',
-            'border-radius': '50%'
+            'border-radius': '50%',
+            'align-items': 'center',
+            'justify-content': 'center'
           }
         }
 
@@ -120,7 +123,9 @@ export class DrawShapeComponent{
           this.shapesClass = { 	'width': results.width + 'px',
             'height': results.height + 'px',
             'transform': 'skew(20deg)',
-            'background': '#555'
+            'background': '#555',
+            'align-items': 'center',
+            'justify-content': 'center'
         }
         }
     }
