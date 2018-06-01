@@ -37,6 +37,7 @@ export class DrawShapeComponent{
   clearDetails(){
     this.name = "";
     this. errorMessage = "";
+    this.shapesClass = "";
   }
 
   public generateImage = () => { 
