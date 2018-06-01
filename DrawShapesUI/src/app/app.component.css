@@ -1,0 +1,10 @@
+.spinner {
+	height: 100%;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 20000;
+	opacity: 0.5;
+	background: transparent url("../assets/images/Loader.gif") no-repeat center 33%;
+}

@@ -2,7 +2,8 @@ import { Component, OnInit }   from '@angular/core';
 import { ShapesApi } from '../../api/ShapesApi/shapesApi';
 import 'rxjs/Rx';
 import { map } from "rxjs/operators";
- import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs/Observable';
+import { SpinnerService } from '../../shared/spinner.service'
 
 @Component({
   selector: 'app-draw-shape',
@@ -21,7 +22,7 @@ export class DrawShapeComponent{
   lines: any = [ [[100, 0], [0, 100]], [[100, 200], [100, 100]], [[100,200], [200,100]], [[100,100], [100,0]] ];
   shapesClass: any;
 
-  constructor(public shapesApi : ShapesApi) { }
+  constructor(public shapesApi : ShapesApi, private loader: SpinnerService) { }
 
   public myResult:any;
 
@@ -40,71 +41,88 @@ export class DrawShapeComponent{
     this.shapesClass = "";
   }
 
-  public generateImage = () => { 
-    this.clearDetails();
-    try {
-        if (this.freeTextvalue) { 
-          var results = null;
-              this.shapesApi.getImageDetails(this.freeTextvalue)
-              .then(resp => {
-                results = resp.json();
-                console.log(resp);
+    public generateImage = () => { 
+      this.clearDetails();
+      try {
+          if (this.freeTextvalue) { 
+            this.loader.show();
 
-                this.name = results.name;
+            // this.shapesApi.getImageDetails(this.freeTextvalue)
+            // .then(resp => {
+            //   console.log(resp);
+            //   this.responseProcessing(resp);
+            //   this.loader.hide();
+            // })
+            // .catch((resp) => {
+            //   this.errorMessage = "Provided input is invalid, corret format is: Draw a(n) <shape> with a(n) <measurement> of <amount> (and a(n)< measurement > of<amount>)";
+            //   console.log(resp);
+            //   this.loader.hide();
+            // });
 
-                if(results.width)
-                  this.width = results.width;
-
-                if(results.height)
-                  this.height = results.height;
-                
-                if(results.radius)
-                this.radius = results.radius;
-
-                if(results.side && results.name == "Square")
-                {
-                  this.width = results.side;
-                  this.height = results.side;
-                }
-
-                if(results.name == "Equilateral" || results.name == 'Isosceles' || results.name == 'Scalene')
-                {
-                  this.lines = [ [[results.height, 0], [0, results.height]], [[results.height, results.width], [results.height, results.height]], [[results.height,results.width], [results.width,results.height]], [[results.height,results.height], [results.height,0]] ];
-                }
-
-                if(results.name == "Oval")
-                {
-                  this.shapesClass = { 'height': results.length + 'px',
-                    'width': results.width + 'px',
-                    'background-color': '#555',
-                    'border-radius': '50%'
-                  }
-                }
-
-                if(results.name == "Parallelogram")
-                {
-                  this.shapesClass = { 	'width': results.width + 'px',
-                    'height': results.height + 'px',
-                    'transform': 'skew(20deg)',
-                    'background': '#555'
-                }
-                }
-
-              })
-              .catch((resp) => {
+            this.shapesApi.getImageDetails(this.freeTextvalue)
+            .subscribe(resp => 
+              { 
+                this.responseProcessing(resp);
+                this.loader.hide();
+              },
+              error => {
                 this.errorMessage = "Provided input is invalid, corret format is: Draw a(n) <shape> with a(n) <measurement> of <amount> (and a(n)< measurement > of<amount>)";
-                console.log(resp);
+                this.loader.hide();
+                console.log(error);
               });
-          
-        } else {
-          this.errorMessage = "Provided input is invalid, corret format is: Draw a(n) <shape> with a(n) <measurement> of <amount> (and a(n)< measurement > of<amount>)";
-          return null;
-        }
-    } 
-    catch (e) {
-        console.log(e);
+            
+          } else {
+            this.errorMessage = "Provided input is invalid, corret format is: Draw a(n) <shape> with a(n) <measurement> of <amount> (and a(n)< measurement > of<amount>)";
+            return null;
+          }
+      } 
+      catch (e) {
+          console.log(e);
+      }
     }
-  }
 
+    responseProcessing(resp:any)
+    {
+      var results = resp.json();
+      this.name = results.name;
+
+        if(results.width)
+          this.width = results.width;
+
+        if(results.height)
+          this.height = results.height;
+        
+        if(results.radius)
+        this.radius = results.radius;
+
+        if(results.side && results.name == "Square")
+        {
+          this.width = results.side;
+          this.height = results.side;
+        }
+
+        if(results.name == "Equilateral" || results.name == 'Isosceles' || results.name == 'Scalene')
+        {
+          this.lines = [ [[results.height, 0], [0, results.height]], [[results.height, results.width], [results.height, results.height]], [[results.height,results.width], [results.width,results.height]], [[results.height,results.height], [results.height,0]] ];
+        }
+
+        if(results.name == "Oval")
+        {
+          this.shapesClass = { 'height': results.length + 'px',
+            'width': results.width + 'px',
+            'background-color': '#555',
+            'border-radius': '50%'
+          }
+        }
+
+        if(results.name == "Parallelogram")
+        {
+          this.shapesClass = { 	'width': results.width + 'px',
+            'height': results.height + 'px',
+            'transform': 'skew(20deg)',
+            'background': '#555'
+        }
+        }
+    }
 
 }
