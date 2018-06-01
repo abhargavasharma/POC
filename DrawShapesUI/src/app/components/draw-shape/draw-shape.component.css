@@ -1,0 +1,13 @@
+.oval {
+  height: 400px;
+  width: 250px;
+  background-color: #555;
+  border-radius: 50%;
+}
+
+.parallelogram {
+	width: 100px;
+	height: 50px;
+	transform: skew(20deg);
+	background: #555;
+}
