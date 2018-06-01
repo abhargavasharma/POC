@@ -66,7 +66,7 @@ namespace ShapesApi
 			.MinimumLevel.Debug()
 			.MinimumLevel.Override("Microsoft", LogEventLevel.Information)
 			.Enrich.FromLogContext()
-			.WriteTo.File($"{configure["SerilogLogFilePath"]}\\DrawShapes-{DateTime.Now.ToString("ddMMYYYY")}.txt",
+			.WriteTo.File($"{configure["SerilogLogFilePath"]}\\DrawShapes-.txt",
 			fileSizeLimitBytes: 1_000_000,
 			rollOnFileSizeLimit: true,
 			rollingInterval: RollingInterval.Day,
