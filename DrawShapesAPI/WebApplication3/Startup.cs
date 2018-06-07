@@ -14,6 +14,8 @@ namespace ShapesApi
 {
 	public class Startup
 	{
+		public static IConfiguration Configuration { get; set; }
+
 		// This method gets called by the runtime. Use this method to add services to the container.
 		// For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
 		public void ConfigureServices(IServiceCollection services)
@@ -31,6 +33,12 @@ namespace ShapesApi
 					TermsOfService = "None"
 				});
 			});
+
+			Configuration = new ConfigurationBuilder()
+			.SetBasePath(Directory.GetCurrentDirectory())
+			.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+			.AddEnvironmentVariables()
+			.Build();
 
 			services.AddCors(o => o.AddPolicy("ShapesApiPolicy", builder =>
 			{
@@ -50,31 +58,25 @@ namespace ShapesApi
 
 			app.UseMvc();
 			app.UseCors("ShapesApiPolicy");
+			app.UseMiddleware<Middleware>();//Calling my middleware
 
 			//Unity config
 			UnityConfig.RegisterComponents();
-
-			var configure = new ConfigurationBuilder()
-			.SetBasePath(Directory.GetCurrentDirectory())
-			.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-			.AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
-			.AddEnvironmentVariables()
-			.Build();
 
 			//Serilog config
 			Log.Logger = new LoggerConfiguration()
 			.MinimumLevel.Debug()
 			.MinimumLevel.Override("Microsoft", LogEventLevel.Information)
 			.Enrich.FromLogContext()
-			.WriteTo.File($"{configure["SerilogLogFilePath"]}\\DrawShapes-.txt",
-			fileSizeLimitBytes: 1_000_000,
-			rollOnFileSizeLimit: true,
-			rollingInterval: RollingInterval.Day,
-			shared: true,
-			flushToDiskInterval: TimeSpan.FromSeconds(10))
+			.WriteTo.File($"{Configuration["SerilogLogFilePath"]}\\DrawShapes-.txt",
+							fileSizeLimitBytes: 1_000_000,
+							rollOnFileSizeLimit: true,
+							rollingInterval: RollingInterval.Day,
+							shared: true,
+							flushToDiskInterval: TimeSpan.FromSeconds(10))
 			.CreateLogger();
 
-			if (Convert.ToBoolean(configure["EnableSwagger"]))
+			if (Convert.ToBoolean(Configuration["EnableSwagger"]))
 			{
 				//Swagger config
 				app.UseSwagger(c =>

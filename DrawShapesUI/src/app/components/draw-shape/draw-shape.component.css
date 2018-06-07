@@ -1,11 +1,13 @@
-#pentagon {
+.pentagon {
   position: relative;
-  width: 54px;
+  width: 90px;
   border-width: 50px 18px 0;
   border-style: solid;
   border-color: red transparent;
+  top: 20px;
+  margin: auto;
 }
-#pentagon:before {
+.pentagon:before {
   content: "";
   position: absolute;
   height: 0;
@@ -17,13 +19,14 @@
   border-color: transparent transparent red;
 }
 
-#hexagon {
+.hexagon {
 	width: 100px;
 	height: 55px;
 	background: red;
 	position: relative;
+	margin: auto;
 }
-#hexagon:before {
+.hexagon:before {
 	content: "";
 	position: absolute;
 	top: -25px;
@@ -34,7 +37,7 @@
 	border-right: 50px solid transparent;
 	border-bottom: 25px solid red;
 }
-#hexagon:after {
+.hexagon:after {
 	content: "";
 	position: absolute;
 	bottom: -25px;
@@ -46,14 +49,15 @@
 	border-top: 25px solid red;
 }
 
-#octagon {
+.octagon {
 	width: 100px;
 	height: 100px;
 	background: red;
 	position: relative;
+	margin: auto;
 }
 
-#octagon:before {
+.octagon:before {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -65,7 +69,39 @@
 	height: 0;
 }
 
-#octagon:after {
+.octagon:after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	border-top: 29px solid red;
+	border-left: 29px solid #eee;
+	border-right: 29px solid #eee;
+	width: 42px;
+	height: 0;
+}
+
+.heptagon {
+	width: 100px;
+	height: 100px;
+	background: red;
+	position: relative;
+	margin: auto;
+}
+
+.heptagon:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-bottom: 29px solid red;
+	border-left: 29px solid #eee;
+	border-right: 29px solid #eee;
+	width: 42px;
+	height: 0;
+}
+
+.heptagon:after {
 	content: "";
 	position: absolute;
 	bottom: 0;

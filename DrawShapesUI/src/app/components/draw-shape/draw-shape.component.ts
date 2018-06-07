@@ -11,7 +11,7 @@ import { SpinnerService } from '../../shared/spinner.service'
   styleUrls: ['./draw-shape.component.css']
 })
 export class DrawShapeComponent{
-  freeTextvalue="Draw a oval with a width of 250 and a length of 400";
+  freeTextvalue="Draw a pentagon with a side length of 200";
   errorMessage: string;
 
   name:string = '';
@@ -21,6 +21,7 @@ export class DrawShapeComponent{
   side: number = 0;
   lines: any = [ [[100, 0], [0, 100]], [[100, 200], [100, 100]], [[100,200], [200,100]], [[100,100], [100,0]] ];
   shapesClass: any;
+  multiSidedShapesCss : any;
 
   constructor(public shapesApi : ShapesApi, private loader: SpinnerService) { }
 
@@ -39,6 +40,7 @@ export class DrawShapeComponent{
     this.name = "";
     this. errorMessage = "";
     this.shapesClass = "";
+    this.multiSidedShapesCss = "";
   }
 
     public generateImage = () => { 
@@ -93,7 +95,7 @@ export class DrawShapeComponent{
         if(results.height)
           this.height = results.height;
         
-        if(results.radius)
+        if(results.radius && results.name == "Circle")
         this.radius = results.radius;
 
         if(results.side && results.name == "Square")
@@ -110,23 +112,58 @@ export class DrawShapeComponent{
         if(results.name == "Oval")
         {
           this.shapesClass = { 'height': results.length + 'px',
-            'width': results.width + 'px',
-            'background-color': '#555',
-            'border-radius': '50%',
-            'align-items': 'center',
-            'justify-content': 'center'
-          }
+                               'width': results.width + 'px',
+                               'background-color': '#555',
+                               'border-radius': '50%',
+                               'margin':'auto'
+                             }
         }
 
         if(results.name == "Parallelogram")
         {
           this.shapesClass = { 	'width': results.width + 'px',
-            'height': results.height + 'px',
-            'transform': 'skew(20deg)',
-            'background': '#555',
-            'align-items': 'center',
-            'justify-content': 'center'
+                                'height': results.height + 'px',
+                                'transform': 'skew(20deg)',
+                                'background': '#555',
+                                'margin':'auto'
+                              }
         }
+
+        if(results.name == "Pentagon")
+        {
+          this.shapesClass = {
+              'pentagon.width':  results.side + 'px',
+              'pentagon:before.border-width': '0 '+results.side/2+'px 35px'
+          };
+          this.width = results.side;
+          this.multiSidedShapesCss = "pentagon";
+        }
+
+        if(results.name == "Hexagon")
+        {
+          this.shapesClass = {
+              'hexagon.width':  results.side + 'px'
+          };
+          this.width = results.side;
+          this.multiSidedShapesCss = "hexagon";
+        }
+
+        if(results.name == "Octagon")
+        {
+          this.shapesClass = {
+              'octagon.width':  results.side + 'px'
+          };
+          this.width = results.side;
+          this.multiSidedShapesCss = "octagon";
+        }
+
+        if(results.name == "Heptagon")
+        {
+          this.shapesClass = {
+              'heptagon.width':  results.side + 'px'
+          };
+          this.width = results.side;
+          this.multiSidedShapesCss = "heptagon";
         }
     }
 
