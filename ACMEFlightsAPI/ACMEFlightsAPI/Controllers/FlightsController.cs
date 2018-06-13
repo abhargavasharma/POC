@@ -1,57 +1,82 @@
-﻿using ACMEFlightsAPI.DependencyInjection;
-using ACMEFlightsAPI.Service;
-using Serilog;
-using Swashbuckle.Swagger.Annotations;
-using System;
+﻿using System;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
+using ACMEFlightsAPI.Attributes;
+using ACMEFlightsAPI.DependencyInjection;
+using ACMEFlightsAPI.Models;
+using ACMEFlightsAPI.Service;
+using Serilog;
+using Swashbuckle.Swagger.Annotations;
+
 
 namespace ACMEFlightsAPI.Controllers
 {
-    [Authorize]
-    public class FlightsController : ApiController
-    {
-        private readonly IUserService _userService;
+	/// <summary>
+	/// FlightsController
+	/// </summary>
+	[Attributes.Authorize]
+	public class FlightsController : ApiController
+	{
+		private readonly IFlightService _flightService;
 
-        public FlightsController()
-        {
-            _userService = ObjectFactory.Resolve<IUserService>();
-        }
+		/// <summary>
+		/// Initializes members of FlightsController
+		/// </summary>
+		public FlightsController()
+		{
+			_flightService = ObjectFactory.Resolve<IFlightService>();
+		}
 
-        /// <summary>
-        /// Get the availability of the flight based on input criteria
-        /// </summary>
-        /// <param name="startDate">From date</param>
-        /// <param name="endDate">To date</param>
-        /// <param name="noOfPax">Number of passengers to board</param>
-        /// <returns></returns>
-        [HttpGet]
-        [Route("api/Flights/CheckFlightAvailability/{startDate}/{endDate}/{noOfPax}")]
-        [SwaggerResponseRemoveDefaults]
-        [SwaggerResponse(HttpStatusCode.OK, null, typeof(string))]
-        [SwaggerResponse(HttpStatusCode.BadRequest)]
-        [SwaggerResponse(HttpStatusCode.InternalServerError)]
-        public async Task<IHttpActionResult> CheckFlightAvailability(DateTime startDate, DateTime endDate, int noOfPax)
-        {
-            try
-            {
-                //var user = await _userService.GetUserByCredentialsAsync(username, password);
+		/// <summary>
+		/// Get the availability of the flight based on input criteria
+		/// </summary>
+		/// <returns>True or fasle based on availability. True means Available and fasle meanns not available</returns>
+		[CheckModelForNull]
+		[ValidateModel]
+		[Route("api/Flights/CheckFlightAvailability")]
+		[SwaggerResponse(HttpStatusCode.OK, null, typeof(string))]
+		[SwaggerResponse(HttpStatusCode.BadRequest)]
+		[SwaggerResponse(HttpStatusCode.InternalServerError)]
+		public async Task<IHttpActionResult> CheckFlightAvailability([FromBody]FlightAvailabilitySearchCriteria searchCriteria)
+		{
+			try
+			{
+				if (searchCriteria.FromDate == DateTime.MinValue || searchCriteria.ToDate == DateTime.MinValue)
+				{
+					return BadRequest($"Provided details are invalid, From date or To date or both should not be {DateTime.MinValue}");
+				}
 
-                //return Ok("Hello " + user.Name + ", Your role is:" + user.Role);
-                return Ok("Done");
-            }
-            catch (HttpRequestException ex)
-            {
-                Log.Error(ex, $"Input: Start Date: {startDate}, End Date: {endDate}, No. Of Pax: {noOfPax}");
-                return BadRequest("Provided details are invalid");
-            }
-            catch (Exception ex)
-            {
-                Log.Error(ex, $"Input: Start Date: {startDate}, End Date: {endDate}, No. Of Pax: {noOfPax}");
-                return InternalServerError();
-            }
-        }
-    }
+				if (searchCriteria.NoOfPax  <= 0)
+				{
+					return BadRequest($"Provided details are invalid, number of passegers should be more than 0");
+				}
+
+				if (searchCriteria.FromDate < DateTime.Now || searchCriteria.ToDate < DateTime.Now)
+				{
+					return BadRequest($"Provided details are invalid, From date and To date should be greater than or eaqual to today");
+				}
+
+				if (searchCriteria.FromDate < searchCriteria.ToDate)
+				{
+					var flightAvialability = await _flightService.GetFlightAvailabilityAsync(searchCriteria);
+					return Ok(flightAvialability);
+				}
+				else
+					return BadRequest("Provided details are invalid, From date should be lower than To date");
+				
+			}
+			catch (HttpRequestException ex)
+			{
+				Log.Error(ex, $"Input: Start Date: {searchCriteria.FromDate}, End Date: {searchCriteria.ToDate}, No. Of Pax: {searchCriteria.NoOfPax}");
+				return BadRequest("Provided details are invalid");
+			}
+			catch (Exception ex)
+			{
+				Log.Error(ex, $"Input: Start Date: {searchCriteria.FromDate}, End Date: {searchCriteria.ToDate}, No. Of Pax: {searchCriteria.NoOfPax}");
+				return InternalServerError();
+			}
+		}
+	}
 }
