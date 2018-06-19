@@ -12,7 +12,6 @@ namespace ACMEFlightsAPI.provider
 		public OAuthAppProvider()
 		{
 			_userService = ObjectFactory.Resolve<IUserService>();
-			//_userService = new UserService(); //Without Unity DI
 		}
 
 		public override async Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
@@ -21,9 +20,6 @@ namespace ACMEFlightsAPI.provider
 		}
 		public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
 		{
-			//If I add below Line I am getting this error: "The key 'Access-Control-Allow-Origin' is already present in the dictionary."
-			//context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
-
 			var identity = new ClaimsIdentity(context.Options.AuthenticationType);
 			var username = context.UserName;
 			var password = context.Password;

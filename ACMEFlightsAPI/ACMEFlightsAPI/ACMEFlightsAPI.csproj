@@ -214,6 +214,7 @@
     <Compile Include="Models\FlightAvailabilitySearchCriteria.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\ApiVersioningSelector.cs" />
     <Compile Include="Providers\OAuthAppProvider.cs" />
     <Compile Include="Services\FlightService.cs" />
     <Compile Include="Services\UserService.cs" />
