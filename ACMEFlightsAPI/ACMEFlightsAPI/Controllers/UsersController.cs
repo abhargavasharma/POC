@@ -27,7 +27,6 @@ namespace ACMEFlightsAPI.Services
         /// <param name="password">Password to access tho solution</param>
         /// <returns></returns>
         [HttpGet]
-		[Route("api/users/getuserdetails/{username}/{password}")]
 		[SwaggerResponseRemoveDefaults]
         [SwaggerResponse(HttpStatusCode.OK, null, typeof(string))]
         [SwaggerResponse(HttpStatusCode.BadRequest)]

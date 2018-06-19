@@ -1,5 +1,7 @@
-﻿using Serilog;
+﻿using ACMEFlightsAPI.Providers;
+using Serilog;
 using System.Web.Http;
+using System.Web.Http.Dispatcher;
 
 namespace ACMEFlightsAPI
 {
@@ -9,6 +11,7 @@ namespace ACMEFlightsAPI
         {
 			UnityConfig.RegisterComponents();
 			GlobalConfiguration.Configure(WebApiConfig.Register);
+			GlobalConfiguration.Configuration.Services.Replace(typeof(IHttpControllerSelector), new ApiVersioningSelector(GlobalConfiguration.Configuration));
 		}
 
 		protected void Application_Error()

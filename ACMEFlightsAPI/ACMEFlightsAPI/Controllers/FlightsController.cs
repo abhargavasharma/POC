@@ -35,7 +35,6 @@ namespace ACMEFlightsAPI.Controllers
 		/// <returns>True or fasle based on availability. True means Available and fasle meanns not available</returns>
 		[CheckModelForNull]
 		[ValidateModel]
-		[Route("api/Flights/CheckFlightAvailability")]
 		[SwaggerResponse(HttpStatusCode.OK, null, typeof(string))]
 		[SwaggerResponse(HttpStatusCode.BadRequest)]
 		[SwaggerResponse(HttpStatusCode.InternalServerError)]
